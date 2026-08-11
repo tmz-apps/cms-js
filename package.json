@@ -1,11 +1,11 @@
 {
-  "name": "@triniti/cms",
+  "name": "@tmz-apps/cms-js",
   "version": "1.2.2",
   "license": "Apache-2.0",
   "description": "A single page app for managing triniti schemas and services.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/triniti/cms-js.git"
+    "url": "git+https://github.com/tmz-apps/cms-js.git"
   },
   "type": "module",
   "scripts": {
@@ -75,8 +75,8 @@
     "@babel/preset-react": "^7.24.1",
     "@babel/register": "^7.23.7",
     "@node-loader/babel": "^2.1.0",
+    "@tmz-apps/cms-js": "file:./src/",
     "@triniti/app": "file:./demo/src/",
-    "@triniti/cms": "file:./src/",
     "cpx": "^1.5.0",
     "faucet": "0.0.4",
     "ignore-styles": "^5.0.1",
