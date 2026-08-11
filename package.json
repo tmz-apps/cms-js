@@ -15,8 +15,7 @@
     "build:prepub-put-this-one-back-later": "cp -rf ./{*.md,package.json} ./dist && cpx 'src/**/*.{jpg,png,scss,sass,svg}' ./dist",
     "clean": "rm -rf ./dist",
     "pub": "npm run build && cd dist && npm publish --access public",
-    "test": "NODE_NO_WARNINGS=1 NODE_OPTIONS=\"--experimental-loader @node-loader/babel -r ./bootstrap.cjs\" tape-es './src/**/*.test.js*' | faucet",
-    "postinstall": "[ -f ./postinstall.sh ] && ./postinstall.sh"
+    "test": "NODE_NO_WARNINGS=1 NODE_OPTIONS=\"--experimental-loader @node-loader/babel -r ./bootstrap.cjs\" tape-es './src/**/*.test.js*' | faucet"
   },
   "peerDependencies": {
     "@gdbots/schemas": "^3.0.0",

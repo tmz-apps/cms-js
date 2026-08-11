@@ -1,0 +1,19 @@
+name: Validate Release
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+jobs:
+  call-validation-workflow:
+    if: github.event.pull_request.draft == false
+    uses: tmz-apps/tmz-devops/.github/workflows/validate-app-release.yaml@main
+    with:
+      base_ref: ${{ github.base_ref }}
+      head_ref: ${{ github.head_ref }}
