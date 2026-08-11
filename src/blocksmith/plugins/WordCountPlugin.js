@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { $getRoot } from 'lexical';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
-import { $isBlocksmithNode } from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
+import { $isBlocksmithNode } from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
 
 const countWords = text => text.trim().split((/\s+/)).filter(word => word.length).length;
 

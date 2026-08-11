@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { TextField } from '@triniti/cms/components/index.js';
+import { TextField } from '@tmz-apps/cms-js/components/index.js';
 
 export default function BlogrollWidgetFields() {
   return (

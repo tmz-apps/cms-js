@@ -1,13 +1,13 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { SelectField, SwitchField, TextareaField, TextField, UrlField } from '@triniti/cms/components/index.js';
-import Blocksmith from '@triniti/cms/blocksmith/index.js';
-import AdvertisingFields from '@triniti/cms/plugins/common/components/advertising-fields/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import SlugField from '@triniti/cms/plugins/ncr/components/slug-field/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import HashtagPickerField from '@triniti/cms/plugins/taxonomy/components/hashtag-picker-field/index.js';
+import { SelectField, SwitchField, TextareaField, TextField, UrlField } from '@tmz-apps/cms-js/components/index.js';
+import Blocksmith from '@tmz-apps/cms-js/blocksmith/index.js';
+import AdvertisingFields from '@tmz-apps/cms-js/plugins/common/components/advertising-fields/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import HashtagPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/hashtag-picker-field/index.js';
 
 const bioSourceOptions = [
   { value: 'imdb', label: 'imdb' },

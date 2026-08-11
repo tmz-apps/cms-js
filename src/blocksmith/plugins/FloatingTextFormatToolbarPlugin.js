@@ -18,10 +18,10 @@ import {
   INSERT_UNORDERED_LIST_COMMAND,
   REMOVE_LIST_COMMAND
 } from '@lexical/list';
-import { Icon } from '@triniti/cms/components/index.js';
-import $getSelectedNode from '@triniti/cms/blocksmith/utils/getSelectedNode.js';
-import LinkModal from '@triniti/cms/blocksmith/components/link-modal/index.js';
-import BlocksmithModal from '@triniti/cms/blocksmith/components/blocksmith-modal/index.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import $getSelectedNode from '@tmz-apps/cms-js/blocksmith/utils/getSelectedNode.js';
+import LinkModal from '@tmz-apps/cms-js/blocksmith/components/link-modal/index.js';
+import BlocksmithModal from '@tmz-apps/cms-js/blocksmith/components/blocksmith-modal/index.js';
 import classnames from "classnames";
 
 function getDOMRangeRect(nativeSelection, rootElement) {

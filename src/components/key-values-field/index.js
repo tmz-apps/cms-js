@@ -4,9 +4,9 @@ import { Badge, Button, Col, Label, Row } from 'reactstrap';
 import { FieldArray } from 'react-final-form-arrays';
 import isEmpty from 'lodash-es/isEmpty.js';
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
-import { Icon, useFormContext } from '@triniti/cms/components/index.js';
-import SelectKeyField from '@triniti/cms/components/key-values-field/SelectKeyField.js';
-import TextKeyField from '@triniti/cms/components/key-values-field/TextKeyField.js';
+import { Icon, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import SelectKeyField from '@tmz-apps/cms-js/components/key-values-field/SelectKeyField.js';
+import TextKeyField from '@tmz-apps/cms-js/components/key-values-field/TextKeyField.js';
 
 const isEqual = (a, b) => fastDeepEqual(a, b) || (isEmpty(a) && isEmpty(b));
 

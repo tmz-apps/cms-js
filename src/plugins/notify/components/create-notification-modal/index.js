@@ -3,10 +3,10 @@ import startCase from 'lodash-es/startCase.js';
 import { ListGroup, ListGroupItem, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import SchemaCurie from '@gdbots/pbj/SchemaCurie.js';
 import SearchAppsSort from '@gdbots/schemas/gdbots/iam/enums/SearchAppsSort.js';
-import { ActionButton, Loading, withPbj } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
+import { ActionButton, Loading, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
 
 const components = {};
 const resolveComponent = (curie) => {
@@ -15,7 +15,7 @@ const resolveComponent = (curie) => {
   }
 
   const file = startCase(SchemaCurie.fromString(curie).getMessage()).replace(/\s/g, '');
-  components[curie] = lazy(() => import(`@triniti/cms/plugins/notify/components/create-notification-modal/${file}Modal.js`));
+  components[curie] = lazy(() => import(`@tmz-apps/cms-js/plugins/notify/components/create-notification-modal/${file}Modal.js`));
   return components[curie];
 };
 

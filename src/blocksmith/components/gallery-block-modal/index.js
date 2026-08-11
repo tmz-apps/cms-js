@@ -1,12 +1,12 @@
 import React from 'react';
 import { useFormState } from 'react-final-form';
-import { SwitchField, TextField } from '@triniti/cms/components/index.js';
-import AspectRatioField from '@triniti/cms/plugins/common/components/aspect-ratio-field/index.js';
-import GalleryPickerField from '@triniti/cms/blocksmith/components/gallery-block-modal/GalleryPickerField.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
-import AsideField from '@triniti/cms/blocksmith/components/with-block-modal/AsideField.js';
+import { SwitchField, TextField } from '@tmz-apps/cms-js/components/index.js';
+import AspectRatioField from '@tmz-apps/cms-js/plugins/common/components/aspect-ratio-field/index.js';
+import GalleryPickerField from '@tmz-apps/cms-js/blocksmith/components/gallery-block-modal/GalleryPickerField.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
+import AsideField from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/AsideField.js';
 
 function GalleryBlockModal(props) {
   const { nodeRef: containerRef } = props.containerFormContext;

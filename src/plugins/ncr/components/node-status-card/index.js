@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import { Badge, Button, Card, CardBody, CardHeader, Spinner, Table } from 'reactstrap';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import pbjUrl from '@gdbots/pbjx/pbjUrl.js';
-import { Icon } from '@triniti/cms/components/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import PublishForm from '@triniti/cms/plugins/ncr/components/node-status-card/PublishForm.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import PublishForm from '@tmz-apps/cms-js/plugins/ncr/components/node-status-card/PublishForm.js';
 
 export default function NodeStatusCard(props) {
   const { nodeRef, statusField = 'status' } = props;

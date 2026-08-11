@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-import ValueRenderer from '@triniti/cms/plugins/ncr/components/node-history-card/ValueRenderer.js';
+import ValueRenderer from '@tmz-apps/cms-js/plugins/ncr/components/node-history-card/ValueRenderer.js';
 
 export default function PropertiesTable({ data }) {
   return (

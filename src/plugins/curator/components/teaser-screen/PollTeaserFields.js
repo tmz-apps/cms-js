@@ -1,5 +1,5 @@
 import React from 'react';
-import PollPickerField from '@triniti/cms/plugins/apollo/components/poll-picker-field/index.js';
+import PollPickerField from '@tmz-apps/cms-js/plugins/apollo/components/poll-picker-field/index.js';
 
 export default function PollTeaserFields() {
   return (

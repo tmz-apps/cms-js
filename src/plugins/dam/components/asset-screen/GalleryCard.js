@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { NumberField } from '@triniti/cms/components/index.js';
-import GalleryPickerField from '@triniti/cms/plugins/curator/components/gallery-picker-field/index.js';
+import { NumberField } from '@tmz-apps/cms-js/components/index.js';
+import GalleryPickerField from '@tmz-apps/cms-js/plugins/curator/components/gallery-picker-field/index.js';
 
 export default function GalleryCard(props) {
   const { node } = props;

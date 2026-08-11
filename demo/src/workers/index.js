@@ -1,4 +1,4 @@
-import startWorkers from '@triniti/cms/actions/startWorkers.js';
+import startWorkers from '@tmz-apps/cms-js/actions/startWorkers.js';
 import RavenWorker from './raven.js';
 
 /**

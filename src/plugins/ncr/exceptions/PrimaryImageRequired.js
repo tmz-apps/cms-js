@@ -1,4 +1,4 @@
-import TrinitiNcrException from '@triniti/cms/plugins/ncr/exceptions/TrinitiNcrException.js';
+import TrinitiNcrException from '@tmz-apps/cms-js/plugins/ncr/exceptions/TrinitiNcrException.js';
 
 export default class PrimaryImageRequired extends TrinitiNcrException {
   constructor(message = 'Primary Image is required.') {

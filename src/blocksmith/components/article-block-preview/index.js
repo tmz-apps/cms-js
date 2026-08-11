@@ -1,10 +1,10 @@
 import React from 'react';
 import { Badge, Button, Col, Media, Row, Table } from 'reactstrap';
 import pbjUrl from '@gdbots/pbjx/pbjUrl.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import { Icon } from '@triniti/cms/components/index.js';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function ArticleBlockPreview(props) {
   const { block, node } = props;

@@ -1,4 +1,4 @@
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
 
 export default async (options) => {
   const { s3PresignedUrl, file, controller } = options;

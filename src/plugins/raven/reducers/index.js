@@ -1,6 +1,6 @@
 import isEmpty from 'lodash-es/isEmpty.js';
-import createReducer from '@triniti/cms/utils/createReducer.js';
-import { actionTypes, connectionStatus } from '@triniti/cms/plugins/raven/constants.js';
+import createReducer from '@tmz-apps/cms-js/utils/createReducer.js';
+import { actionTypes, connectionStatus } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export const initialState = {
   collaborationsKeys: [],

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { ButtonToolbar, Card, Input, Label, Media } from 'reactstrap';
-import { BackgroundImage, Icon } from '@triniti/cms/components/index.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/styles.scss';
+import { BackgroundImage, Icon } from '@tmz-apps/cms-js/components/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/styles.scss';
 
 export default function SortableImage(props) {
   const { id, index, imagesPerRow, seq, image, batch, isReordering, canReorder } = props;

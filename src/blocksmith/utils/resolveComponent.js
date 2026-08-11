@@ -8,6 +8,6 @@ export default (curie, type) => {
   }
 
   const file = curie.split(':').pop();
-  components[key] = lazy(() => import(`@triniti/cms/blocksmith/components/${file}-${type}/index.js`));
+  components[key] = lazy(() => import(`@tmz-apps/cms-js/blocksmith/components/${file}-${type}/index.js`));
   return components[key];
 };

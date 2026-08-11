@@ -1,7 +1,7 @@
 import React from 'react';
-import { KeyValuesField, SelectField, SwitchField, TextField, UrlField, useFormContext } from '@triniti/cms/components/index.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
-import parseIframeSrc from '@triniti/cms/blocksmith/utils/parseIframeSrc.js';
+import { KeyValuesField, SelectField, SwitchField, TextField, UrlField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
+import parseIframeSrc from '@tmz-apps/cms-js/blocksmith/utils/parseIframeSrc.js';
 
 const align = [
   { label: 'center', value: 'center' },

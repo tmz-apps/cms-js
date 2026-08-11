@@ -1,5 +1,5 @@
 import React from 'react';
-import { EnumField } from '@triniti/cms/components/index.js';
+import { EnumField } from '@tmz-apps/cms-js/components/index.js';
 
 const filter = option => option.value !== 'unknown';
 

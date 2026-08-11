@@ -3,14 +3,14 @@ import { Button, Card, CardBody, CardHeader, CardText, Row, Spinner } from 'reac
 import { closestCenter, DndContext, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { rectSortingStrategy, SortableContext } from '@dnd-kit/sortable';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import { ActionButton, CreateModalButton, Icon, Loading, Pager } from '@triniti/cms/components/index.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useDelegate from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/useDelegate.js';
-import SortableImage from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/SortableImage.js';
-import ResizeGallerySlider from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/ResizeGallerySlider.js';
+import { ActionButton, CreateModalButton, Icon, Loading, Pager } from '@tmz-apps/cms-js/components/index.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useDelegate from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/useDelegate.js';
+import SortableImage from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/SortableImage.js';
+import ResizeGallerySlider from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/ResizeGallerySlider.js';
 
-const AddImagesModal = lazy(() => import('@triniti/cms/plugins/curator/components/gallery-screen/images-tab/AddImagesModal.js'));
-const PatchAssetsModal = lazy(() => import('@triniti/cms/plugins/dam/components/patch-assets-modal/index.js'));
+const AddImagesModal = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/AddImagesModal.js'));
+const PatchAssetsModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/patch-assets-modal/index.js'));
 
 function ImagesTab(props) {
   const { nodeRef, request } = props;

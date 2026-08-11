@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import SlugField from '@triniti/cms/plugins/ncr/components/slug-field/index.js';
-import SeoTitleField from '@triniti/cms/plugins/common/components/seo-title-field/index.js';
-import Blocksmith from '@triniti/cms/blocksmith/index.js';
-import { DatePickerField, KeyValuesField, NumberField, SwitchField } from '@triniti/cms/components/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import HeadlineFragmentsCard from '@triniti/cms/plugins/news/components/headline-fragments-card/index.js';
+import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.js';
+import SeoTitleField from '@tmz-apps/cms-js/plugins/common/components/seo-title-field/index.js';
+import Blocksmith from '@tmz-apps/cms-js/blocksmith/index.js';
+import { DatePickerField, KeyValuesField, NumberField, SwitchField } from '@tmz-apps/cms-js/components/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import HeadlineFragmentsCard from '@tmz-apps/cms-js/plugins/news/components/headline-fragments-card/index.js';
 import slottingKeys from '@triniti/app/config/slottingKeys.js';
 
 export default function StoryTab(props) {

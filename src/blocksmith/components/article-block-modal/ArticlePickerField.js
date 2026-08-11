@@ -5,6 +5,6 @@
  * Vendors can override this file to implement custom logic.
  *
  */
-import ArticlePickerField from '@triniti/cms/plugins/news/components/article-picker-field/index.js';
+import ArticlePickerField from '@tmz-apps/cms-js/plugins/news/components/article-picker-field/index.js';
 
 export default ArticlePickerField;

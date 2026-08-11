@@ -1,7 +1,7 @@
 import isArray from 'lodash-es/isArray.js';
 import isFunction from 'lodash-es/isFunction.js';
 import { useField } from 'react-final-form';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
 
 export default (config, formContext) => {
   const {

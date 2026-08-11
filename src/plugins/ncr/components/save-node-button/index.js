@@ -1,6 +1,6 @@
 import React from 'react';
-import { ActionButton } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
+import { ActionButton } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 
 export default function SaveNodeButton (props) {

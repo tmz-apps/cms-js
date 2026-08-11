@@ -1,4 +1,4 @@
-import { methods, serviceIds } from '@triniti/cms/plugins/raven/constants.js';
+import { methods, serviceIds } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export default (nodeRef) => async (dispatch, getState, app) => {
   if (!app.has(serviceIds.RAVEN_WORKER)) {

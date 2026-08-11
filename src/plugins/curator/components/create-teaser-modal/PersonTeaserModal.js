@@ -1,6 +1,6 @@
 import React from 'react';
-import PersonPickerField from '@triniti/cms/plugins/people/components/person-picker-field/index.js';
-import withTeaserModal from '@triniti/cms/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
+import PersonPickerField from '@tmz-apps/cms-js/plugins/people/components/person-picker-field/index.js';
+import withTeaserModal from '@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
 
 function PersonTeaserModal() {
   return (

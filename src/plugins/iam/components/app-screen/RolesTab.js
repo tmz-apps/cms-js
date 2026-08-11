@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
-import { ErrorBoundary, Loading } from '@triniti/cms/components/index.js';
+import { ErrorBoundary, Loading } from '@tmz-apps/cms-js/components/index.js';
 
-const RolesForm = lazy(() => import('@triniti/cms/plugins/iam/components/app-screen/RolesForm.js'));
+const RolesForm = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/app-screen/RolesForm.js'));
 
 export default function RolesTab(props) {
   const { tab } = props;

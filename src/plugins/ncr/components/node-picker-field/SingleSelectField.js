@@ -2,10 +2,10 @@ import React from 'react';
 import { AsyncPaginate } from 'react-select-async-paginate';
 import classNames from 'classnames';
 import { Badge, FormText, Label } from 'reactstrap';
-import { useField, useFormContext } from '@triniti/cms/components/index.js';
-import defaultLoadOptions from '@triniti/cms/plugins/ncr/components/node-picker-field/loadOptions.js';
-import Option from '@triniti/cms/plugins/ncr/components/node-picker-field/Option.js';
-import SingleValue from '@triniti/cms/plugins/ncr/components/node-picker-field/SingleValue.js';
+import { useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import defaultLoadOptions from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/loadOptions.js';
+import Option from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/Option.js';
+import SingleValue from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/SingleValue.js';
 
 const defaultComponents = { Option, SingleValue };
 

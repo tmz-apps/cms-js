@@ -1,6 +1,6 @@
 import React from 'react';
 import AspectRatio from '@triniti/schemas/triniti/common/enums/AspectRatio.js';
-import { EnumField } from '@triniti/cms/components/index.js';
+import { EnumField } from '@tmz-apps/cms-js/components/index.js';
 
 const labels = {
   'R16BY9': 'Widescreen - 16:9',

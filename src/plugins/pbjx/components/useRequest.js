@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import noop from 'lodash-es/noop.js';
 import { getInstance } from '@triniti/app/main.js';
-import * as constants from '@triniti/cms/constants.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import * as constants from '@tmz-apps/cms-js/constants.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
 
 const makeRequest = async (request, enricher) => {
   const app = getInstance();

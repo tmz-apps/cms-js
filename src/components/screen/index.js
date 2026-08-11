@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, NavItem } from 'reactstrap';
 import kebabCase from 'lodash-es/kebabCase.js';
 import { useDispatch } from 'react-redux';
-import { Icon, Nav, RouterLink } from '@triniti/cms/components/index.js';
-import AlertBar from '@triniti/cms/components/screen/AlertBar.js';
-import PrimaryActions from '@triniti/cms/components/screen/PrimaryActions.js';
-import changeNavbar from '@triniti/cms/actions/changeNavbar.js';
+import { Icon, Nav, RouterLink } from '@tmz-apps/cms-js/components/index.js';
+import AlertBar from '@tmz-apps/cms-js/components/screen/AlertBar.js';
+import PrimaryActions from '@tmz-apps/cms-js/components/screen/PrimaryActions.js';
+import changeNavbar from '@tmz-apps/cms-js/actions/changeNavbar.js';
 
 let screenBody = null;
 export const scrollToTop = (behavior = 'smooth', top = 0) => {

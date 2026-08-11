@@ -1,3 +1,3 @@
-import { actionTypes } from '@triniti/cms/plugins/raven/constants.js';
+import { actionTypes } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export default () => ({ type: actionTypes.PRUNE_COLLABORATORS });

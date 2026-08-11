@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
-import { ErrorBoundary, Loading, SelectField, SwitchField } from '@triniti/cms/components/index.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
+import { ErrorBoundary, Loading, SelectField, SwitchField } from '@tmz-apps/cms-js/components/index.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
 import startCase from 'lodash-es/startCase.js';
 
 // sort the curies by message, e.g. consider these curies:
@@ -23,7 +23,7 @@ const resolveComponent = (id) => {
   parts.pop();
   const message = parts.pop();
   const file = startCase(message).replace(/\s/g, '');
-  components[id] = lazy(() => import(`@triniti/cms/plugins/curator/components/widget-screen/${file}Fields.js`));
+  components[id] = lazy(() => import(`@tmz-apps/cms-js/plugins/curator/components/widget-screen/${file}Fields.js`));
   return components[id];
 };
 

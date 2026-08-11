@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { DatePickerField, SwitchField, useFormContext } from '@triniti/cms/components/index.js';
+import { DatePickerField, SwitchField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 import { useFormState, Field } from 'react-final-form';
 
 export default function SendOptionsField(props) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { SwitchField, TextareaField, TextField } from '@triniti/cms/components/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
+import { SwitchField, TextareaField, TextField } from '@tmz-apps/cms-js/components/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 
 export default function ShowtimesWidgetFields() {
   return (

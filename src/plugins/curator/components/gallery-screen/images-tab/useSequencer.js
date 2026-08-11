@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { arrayMove } from '@dnd-kit/sortable';
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
 import clamp from 'lodash-es/clamp.js';
-import incrementer from '@triniti/cms/utils/incrementer.js';
+import incrementer from '@tmz-apps/cms-js/utils/incrementer.js';
 
 /**
  * Things to know:

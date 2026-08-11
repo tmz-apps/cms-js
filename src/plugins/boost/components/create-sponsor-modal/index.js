@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { FORM_ERROR } from 'final-form';
 import { Form, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import createSlug from '@gdbots/pbj/utils/createSlug.js';
-import { ActionButton, FormErrors, TextField, withForm, withPbj } from '@triniti/cms/components/index.js';
-import createNode from '@triniti/cms/plugins/ncr/actions/createNode.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
+import { ActionButton, FormErrors, TextField, withForm, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import createNode from '@tmz-apps/cms-js/plugins/ncr/actions/createNode.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
 
 function CreateSponsorModal(props) {
   const dispatch = useDispatch();

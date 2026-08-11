@@ -1,5 +1,5 @@
-import Plugin from '@triniti/cms/Plugin.js';
-import { serviceIds } from '@triniti/cms/plugins/news/constants.js';
+import Plugin from '@tmz-apps/cms-js/Plugin.js';
+import { serviceIds } from '@tmz-apps/cms-js/plugins/news/constants.js';
 
 export default class NewsPlugin extends Plugin {
   constructor() {
@@ -8,7 +8,7 @@ export default class NewsPlugin extends Plugin {
 
   async configure(app) {
     app.register(serviceIds.HEADLINE_FRAGMENTS_SUBSCRIBER, async () => {
-      const HeadlineFragmentsSubscriber = (await import('@triniti/cms/plugins/news/HeadlineFragmentsSubscriber.js')).default;
+      const HeadlineFragmentsSubscriber = (await import('@tmz-apps/cms-js/plugins/news/HeadlineFragmentsSubscriber.js')).default;
       return new HeadlineFragmentsSubscriber();
     });
 

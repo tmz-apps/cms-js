@@ -1,15 +1,15 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { SwitchField, TextField } from '@triniti/cms/components/index.js';
-import AdvertisingFields from '@triniti/cms/plugins/common/components/advertising-fields/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import ArticlePickerField from '@triniti/cms/plugins/news/components/article-picker-field/index.js';
-import SponsorPickerField from '@triniti/cms/plugins/boost/components/sponsor-picker-field/index.js';
-import TeaserPickerField from '@triniti/cms/plugins/curator/components/teaser-picker-field/index.js';
-import UserPickerField from '@triniti/cms/plugins/iam/components/user-picker-field/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import SyndicationCard from '@triniti/cms/plugins/news/components/article-screen/SyndicationCard.js';
+import { SwitchField, TextField } from '@tmz-apps/cms-js/components/index.js';
+import AdvertisingFields from '@tmz-apps/cms-js/plugins/common/components/advertising-fields/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import ArticlePickerField from '@tmz-apps/cms-js/plugins/news/components/article-picker-field/index.js';
+import SponsorPickerField from '@tmz-apps/cms-js/plugins/boost/components/sponsor-picker-field/index.js';
+import TeaserPickerField from '@tmz-apps/cms-js/plugins/curator/components/teaser-picker-field/index.js';
+import UserPickerField from '@tmz-apps/cms-js/plugins/iam/components/user-picker-field/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import SyndicationCard from '@tmz-apps/cms-js/plugins/news/components/article-screen/SyndicationCard.js';
 
 export default function DetailsTab(props) {
   const { node } = props;

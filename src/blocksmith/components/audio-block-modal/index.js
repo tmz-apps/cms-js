@@ -1,9 +1,9 @@
 import React from 'react';
-import { TextField, UrlField } from '@triniti/cms/components/index.js';
-import AudioAssetPickerField from '@triniti/cms/plugins/dam/components/audio-asset-picker-field/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
-import AsideField from '@triniti/cms/blocksmith/components/with-block-modal/AsideField.js';
+import { TextField, UrlField } from '@tmz-apps/cms-js/components/index.js';
+import AudioAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/audio-asset-picker-field/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
+import AsideField from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/AsideField.js';
 
 function AudioBlockModal(props) {
   const { nodeRef: containerRef } = props.containerFormContext;

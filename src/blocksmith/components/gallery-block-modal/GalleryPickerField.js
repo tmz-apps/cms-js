@@ -5,6 +5,6 @@
  * Vendors can override this file to implement custom logic.
  *
  */
-import GalleryPickerField from '@triniti/cms/plugins/curator/components/gallery-picker-field/index.js';
+import GalleryPickerField from '@tmz-apps/cms-js/plugins/curator/components/gallery-picker-field/index.js';
 
 export default GalleryPickerField;

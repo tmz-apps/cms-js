@@ -3,15 +3,15 @@ import Swal from 'sweetalert2';
 import { CardText, Label, Spinner } from 'reactstrap';
 import ChannelState from '@triniti/schemas/triniti/ovp.medialive/enums/ChannelState.js';
 import { useDispatch } from 'react-redux';
-import { ActionButton, Icon } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import delay from '@triniti/cms/utils/delay.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import startMediaLiveChannel from '@triniti/cms/plugins/ovp/actions/startMediaLiveChannel.js';
-import stopMediaLiveChannel from '@triniti/cms/plugins/ovp/actions/stopMediaLiveChannel.js';
+import { ActionButton, Icon } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import startMediaLiveChannel from '@tmz-apps/cms-js/plugins/ovp/actions/startMediaLiveChannel.js';
+import stopMediaLiveChannel from '@tmz-apps/cms-js/plugins/ovp/actions/stopMediaLiveChannel.js';
 
 export function processMedialiveMetas(metas, nodeRef) {
   if (!metas) {

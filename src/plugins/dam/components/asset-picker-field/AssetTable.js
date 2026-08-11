@@ -1,9 +1,9 @@
 import React from 'react';
 import { Badge, Card, Table } from 'reactstrap';
-import { ActionButton } from '@triniti/cms/components/index.js';
-import formatBytes from '@triniti/cms/utils/formatBytes.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
+import { ActionButton } from '@tmz-apps/cms-js/components/index.js';
+import formatBytes from '@tmz-apps/cms-js/utils/formatBytes.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
 
 export default function AssetTable(props) {
   const { nodes, onSelectAsset } = props;

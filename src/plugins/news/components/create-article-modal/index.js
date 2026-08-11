@@ -3,14 +3,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FORM_ERROR } from 'final-form';
 import { Form, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import { ActionButton, FormErrors, TextField, withForm, withPbj } from '@triniti/cms/components/index.js';
-import SeoTitleField from '@triniti/cms/plugins/common/components/seo-title-field/index.js';
-import createNode from '@triniti/cms/plugins/ncr/actions/createNode.js';
-import { datedSlugValidator, formatDatedSlug, isValidDatedSlug } from '@triniti/cms/plugins/ncr/utils/slugFormat.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import { ActionButton, FormErrors, TextField, withForm, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import SeoTitleField from '@tmz-apps/cms-js/plugins/common/components/seo-title-field/index.js';
+import createNode from '@tmz-apps/cms-js/plugins/ncr/actions/createNode.js';
+import { datedSlugValidator, formatDatedSlug, isValidDatedSlug } from '@tmz-apps/cms-js/plugins/ncr/utils/slugFormat.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
 
 // Slug is optional on create — if left empty it's generated from the title on submit.
 const slugValidator = (value) => {

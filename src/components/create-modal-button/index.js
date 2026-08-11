@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import isFunction from 'lodash-es/isFunction.js';
-import { ActionButton, ErrorBoundary } from '@triniti/cms/components/index.js';
+import { ActionButton, ErrorBoundary } from '@tmz-apps/cms-js/components/index.js';
 
 export default function CreateModalButton(props) {
   const { color = 'light', modal: ModalComponent, modalProps = {}, keyCode, ...rest } = props;

@@ -1,10 +1,10 @@
 import React from 'react';
 import SearchVideosSort from '@triniti/schemas/triniti/ovp/enums/SearchVideosSort.js';
 import { Button } from 'reactstrap';
-import { Icon, Loading, Screen } from '@triniti/cms/components/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import MediaLiveCard from '@triniti/cms/plugins/ovp/components/livestreams-screen/MediaLiveCard.js';
+import { Icon, Loading, Screen } from '@tmz-apps/cms-js/components/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import MediaLiveCard from '@tmz-apps/cms-js/plugins/ovp/components/livestreams-screen/MediaLiveCard.js';
 
 function LivestreamsScreen(props) {
   const { request } = props;

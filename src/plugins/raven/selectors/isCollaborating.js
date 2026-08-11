@@ -1,4 +1,4 @@
-import getUserRef from '@triniti/cms/plugins/iam/selectors/getUserRef.js';
+import getUserRef from '@tmz-apps/cms-js/plugins/iam/selectors/getUserRef.js';
 
 export default (state, nodeRef) => {
   const userRef = getUserRef(state);

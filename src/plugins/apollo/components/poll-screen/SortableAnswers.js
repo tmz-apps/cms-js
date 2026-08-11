@@ -2,9 +2,9 @@ import React from 'react';
 import isEmpty from 'lodash-es/isEmpty.js';
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
 import { FieldArray } from 'react-final-form-arrays';
-import { CreateModalButton, useFormContext, withPbj } from '@triniti/cms/components/index.js';
-import AnswerModal from '@triniti/cms/plugins/apollo/components/poll-screen/AnswerModal.js';
-import SortableAnswer from '@triniti/cms/plugins/apollo/components/poll-screen/SortableAnswer.js';
+import { CreateModalButton, useFormContext, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import AnswerModal from '@tmz-apps/cms-js/plugins/apollo/components/poll-screen/AnswerModal.js';
+import SortableAnswer from '@tmz-apps/cms-js/plugins/apollo/components/poll-screen/SortableAnswer.js';
 import {
   DndContext,
   closestCenter,

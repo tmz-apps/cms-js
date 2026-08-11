@@ -1,6 +1,6 @@
 import mqtt from 'mqtt';
-import { actionTypes as appActionTypes } from '@triniti/cms/constants.js';
-import { actionTypes, connectionStatus } from '@triniti/cms/plugins/raven/constants.js';
+import { actionTypes as appActionTypes } from '@tmz-apps/cms-js/constants.js';
+import { actionTypes, connectionStatus } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 const LOG_PREFIX = `raven_worker.v${APP_VERSION}/`;
 const MAX_CONNECT_ATTEMPTS = 5;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import classNames from 'classnames';
 import { Badge, Button, ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle, FormText, InputGroup, InputGroupText, Label, UncontrolledTooltip } from 'reactstrap';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import { Icon, useField, useFormContext } from '@triniti/cms/components/index.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import { Icon, useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 export default function DatePickerField(props) {
   const {

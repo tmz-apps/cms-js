@@ -1,6 +1,6 @@
-import isAuthenticated from '@triniti/cms/plugins/iam/selectors/isAuthenticated.js';
-import getAccessToken from '@triniti/cms/plugins/iam/selectors/getAccessToken.js';
-import { methods, serviceIds } from '@triniti/cms/plugins/raven/constants.js';
+import isAuthenticated from '@tmz-apps/cms-js/plugins/iam/selectors/isAuthenticated.js';
+import getAccessToken from '@tmz-apps/cms-js/plugins/iam/selectors/getAccessToken.js';
+import { methods, serviceIds } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export default (userRef) => async (dispatch, getState, app) => {
   if (!app.has(serviceIds.RAVEN_WORKER)) {

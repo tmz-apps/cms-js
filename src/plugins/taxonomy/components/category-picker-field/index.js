@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchCategoriesSort from '@triniti/schemas/triniti/taxonomy/enums/SearchCategoriesSort.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import NodePickerField from '@triniti/cms/plugins/ncr/components/node-picker-field/index.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import NodePickerField from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/index.js';
 
 function CategoryPickerField(props) {
   return <NodePickerField {...props} showImage={false} />;

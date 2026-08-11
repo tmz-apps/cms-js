@@ -13,15 +13,15 @@ import {
   UncontrolledButtonDropdown
 } from 'reactstrap';
 import DatePicker from 'react-datepicker';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import markNodeAsDraft from '@triniti/cms/plugins/ncr/actions/markNodeAsDraft.js';
-import markNodeAsPending from '@triniti/cms/plugins/ncr/actions/markNodeAsPending.js';
-import publishNode from '@triniti/cms/plugins/ncr/actions/publishNode.js';
-import unpublishNode from '@triniti/cms/plugins/ncr/actions/unpublishNode.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import markNodeAsDraft from '@tmz-apps/cms-js/plugins/ncr/actions/markNodeAsDraft.js';
+import markNodeAsPending from '@tmz-apps/cms-js/plugins/ncr/actions/markNodeAsPending.js';
+import publishNode from '@tmz-apps/cms-js/plugins/ncr/actions/publishNode.js';
+import unpublishNode from '@tmz-apps/cms-js/plugins/ncr/actions/unpublishNode.js';
 
 const actions = {
   'mark-as-draft': markNodeAsDraft,

@@ -1,7 +1,7 @@
 import { $getRoot, $insertNodes } from 'lexical';
 import { $generateNodesFromDOM } from '@lexical/html';
-import { $createBlocksmithNode } from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
-import { BLOCKSMITH_HYDRATION } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
+import { $createBlocksmithNode } from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
+import { BLOCKSMITH_HYDRATION } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
 
 export default (blocks, editor) => {
   editor.update(() => {

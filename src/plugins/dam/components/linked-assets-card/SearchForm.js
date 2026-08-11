@@ -13,7 +13,7 @@ import {
 } from 'reactstrap';
 import { Field } from 'react-final-form';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
 import {
   ActionButton,
   DatePickerField,
@@ -21,10 +21,10 @@ import {
   NumberField,
   SelectField,
   useDebounce
-} from '@triniti/cms/components/index.js';
-import SortField from '@triniti/cms/plugins/ncr/components/sort-field/index.js';
-import GalleryPickerField from '@triniti/cms/plugins/curator/components/gallery-picker-field/index.js';
-import PersonPickerField from '@triniti/cms/plugins/people/components/person-picker-field/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import SortField from '@tmz-apps/cms-js/plugins/ncr/components/sort-field/index.js';
+import GalleryPickerField from '@tmz-apps/cms-js/plugins/curator/components/gallery-picker-field/index.js';
+import PersonPickerField from '@tmz-apps/cms-js/plugins/people/components/person-picker-field/index.js';
 
 const scrollToTop = () => {
   const tabBody = document.getElementById('asset-linker-search-body');

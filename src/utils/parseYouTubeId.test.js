@@ -1,5 +1,5 @@
 import test from 'tape';
-import parseYouTubeId from './parseYouTubeId.js';
+import parseYouTubeId from '@tmz-apps/cms-js/utils/parseYouTubeId.js';
 
 test('parseYouTubeId handles various inputs', (t) => {
   const testCases = [

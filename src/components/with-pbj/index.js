@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from '@triniti/cms/components/loading/index.js';
-import useResolver from '@triniti/cms/components/with-pbj/useResolver.js';
+import Loading from '@tmz-apps/cms-js/components/loading/index.js';
+import useResolver from '@tmz-apps/cms-js/components/with-pbj/useResolver.js';
 
 export { useResolver };
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import { Loading } from '@triniti/cms/components/index.js';
-import AssetPresenter from '@triniti/cms/plugins/dam/components/asset-picker-field/AssetPresenter.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import { Loading } from '@tmz-apps/cms-js/components/index.js';
+import AssetPresenter from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/AssetPresenter.js';
 
 function LinkedTab(props) {
   const { onSelectAsset, onClickTab, onUpload, searchEnricher, activeTab, linkedRef, type, request, displayView } = props;

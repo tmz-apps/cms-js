@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { ErrorBoundary } from '@triniti/cms/components/index.js';
+import { ErrorBoundary } from '@tmz-apps/cms-js/components/index.js';
 
 export default function BlocksmithModal(props) {
   const { isOpen = false, toggle, modal: ModalComponent, ...rest } = props;

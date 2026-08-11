@@ -13,7 +13,7 @@ import {
   ModalFooter,
   ModalHeader
 } from 'reactstrap';
-import { ActionButton, Icon } from '@triniti/cms/components/index.js';
+import { ActionButton, Icon } from '@tmz-apps/cms-js/components/index.js';
 
 export default function LinkModal(props) {
   const [editor] = useLexicalComposerContext();

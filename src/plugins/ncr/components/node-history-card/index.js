@@ -3,15 +3,15 @@ import startCase from 'lodash-es/startCase.js';
 import { formatDistanceToNow } from 'date-fns';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import { Badge, Button, ButtonGroup, Card, CardBody, CardHeader, Spinner } from 'reactstrap';
-import { CreateModalButton, Icon, Loading } from '@triniti/cms/components/index.js';
-import { scrollToTop } from '@triniti/cms/components/screen/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import Event from '@triniti/cms/plugins/ncr/components/node-history-card/Event.js';
-import UserLink from '@triniti/cms/plugins/ncr/components/node-history-card/UserLink.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
+import { CreateModalButton, Icon, Loading } from '@tmz-apps/cms-js/components/index.js';
+import { scrollToTop } from '@tmz-apps/cms-js/components/screen/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import Event from '@tmz-apps/cms-js/plugins/ncr/components/node-history-card/Event.js';
+import UserLink from '@tmz-apps/cms-js/plugins/ncr/components/node-history-card/UserLink.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
 
-const RawPbjModal = lazy(() => import('@triniti/cms/components/raw-pbj-modal/index.js'));
+const RawPbjModal = lazy(() => import('@tmz-apps/cms-js/components/raw-pbj-modal/index.js'));
 
 function NodeHistoryCard(props) {
   const { nodeRef: nodeRefStr, request } = props;

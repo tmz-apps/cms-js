@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import clearAlerts from '@triniti/cms/actions/clearAlerts.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import duplicateNode from '@triniti/cms/plugins/ncr/actions/duplicateNode.js';
+import clearAlerts from '@tmz-apps/cms-js/actions/clearAlerts.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import duplicateNode from '@tmz-apps/cms-js/plugins/ncr/actions/duplicateNode.js';
 
 export default () => {
   const dispatch = useDispatch();

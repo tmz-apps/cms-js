@@ -11,15 +11,15 @@ import {
   TextareaField,
   TextField,
   UrlField,
-} from '@triniti/cms/components/index.js';
-import AdvertisingFields from '@triniti/cms/plugins/common/components/advertising-fields/index.js';
-import Blocksmith from '@triniti/cms/blocksmith/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import AdvertisingFields from '@tmz-apps/cms-js/plugins/common/components/advertising-fields/index.js';
+import Blocksmith from '@tmz-apps/cms-js/blocksmith/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 import slottingKeys from '@triniti/app/config/slottingKeys.js';
-import SponsorPickerField from '@triniti/cms/plugins/boost/components/sponsor-picker-field/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import TimelinePickerField from '@triniti/cms/plugins/curator/components/timeline-picker-field/index.js';
+import SponsorPickerField from '@tmz-apps/cms-js/plugins/boost/components/sponsor-picker-field/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import TimelinePickerField from '@tmz-apps/cms-js/plugins/curator/components/timeline-picker-field/index.js';
 
 const components = {};
 const resolveComponent = (label) => {
@@ -29,7 +29,7 @@ const resolveComponent = (label) => {
 
   const file = startCase(label).replace(/\s/g, '');
   components[label] = lazy(() =>
-    import(`@triniti/cms/plugins/curator/components/teaser-screen/${file}Fields.js`)
+    import(`@tmz-apps/cms-js/plugins/curator/components/teaser-screen/${file}Fields.js`)
       .catch(() => ({ default: () => null })),
   );
   return components[label];

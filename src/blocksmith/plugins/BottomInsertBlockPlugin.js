@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { Icon } from '@triniti/cms/components/index.js';
-import { INSERT_BLOCK_AT_BOTTOM_COMMAND } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import { INSERT_BLOCK_AT_BOTTOM_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 
 export default function BottomInsertBlockPlugin () {

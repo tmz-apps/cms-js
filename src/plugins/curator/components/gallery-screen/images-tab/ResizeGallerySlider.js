@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input } from 'reactstrap';
-import { Icon } from '@triniti/cms/components/index.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
 
 const ResizeGallerySlider = ({
   imagesPerRow,

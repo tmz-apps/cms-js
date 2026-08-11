@@ -20,10 +20,10 @@ import {
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { NodeEventPlugin } from '@lexical/react/LexicalNodeEventPlugin';
 import { calculateZoomLevel, isHTMLElement, mergeRegister } from '@lexical/utils';
-import BlocksmithNode from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
-import { Point } from '@triniti/cms/blocksmith/utils/point.js';
-import { Rect } from '@triniti/cms/blocksmith/utils/rect.js';
-import { Icon } from '@triniti/cms/components/index.js';
+import BlocksmithNode from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
+import { Point } from '@tmz-apps/cms-js/blocksmith/utils/point.js';
+import { Rect } from '@tmz-apps/cms-js/blocksmith/utils/rect.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
 import noop from 'lodash-es/noop.js';
 
 const SPACE = 1;

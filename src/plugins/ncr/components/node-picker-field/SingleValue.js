@@ -2,11 +2,11 @@ import React from 'react';
 import { components } from 'react-select';
 import { Badge, Media } from 'reactstrap';
 import pbjUrl from '@gdbots/pbjx/pbjUrl.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js'
-import { Icon, Loading } from '@triniti/cms/components/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import brokenImage from '@triniti/cms/assets/img/broken-image--xxs.jpg';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js'
+import { Icon, Loading } from '@tmz-apps/cms-js/components/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import brokenImage from '@tmz-apps/cms-js/assets/img/broken-image--xxs.jpg';
 
 const noop = (event) => {
   event.stopPropagation();

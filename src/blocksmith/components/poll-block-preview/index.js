@@ -1,8 +1,8 @@
 import React from 'react';
 import { Badge, Col, Media, Row, Table } from 'reactstrap';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function PollBlockPreview(props) {
   const { block, node } = props;

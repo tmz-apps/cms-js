@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormText } from 'reactstrap';
-import { FlatArrayField, UrlField, useFormContext } from '@triniti/cms/components/index.js';
+import { FlatArrayField, UrlField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 const normalizeSeoAlternateUrl = value => `${value || ''}`.trim();
 

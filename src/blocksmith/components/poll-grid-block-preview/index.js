@@ -1,9 +1,9 @@
 import React from 'react';
 import { Badge, ListGroup, ListGroupItem } from 'reactstrap';
-import { Loading } from '@triniti/cms/components/index.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import { Loading } from '@tmz-apps/cms-js/components/index.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function SinglePoll(props) {
   const { nodeRef } = props;

@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Card, CardBody, CardHeader, Col, Label, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import isEmpty from 'lodash-es/isEmpty.js';
 import { useDispatch } from 'react-redux';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import { ActionButton, Loading } from '@triniti/cms/components/index.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import grantRolesToUser from '@triniti/cms/plugins/iam/actions/grantRolesToUser.js';
-import revokeRolesFromUser from '@triniti/cms/plugins/iam/actions/revokeRolesFromUser.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import { ActionButton, Loading } from '@tmz-apps/cms-js/components/index.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import grantRolesToUser from '@tmz-apps/cms-js/plugins/iam/actions/grantRolesToUser.js';
+import revokeRolesFromUser from '@tmz-apps/cms-js/plugins/iam/actions/revokeRolesFromUser.js';
 
 function RolesForm(props) {
   const { node, nodeRef, request, refreshNode } = props;

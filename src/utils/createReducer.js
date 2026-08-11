@@ -1,6 +1,6 @@
 import isEmpty from 'lodash-es/isEmpty.js';
 import isPlainObject from 'lodash-es/isPlainObject.js';
-import InvalidArgumentException from '@triniti/cms/exceptions/InvalidArgumentException.js';
+import InvalidArgumentException from '@tmz-apps/cms-js/exceptions/InvalidArgumentException.js';
 
 /**
  * Creates a reducer which automatically calls the functions in the handlers

@@ -1,9 +1,9 @@
 import EnvelopeV1 from '@gdbots/schemas/gdbots/pbjx/EnvelopeV1.js';
-import receiveEnvelope from '@triniti/cms/plugins/pbjx/actions/receiveEnvelope.js';
-import isAuthenticated from '@triniti/cms/plugins/iam/selectors/isAuthenticated.js';
-import getAccessToken from '@triniti/cms/plugins/iam/selectors/getAccessToken.js';
-import getUserRef from '@triniti/cms/plugins/iam/selectors/getUserRef.js';
-import { actionTypes, methods, serviceIds } from '@triniti/cms/plugins/raven/constants.js';
+import receiveEnvelope from '@tmz-apps/cms-js/plugins/pbjx/actions/receiveEnvelope.js';
+import isAuthenticated from '@tmz-apps/cms-js/plugins/iam/selectors/isAuthenticated.js';
+import getAccessToken from '@tmz-apps/cms-js/plugins/iam/selectors/getAccessToken.js';
+import getUserRef from '@tmz-apps/cms-js/plugins/iam/selectors/getUserRef.js';
+import { actionTypes, methods, serviceIds } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export default (nodeRef) => async (dispatch, getState, app) => {
   if (!app.has(serviceIds.RAVEN_WORKER)) {

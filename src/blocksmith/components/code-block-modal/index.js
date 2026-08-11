@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextareaField } from '@triniti/cms/components/index.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
+import { TextareaField } from '@tmz-apps/cms-js/components/index.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
 
 function CodeBlockModal() {
   return <TextareaField name="code" label="Code" required rows={10} />;
