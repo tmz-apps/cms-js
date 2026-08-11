@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-## vN.N.N
+## v1.3.0
 * dam :: Adjust batch upload form's "Apply To All" fix to address a new regression that after saving an article, the save button remains enabled.
 * blocksmith :: Parse and save TikTok username in tiktok-embed-block modal.
 * notify :: Remove Apple News option from create notification modal.
@@ -72,6 +72,7 @@
 * livestream sort: updated-at-desc
 * Image modal selectors to match Asset linker modal
 * Fix error adding fcm_topics to iOS notifications
+* Publish `@tmz-apps/cms-js` v1.3.0
 
 
 ## v1.2.2

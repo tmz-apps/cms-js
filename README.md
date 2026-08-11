@@ -7,7 +7,7 @@ See the demo [README](./demo/).
 
 The codebase is organized into two main packages:
 
-### `@triniti/cms`
+### `@tmz-apps/cms-js`
 The core CMS package that contains all the reusable components, utilities, and functionality. This package includes:
 - Higher-Order Components (HOCs)
 - React Hooks
@@ -15,10 +15,10 @@ The core CMS package that contains all the reusable components, utilities, and f
 - Shared components
 - Core business logic
 
-All imports from this package should use the `@triniti/cms` prefix, for example:
+All imports from this package should use the `@tmz-apps/cms-js` prefix, for example:
 ```javascript
-import { withPbj } from '@triniti/cms/components/with-pbj';
-import { formatDate } from '@triniti/cms/utils/date';
+import { withPbj } from '@tmz-apps/cms-js/components/with-pbj';
+import { formatDate } from '@tmz-apps/cms-js/utils/date';
 ```
 
 ### `@triniti/app`
@@ -45,7 +45,7 @@ withPbj(Component, curie, initialData = {})
 ```
 Wraps a component with PBJ (Protocol Buffer JSON) functionality. This HOC handles loading states, provides PBJ data to the wrapped component, and uses the `useResolver` hook internally for data resolution.
 
-**Location:** `@triniti/cms/components/with-pbj/index.js`
+**Location:** `@tmz-apps/cms-js/components/with-pbj/index.js`
 
 **Parameters:**
 - `Component` - The React component to wrap
@@ -69,7 +69,7 @@ withForm(Component, config = {})
 ```
 Wraps a component with comprehensive form handling capabilities. This HOC provides form state management, initialization, and restoration capabilities. It integrates with Redux for state management and includes built-in error handling and loading states.
 
-**Location:** `@triniti/cms/components/with-form/index.js`
+**Location:** `@tmz-apps/cms-js/components/with-form/index.js`
 
 **Parameters:**
 - `Component` - The React component to wrap
@@ -101,7 +101,7 @@ withBlockModal(Component)
 ```
 Wraps a component with block modal functionality, providing a standardized interface for editing and managing content blocks within a modal context.
 
-**Location:** `@triniti/cms/blocksmith/components/with-block-modal/index.js`
+**Location:** `@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js`
 
 **Example:**
 ```javascript
@@ -121,7 +121,7 @@ withBlockPreview(Component)
 ```
 Wraps a component with block preview functionality, enabling real-time preview of content blocks with proper formatting and styling.
 
-**Location:** `@triniti/cms/blocksmith/components/with-block-preview/index.js`
+**Location:** `@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js`
 
 **Example:**
 ```javascript
@@ -141,7 +141,7 @@ withNodeScreen(Screen, config)
 ```
 Wraps a screen component with node-related functionality, providing a standardized interface for viewing and managing node data with built-in CRUD operations.
 
-**Location:** `@triniti/cms/plugins/ncr/components/with-node-screen/index.js`
+**Location:** `@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/index.js`
 
 **Example:**
 ```javascript
@@ -173,7 +173,7 @@ Wraps a component with request handling capabilities, providing a standardized w
 - `request` - The PBJX request object to be used with `useRequest`
 - `pbj` - The same request object (for backward compatibility)
 
-**Location:** `@triniti/cms/plugins/pbjx/components/with-request/index.js`
+**Location:** `@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js`
 
 **Example:**
 ```javascript
@@ -214,7 +214,7 @@ Hook for resolving PBJ data, providing a simple way to fetch and manage PBJ data
 - `curie` - The PBJ curie identifier
 - `initialData` - Optional initial data
 
-**Location:** `@triniti/cms/components/with-pbj/useResolver.js`
+**Location:** `@tmz-apps/cms-js/components/with-pbj/useResolver.js`
 
 **Used by:** `withPbj` HOC
 
@@ -249,7 +249,7 @@ Hook for making and managing PBJX requests, providing a standardized way to hand
 - `pbjxError` - Any error that occurred during the request
 - `pbjxStatus` - Current status of the request (none, pending, fulfilled, failed)
 
-**Location:** `@triniti/cms/plugins/pbjx/components/useRequest.js`
+**Location:** `@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js`
 
 **Example:**
 ```javascript
@@ -284,7 +284,7 @@ getExt(fileName)
 ```
 Extracts the file extension from a filename.
 
-**Location:** `@triniti/cms/utils/file.js`
+**Location:** `@tmz-apps/cms-js/utils/file.js`
 
 **Parameters:**
 - `fileName` - A file name including extension
@@ -303,7 +303,7 @@ removeExt(fileName)
 ```
 Removes the extension from a filename.
 
-**Location:** `@triniti/cms/utils/file.js`
+**Location:** `@tmz-apps/cms-js/utils/file.js`
 
 **Parameters:**
 - `fileName` - A file name including extension
@@ -321,7 +321,7 @@ insertBeforeExt(fileName, str)
 ```
 Inserts a string before the file extension.
 
-**Location:** `@triniti/cms/utils/file.js`
+**Location:** `@tmz-apps/cms-js/utils/file.js`
 
 **Parameters:**
 - `fileName` - A file name including extension
@@ -342,7 +342,7 @@ formatDate(date, format = 'MMM dd, yyyy hh:mm a', dateOnly = false)
 ```
 Formats a date using date-fns.
 
-**Location:** `@triniti/cms/utils/date.js`
+**Location:** `@tmz-apps/cms-js/utils/date.js`
 
 **Parameters:**
 - `date` - Date object or string to format
@@ -363,7 +363,7 @@ formatBytes(bytes)
 ```
 Converts bytes to a human-readable format.
 
-**Location:** `@triniti/cms/utils/format.js`
+**Location:** `@tmz-apps/cms-js/utils/format.js`
 
 **Parameters:**
 - `bytes` - Number of bytes
@@ -384,7 +384,7 @@ createReducer(initialState, handlers)
 ```
 Creates a Redux reducer with automatic action type handling.
 
-**Location:** `@triniti/cms/utils/redux.js`
+**Location:** `@tmz-apps/cms-js/utils/redux.js`
 
 **Parameters:**
 - `initialState` - Initial state for the reducer
@@ -410,7 +410,7 @@ progressIndicator.close()
 ```
 Manages loading indicators using SweetAlert2.
 
-**Location:** `@triniti/cms/utils/progress.js`
+**Location:** `@tmz-apps/cms-js/utils/progress.js`
 
 **Example:**
 ```javascript
@@ -427,7 +427,7 @@ damUrl(id)
 ```
 Generates a DAM (Digital Asset Management) URL for an asset.
 
-**Location:** `@triniti/cms/utils/url.js`
+**Location:** `@tmz-apps/cms-js/utils/url.js`
 
 **Parameters:**
 - `id` - Asset ID
@@ -445,7 +445,7 @@ nodeUrl(nodeRef)
 ```
 Generates a URL for a node.
 
-**Location:** `@triniti/cms/utils/url.js`
+**Location:** `@tmz-apps/cms-js/utils/url.js`
 
 **Parameters:**
 - `nodeRef` - Node reference
