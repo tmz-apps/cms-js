@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 
 export default function IosNotificationFields() {
   return (

@@ -1,5 +1,5 @@
-import Plugin from '@triniti/cms/Plugin.js';
-import { serviceIds } from '@triniti/cms/plugins/canvas/constants.js';
+import Plugin from '@tmz-apps/cms-js/Plugin.js';
+import { serviceIds } from '@tmz-apps/cms-js/plugins/canvas/constants.js';
 
 export default class CanvasPlugin extends Plugin {
   constructor() {
@@ -8,7 +8,7 @@ export default class CanvasPlugin extends Plugin {
 
   async configure(app) {
     app.register(serviceIds.BLOCK_SUBSCRIBER, async () => {
-      const BlockSubscriber = (await import('@triniti/cms/plugins/canvas/BlockSubscriber.js')).default;
+      const BlockSubscriber = (await import('@tmz-apps/cms-js/plugins/canvas/BlockSubscriber.js')).default;
       return new BlockSubscriber();
     });
 

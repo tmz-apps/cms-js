@@ -74,10 +74,10 @@ import {
   SwitchField,
   withForm,
   withPbj
-} from '@triniti/cms/components/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
 import ModalExample from './Modals.js';
 import './styles.scss';
-import toast from '@triniti/cms/utils/toast.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
 
 function sweetAlert1(e) {
   e.preventDefault();

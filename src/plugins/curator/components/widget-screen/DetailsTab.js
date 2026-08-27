@@ -7,9 +7,9 @@ import {
   SwitchField,
   TextField,
   UrlField
-} from '@triniti/cms/components/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 
 const components = {};
 const resolveComponent = (label) => {
@@ -18,7 +18,7 @@ const resolveComponent = (label) => {
   }
 
   const file = startCase(label).replace(/\s/g, '');
-  components[label] = lazy(() => import(`@triniti/cms/plugins/curator/components/widget-screen/${file}Fields.js`));
+  components[label] = lazy(() => import(`@tmz-apps/cms-js/plugins/curator/components/widget-screen/${file}Fields.js`));
   return components[label];
 };
 

@@ -1,4 +1,4 @@
-import hasNode from '@triniti/cms/plugins/ncr/selectors/hasNode.js';
+import hasNode from '@tmz-apps/cms-js/plugins/ncr/selectors/hasNode.js';
 
 export default (state, nodeRef) => {
   if (!hasNode(state, nodeRef)) {

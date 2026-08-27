@@ -21,13 +21,13 @@ import {
   INSERT_UNORDERED_LIST_COMMAND,
   REMOVE_LIST_COMMAND
 } from '@lexical/list';
-import { Icon } from '@triniti/cms/components/index.js';
-import resolveComponent from '@triniti/cms/blocksmith/utils/resolveComponent.js';
-import BlocksmithModal from '@triniti/cms/blocksmith/components/blocksmith-modal/index.js';
-import BlockSelectorModal from '@triniti/cms/blocksmith/components/block-selector-modal/index.js';
-import LinkModal from '@triniti/cms/blocksmith/components/link-modal/index.js';
-import getSelectedNode from '@triniti/cms/blocksmith/utils/getSelectedNode.js';
-import { INSERT_BLOCK_COMMAND, INSERT_BLOCK_AT_TOP_COMMAND } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import resolveComponent from '@tmz-apps/cms-js/blocksmith/utils/resolveComponent.js';
+import BlocksmithModal from '@tmz-apps/cms-js/blocksmith/components/blocksmith-modal/index.js';
+import BlockSelectorModal from '@tmz-apps/cms-js/blocksmith/components/block-selector-modal/index.js';
+import LinkModal from '@tmz-apps/cms-js/blocksmith/components/link-modal/index.js';
+import getSelectedNode from '@tmz-apps/cms-js/blocksmith/utils/getSelectedNode.js';
+import { INSERT_BLOCK_COMMAND, INSERT_BLOCK_AT_TOP_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
 
 export const SHOW_BLOCK_SELECTOR_COMMAND = createCommand();
 export const SHOW_BLOCK_SELECTOR_AT_TOP_COMMAND = createCommand();

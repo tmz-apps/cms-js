@@ -1,5 +1,5 @@
 import React from 'react';
-import TextField from '@triniti/cms/components/text-field/index.js';
+import TextField from '@tmz-apps/cms-js/components/text-field/index.js';
 
 const normalize = value => `${value || ''}`.trim().replace(/\s/g, '-').replace(/\/{2,}/g, '/');
 

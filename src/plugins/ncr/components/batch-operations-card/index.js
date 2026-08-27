@@ -1,15 +1,15 @@
 import React, { lazy } from 'react';
 import { ButtonGroup} from 'reactstrap';
 import NodeStatus from '@gdbots/schemas/gdbots/ncr/enums/NodeStatus.js';
-import { CreateModalButton } from '@triniti/cms/components/index.js';
-import deleteNode from '@triniti/cms/plugins/ncr/actions/deleteNode.js';
-import markNodeAsDraft from '@triniti/cms/plugins/ncr/actions/markNodeAsDraft.js';
-import markNodeAsPending from '@triniti/cms/plugins/ncr/actions/markNodeAsPending.js';
-import publishNode from '@triniti/cms/plugins/ncr/actions/publishNode.js';
-import unpublishNode from '@triniti/cms/plugins/ncr/actions/unpublishNode.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
+import { CreateModalButton } from '@tmz-apps/cms-js/components/index.js';
+import deleteNode from '@tmz-apps/cms-js/plugins/ncr/actions/deleteNode.js';
+import markNodeAsDraft from '@tmz-apps/cms-js/plugins/ncr/actions/markNodeAsDraft.js';
+import markNodeAsPending from '@tmz-apps/cms-js/plugins/ncr/actions/markNodeAsPending.js';
+import publishNode from '@tmz-apps/cms-js/plugins/ncr/actions/publishNode.js';
+import unpublishNode from '@tmz-apps/cms-js/plugins/ncr/actions/unpublishNode.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
 
-const BatchOperationModal = lazy(() => import('@triniti/cms/plugins/ncr/components/batch-operation-modal/index.js'));
+const BatchOperationModal = lazy(() => import('@tmz-apps/cms-js/plugins/ncr/components/batch-operation-modal/index.js'));
 
 const publishOperation = async (dispatch, node) => {
   if (node.get('status') === NodeStatus.PUBLISHED) {

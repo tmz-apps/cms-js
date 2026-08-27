@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { SwitchField } from '@triniti/cms/components/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
+import { SwitchField } from '@tmz-apps/cms-js/components/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 
 export default function BrowserNotificationFields() {
   return (

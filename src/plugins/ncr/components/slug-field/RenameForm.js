@@ -4,12 +4,12 @@ import { FORM_ERROR } from 'final-form';
 import { Form, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import startCase from 'lodash-es/startCase.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import { ActionButton, FormErrors, TextField, withForm } from '@triniti/cms/components/index.js';
-import renameNode from '@triniti/cms/plugins/ncr/actions/renameNode.js';
-import { datedSlugValidator, formatSlug, slugValidator } from '@triniti/cms/plugins/ncr/utils/slugFormat.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import { ActionButton, FormErrors, TextField, withForm } from '@tmz-apps/cms-js/components/index.js';
+import renameNode from '@tmz-apps/cms-js/plugins/ncr/actions/renameNode.js';
+import { datedSlugValidator, formatSlug, slugValidator } from '@tmz-apps/cms-js/plugins/ncr/utils/slugFormat.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
 
 function RenameForm(props) {
   const dispatch = useDispatch();

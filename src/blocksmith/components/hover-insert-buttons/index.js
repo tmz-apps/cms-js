@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { INSERT_BLOCK_AT_TOP_COMMAND } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
-import { SHOW_BLOCK_SELECTOR_AT_TOP_COMMAND } from '@triniti/cms/blocksmith/plugins/ToolbarPlugin.js';
-import InsertBlockButtons from '@triniti/cms/blocksmith/components/insert-block-buttons/index.js';
+import { INSERT_BLOCK_AT_TOP_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
+import { SHOW_BLOCK_SELECTOR_AT_TOP_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/ToolbarPlugin.js';
+import InsertBlockButtons from '@tmz-apps/cms-js/blocksmith/components/insert-block-buttons/index.js';
 import './styles.scss';
 
 export default function HoverInsertButtons({ isDragging }) {

@@ -1,2 +1,2 @@
-import '@triniti/cms/plugins/raven/RavenWorker.js';
+import '@tmz-apps/cms-js/plugins/raven/RavenWorker.js';
 export default self;

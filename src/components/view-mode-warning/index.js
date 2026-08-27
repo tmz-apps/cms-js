@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
-import Icon from '@triniti/cms/components/icon/index.js';
+import Icon from '@tmz-apps/cms-js/components/icon/index.js';
 
 export default function ViewModeWarning() {
   return (

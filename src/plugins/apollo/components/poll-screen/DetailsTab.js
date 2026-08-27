@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { DatePickerField, SwitchField, TextField, UrlField } from '@triniti/cms/components/index.js';
-import SeoTitleField from '@triniti/cms/plugins/common/components/seo-title-field/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import SponsorPickerField from '@triniti/cms/plugins/boost/components/sponsor-picker-field/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import SortableAnswers from '@triniti/cms/plugins/apollo/components/poll-screen/SortableAnswers.js';
+import { DatePickerField, SwitchField, TextField, UrlField } from '@tmz-apps/cms-js/components/index.js';
+import SeoTitleField from '@tmz-apps/cms-js/plugins/common/components/seo-title-field/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import SponsorPickerField from '@tmz-apps/cms-js/plugins/boost/components/sponsor-picker-field/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import SortableAnswers from '@tmz-apps/cms-js/plugins/apollo/components/poll-screen/SortableAnswers.js';
 
 export default function DetailsTab(props) {
   const { node } = props;

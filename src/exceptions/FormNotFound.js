@@ -1,4 +1,4 @@
-import LogicException from '@triniti/cms/exceptions/LogicException.js';
+import LogicException from '@tmz-apps/cms-js/exceptions/LogicException.js';
 
 export default class FormNotFound extends LogicException {
   /**

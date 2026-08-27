@@ -8,8 +8,8 @@ import {
   Media,
   Row,
 } from 'reactstrap';
-import { BackgroundImage } from '@triniti/cms/components/index.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
+import { BackgroundImage } from '@tmz-apps/cms-js/components/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
 
 export default function ImageGrid(props) {
   const { nodes, onSelectAsset, batch } = props;

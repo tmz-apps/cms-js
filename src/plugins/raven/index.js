@@ -1,12 +1,12 @@
-import Plugin from '@triniti/cms/Plugin.js';
-import { actionTypes as iamActionTypes } from '@triniti/cms/plugins/iam/constants.js';
-import RavenServer from '@triniti/cms/plugins/raven/RavenServer.js';
-import reducer from '@triniti/cms/plugins/raven/reducers/index.js';
-import connect from '@triniti/cms/plugins/raven/actions/connect.js';
-import disconnect from '@triniti/cms/plugins/raven/actions/disconnect.js';
-import pruneCollaborators from '@triniti/cms/plugins/raven/actions/pruneCollaborators.js';
-import fetchInitialCollaborations from '@triniti/cms/plugins/raven/actions/fetchInitialCollaborations.js';
-import { serviceIds } from '@triniti/cms/plugins/raven/constants.js';
+import Plugin from '@tmz-apps/cms-js/Plugin.js';
+import { actionTypes as iamActionTypes } from '@tmz-apps/cms-js/plugins/iam/constants.js';
+import RavenServer from '@tmz-apps/cms-js/plugins/raven/RavenServer.js';
+import reducer from '@tmz-apps/cms-js/plugins/raven/reducers/index.js';
+import connect from '@tmz-apps/cms-js/plugins/raven/actions/connect.js';
+import disconnect from '@tmz-apps/cms-js/plugins/raven/actions/disconnect.js';
+import pruneCollaborators from '@tmz-apps/cms-js/plugins/raven/actions/pruneCollaborators.js';
+import fetchInitialCollaborations from '@tmz-apps/cms-js/plugins/raven/actions/fetchInitialCollaborations.js';
+import { serviceIds } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export default class RavenPlugin extends Plugin {
   constructor() {

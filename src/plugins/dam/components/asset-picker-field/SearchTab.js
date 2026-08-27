@@ -1,10 +1,10 @@
 import React from 'react';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import { Loading, Pager, withForm } from '@triniti/cms/components/index.js';
-import AssetPresenter from '@triniti/cms/plugins/dam/components/asset-picker-field/AssetPresenter.js';
-import SearchForm from '@triniti/cms/plugins/dam/components/asset-picker-field/SearchForm.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import { Loading, Pager, withForm } from '@tmz-apps/cms-js/components/index.js';
+import AssetPresenter from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/AssetPresenter.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/SearchForm.js';
 
 function SearchTab(props) {
   const { onSelectAsset, activeTab, type, searchEnricher, request, delegate, displayView } = props;

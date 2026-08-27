@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextField } from '@triniti/cms/components/index.js';
-import parseYouTubeId from '@triniti/cms/utils/parseYouTubeId.js';
+import { TextField } from '@tmz-apps/cms-js/components/index.js';
+import parseYouTubeId from '@tmz-apps/cms-js/utils/parseYouTubeId.js';
 
 export default function YoutubeVideoTeaserFields() {
   return (

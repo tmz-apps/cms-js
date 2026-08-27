@@ -1,5 +1,5 @@
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
-import PrimaryImageRequired from '@triniti/cms/plugins/ncr/exceptions/PrimaryImageRequired.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
+import PrimaryImageRequired from '@tmz-apps/cms-js/plugins/ncr/exceptions/PrimaryImageRequired.js';
 
 export default class PublishNodeValidator {
   /**

@@ -1,4 +1,4 @@
-import InvalidArgumentException from '@triniti/cms/exceptions/InvalidArgumentException.js';
+import InvalidArgumentException from '@tmz-apps/cms-js/exceptions/InvalidArgumentException.js';
 
 const wildcard = '*';
 const delimiter = ':';

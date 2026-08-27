@@ -6,9 +6,9 @@ import {
   ModalFooter,
   ModalHeader
 } from 'reactstrap';
-import { ActionButton, Icon } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import config from '@triniti/cms/blocksmith/config.js';
+import { ActionButton, Icon } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import config from '@tmz-apps/cms-js/blocksmith/config.js';
 
 export default function BlockSelectorModal(props) {
   const { onInsertBlock, afterNodeKey = null, insertAtTop = false } = props;

@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import startCase from 'lodash-es/startCase.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import { Badge, Button, Modal, ModalBody } from 'reactstrap';
-import { Icon } from '@triniti/cms/components/index.js';
-import getUserRef from '@triniti/cms/plugins/iam/selectors/getUserRef.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import getStatus from '@triniti/cms/plugins/raven/selectors/getStatus.js';
-import { connectionStatus } from '@triniti/cms/plugins/raven/constants.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import getUserRef from '@tmz-apps/cms-js/plugins/iam/selectors/getUserRef.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import getStatus from '@tmz-apps/cms-js/plugins/raven/selectors/getStatus.js';
+import { connectionStatus } from '@tmz-apps/cms-js/plugins/raven/constants.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
 
 function UserName(props) {
   const { nodeRef } = props;

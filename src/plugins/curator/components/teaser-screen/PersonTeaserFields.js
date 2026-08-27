@@ -1,5 +1,5 @@
 import React from 'react';
-import PersonPickerField from '@triniti/cms/plugins/people/components/person-picker-field/index.js';
+import PersonPickerField from '@tmz-apps/cms-js/plugins/people/components/person-picker-field/index.js';
 
 export default function PersonTeaserFields() {
   return (

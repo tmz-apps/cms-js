@@ -1,5 +1,5 @@
 import React from 'react';
-import PagePickerField from '@triniti/cms/plugins/canvas/components/page-picker-field/index.js';
+import PagePickerField from '@tmz-apps/cms-js/plugins/canvas/components/page-picker-field/index.js';
 
 export default function PageTeaserFields() {
   return (

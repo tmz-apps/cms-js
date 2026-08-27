@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
 import AdSizeEnum from '@triniti/schemas/triniti/common/enums/AdSize.js';
-import { EnumField, KeyValuesField, TextField } from '@triniti/cms/components/index.js';
+import { EnumField, KeyValuesField, TextField } from '@tmz-apps/cms-js/components/index.js';
 
 export default function AdWidgetFields() {
   return (

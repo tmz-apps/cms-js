@@ -3,7 +3,7 @@ import ReactSelect from 'react-select';
 import ReactSelectCreatable from 'react-select/creatable';
 import classNames from 'classnames';
 import { Badge, FormText, Label } from 'reactstrap';
-import { useField, useFormContext } from '@triniti/cms/components/index.js';
+import { useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 export default function SingleSelectField(props) {
   const {

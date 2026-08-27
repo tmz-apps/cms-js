@@ -1,6 +1,6 @@
-import { actionTypes } from '@triniti/cms/constants.js';
-import publishEvent from '@triniti/cms/plugins/raven/actions/publishEvent.js';
-import { actionTypes as ravenActionTypes } from '@triniti/cms/plugins/raven/constants.js';
+import { actionTypes } from '@tmz-apps/cms-js/constants.js';
+import publishEvent from '@tmz-apps/cms-js/plugins/raven/actions/publishEvent.js';
+import { actionTypes as ravenActionTypes } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 const start = { method: 'start', appEnv: APP_ENV, apiEndpoint: API_ENDPOINT };
 

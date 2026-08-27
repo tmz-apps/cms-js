@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import alerts from '@triniti/cms/reducers/alerts.js';
-import forms from '@triniti/cms/reducers/forms.js';
-import navbar from '@triniti/cms/reducers/navbar.js';
-import theme from '@triniti/cms/reducers/theme.js';
+import alerts from '@tmz-apps/cms-js/reducers/alerts.js';
+import forms from '@tmz-apps/cms-js/reducers/forms.js';
+import navbar from '@tmz-apps/cms-js/reducers/navbar.js';
+import theme from '@tmz-apps/cms-js/reducers/theme.js';
 
 export default combineReducers({
   alerts,

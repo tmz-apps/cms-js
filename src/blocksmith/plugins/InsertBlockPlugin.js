@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { NodeEventPlugin } from '@lexical/react/LexicalNodeEventPlugin';
 import { ParagraphNode } from 'lexical';
-import InsertBlockButtons from '@triniti/cms/blocksmith/components/insert-block-buttons/index.js';
-import BlocksmithNode from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
-import { INSERT_BLOCK_COMMAND } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
-import { SHOW_BLOCK_SELECTOR_COMMAND } from '@triniti/cms/blocksmith/plugins/ToolbarPlugin.js';
+import InsertBlockButtons from '@tmz-apps/cms-js/blocksmith/components/insert-block-buttons/index.js';
+import BlocksmithNode from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
+import { INSERT_BLOCK_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
+import { SHOW_BLOCK_SELECTOR_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/ToolbarPlugin.js';
 
 const BUTTON_OFFSET = 80; // height of the toolbar plus the card header minus the padding between blocks
 

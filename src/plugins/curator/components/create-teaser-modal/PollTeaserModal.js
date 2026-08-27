@@ -1,6 +1,6 @@
 import React from 'react';
-import PollPickerField from '@triniti/cms/plugins/apollo/components/poll-picker-field/index.js';
-import withTeaserModal from '@triniti/cms/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
+import PollPickerField from '@tmz-apps/cms-js/plugins/apollo/components/poll-picker-field/index.js';
+import withTeaserModal from '@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
 
 function PollTeaserModal() {
   return (

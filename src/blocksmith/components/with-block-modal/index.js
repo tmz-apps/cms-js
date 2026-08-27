@@ -3,13 +3,13 @@ import { FORM_ERROR } from 'final-form';
 import startCase from 'lodash-es/startCase.js';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { Form, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import { ActionButton, FormErrors, Icon, useFormContext, withForm, withPbj } from '@triniti/cms/components/index.js';
+import { ActionButton, FormErrors, Icon, useFormContext, withForm, withPbj } from '@tmz-apps/cms-js/components/index.js';
 import Message from '@gdbots/pbj/Message.js';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
-import getRootFields from '@triniti/cms/utils/getRootFields.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import { INSERT_BLOCK_COMMAND, INSERT_BLOCK_AT_TOP_COMMAND } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
-import config from '@triniti/cms/blocksmith/config.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
+import getRootFields from '@tmz-apps/cms-js/utils/getRootFields.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import { INSERT_BLOCK_COMMAND, INSERT_BLOCK_AT_TOP_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
+import config from '@tmz-apps/cms-js/blocksmith/config.js';
 
 function BlockModal(props) {
   const {

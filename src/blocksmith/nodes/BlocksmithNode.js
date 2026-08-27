@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { BlockWithAlignableContents } from '@lexical/react/LexicalBlockWithAlignableContents';
 import { DecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode.js';
-import { ErrorBoundary, Loading } from '@triniti/cms/components/index.js';
-import resolveComponent from '@triniti/cms/blocksmith/utils/resolveComponent.js';
+import { ErrorBoundary, Loading } from '@tmz-apps/cms-js/components/index.js';
+import resolveComponent from '@tmz-apps/cms-js/blocksmith/utils/resolveComponent.js';
 
 function BlocksmithComponent(props) {
   const { nodeKey, curie, pbj = {}, classes, ...rest } = props;

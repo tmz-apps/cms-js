@@ -1,15 +1,15 @@
 import React from 'react';
 import { Badge, DropdownMenu, DropdownToggle, Form, TabContent, TabPane, UncontrolledDropdown } from 'reactstrap';
-import withNodeScreen, { useDelegate } from '@triniti/cms/plugins/ncr/components/with-node-screen/index.js';
-import NodeStatusCard from '@triniti/cms/plugins/ncr/components/node-status-card/index.js';
-import { ActionButton, FormErrors, Icon, Screen, ViewModeWarning } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import DetailsTab from '@triniti/cms/plugins/taxonomy/components/category-screen/DetailsTab.js';
-import SeoTab from '@triniti/cms/plugins/common/components/seo-tab/index.js';
-import CodeTab from '@triniti/cms/plugins/common/components/code-tab/index.js';
-import HistoryTab from '@triniti/cms/plugins/ncr/components/history-tab/index.js';
-import RawTab from '@triniti/cms/plugins/ncr/components/raw-tab/index.js';
-import SaveNodeButton from '@triniti/cms/plugins/ncr/components/save-node-button/index.js';
+import withNodeScreen, { useDelegate } from '@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/index.js';
+import NodeStatusCard from '@tmz-apps/cms-js/plugins/ncr/components/node-status-card/index.js';
+import { ActionButton, FormErrors, Icon, Screen, ViewModeWarning } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import DetailsTab from '@tmz-apps/cms-js/plugins/taxonomy/components/category-screen/DetailsTab.js';
+import SeoTab from '@tmz-apps/cms-js/plugins/common/components/seo-tab/index.js';
+import CodeTab from '@tmz-apps/cms-js/plugins/common/components/code-tab/index.js';
+import HistoryTab from '@tmz-apps/cms-js/plugins/ncr/components/history-tab/index.js';
+import RawTab from '@tmz-apps/cms-js/plugins/ncr/components/raw-tab/index.js';
+import SaveNodeButton from '@tmz-apps/cms-js/plugins/ncr/components/save-node-button/index.js';
 
 function CategoryScreen(props) {
   const {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormText, UncontrolledTooltip } from 'reactstrap';
 import classNames from 'classnames';
-import { Icon, useField, useFormContext } from '@triniti/cms/components/index.js';
+import { Icon, useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 export default function SwitchField(props) {
   const {

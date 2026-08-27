@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
 
 export default (config = {}) => {
   const batchRef = useRef(null);

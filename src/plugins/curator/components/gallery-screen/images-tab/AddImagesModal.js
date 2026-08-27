@@ -23,20 +23,20 @@ import {
   Loading,
   Pager,
   withForm
-} from '@triniti/cms/components/index.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import reorderGalleryAssets from '@triniti/cms/plugins/dam/actions/reorderGalleryAssets.js';
-import delay from '@triniti/cms/utils/delay.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import SearchForm from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/SearchForm.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import reorderGalleryAssets from '@tmz-apps/cms-js/plugins/dam/actions/reorderGalleryAssets.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/SearchForm.js';
 
-const UploaderModal = lazy(() => import('@triniti/cms/plugins/dam/components/uploader-modal/index.js'));
+const UploaderModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/uploader-modal/index.js'));
 
 function AddImagesModal(props) {
   const { onClose = noop, galleryRef, gallerySeqIncrementer, request, delegate } = props;

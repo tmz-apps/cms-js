@@ -6,15 +6,15 @@ import { FORM_ERROR } from 'final-form';
 import { Form, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import startCase from 'lodash-es/startCase.js';
 import { getInstance } from '@triniti/app/main.js';
-import { ActionButton, FormErrors, TextareaField, TextField, withForm } from '@triniti/cms/components/index.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import createNode from '@triniti/cms/plugins/ncr/actions/createNode.js';
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
-import ContentRefField from '@triniti/cms/plugins/notify/components/content-ref-field/index.js';
-import SendOptionsField from '@triniti/cms/plugins/notify/components/send-options-field/index.js';
+import { ActionButton, FormErrors, TextareaField, TextField, withForm } from '@tmz-apps/cms-js/components/index.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import createNode from '@tmz-apps/cms-js/plugins/ncr/actions/createNode.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
+import ContentRefField from '@tmz-apps/cms-js/plugins/notify/components/content-ref-field/index.js';
+import SendOptionsField from '@tmz-apps/cms-js/plugins/notify/components/send-options-field/index.js';
 
 const getContent = ref => getNode(getInstance().getRedux().getState(), ref);
 

@@ -7,16 +7,16 @@ import {
   TextareaField,
   TextField,
   UrlField
-} from '@triniti/cms/components/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import PollPickerField from '@triniti/cms/plugins/apollo/components/poll-picker-field/index.js';
-import AssetPreview from '@triniti/cms/plugins/dam/components/asset-preview/index.js';
-import GalleryCard from '@triniti/cms/plugins/dam/components/asset-screen/GalleryCard.js';
-import LinkedNodesCard from '@triniti/cms/plugins/dam/components/asset-screen/LinkedNodesCard.js';
-import TranscodeableCard from '@triniti/cms/plugins/dam/components/asset-screen/TranscodeableCard.js';
-import TranscribeableCard from '@triniti/cms/plugins/dam/components/asset-screen/TranscribeableCard.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import formatBytes from '@triniti/cms/utils/formatBytes.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import PollPickerField from '@tmz-apps/cms-js/plugins/apollo/components/poll-picker-field/index.js';
+import AssetPreview from '@tmz-apps/cms-js/plugins/dam/components/asset-preview/index.js';
+import GalleryCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/GalleryCard.js';
+import LinkedNodesCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/LinkedNodesCard.js';
+import TranscodeableCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/TranscodeableCard.js';
+import TranscribeableCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/TranscribeableCard.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import formatBytes from '@tmz-apps/cms-js/utils/formatBytes.js';
 
 export default function DetailsTab(props) {
   const { label, node } = props;

@@ -12,11 +12,11 @@ import {
   UrlField,
   withForm,
   withPbj
-} from '@triniti/cms/components/index.js';
-import patchAssets from '@triniti/cms/plugins/dam/actions/patchAssets.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import patchAssets from '@tmz-apps/cms-js/plugins/dam/actions/patchAssets.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
 
 function PatchAssetsModal(props) {
   const dispatch = useDispatch();

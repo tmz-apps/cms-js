@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import startCase from 'lodash-es/startCase.js';
 import { useDispatch } from 'react-redux';
 import { FORM_ERROR } from 'final-form';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import updateNode from '@triniti/cms/plugins/ncr/actions/updateNode.js';
-import patchAssets from '@triniti/cms/plugins/dam/actions/patchAssets.js';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import updateNode from '@tmz-apps/cms-js/plugins/ncr/actions/updateNode.js';
+import patchAssets from '@tmz-apps/cms-js/plugins/dam/actions/patchAssets.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
 
 export default (props) => {
   const {

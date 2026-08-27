@@ -1,20 +1,20 @@
 import React from 'react';
 import { Badge, DropdownMenu, DropdownToggle, Form, TabContent, TabPane, UncontrolledDropdown } from 'reactstrap';
-import withNodeScreen, { useDelegate } from '@triniti/cms/plugins/ncr/components/with-node-screen/index.js';
-import NodeStatusCard from '@triniti/cms/plugins/ncr/components/node-status-card/index.js';
-import { ActionButton, FormErrors, Icon, Screen, ViewModeWarning } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import ReactionsCard from '@triniti/cms/plugins/apollo/components/reactions-card/index.js';
-import StatsCard from '@triniti/cms/plugins/news/components/article-screen/StatsCard.js';
-import StoryTab from '@triniti/cms/plugins/news/components/article-screen/StoryTab.js';
-import DetailsTab from '@triniti/cms/plugins/news/components/article-screen/DetailsTab.js';
-import NotificationsTab from '@triniti/cms/plugins/news/components/article-screen/NotificationsTab.js';
-import AssetsTab from '@triniti/cms/plugins/news/components/article-screen/AssetsTab.js';
-import TaxonomyTab from '@triniti/cms/plugins/taxonomy/components/taxonomy-tab/index.js';
-import SeoTab from '@triniti/cms/plugins/common/components/seo-tab/index.js';
-import HistoryTab from '@triniti/cms/plugins/ncr/components/history-tab/index.js';
-import RawTab from '@triniti/cms/plugins/ncr/components/raw-tab/index.js';
-import SaveNodeButton from '@triniti/cms/plugins/ncr/components/save-node-button/index.js';
+import withNodeScreen, { useDelegate } from '@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/index.js';
+import NodeStatusCard from '@tmz-apps/cms-js/plugins/ncr/components/node-status-card/index.js';
+import { ActionButton, FormErrors, Icon, Screen, ViewModeWarning } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import ReactionsCard from '@tmz-apps/cms-js/plugins/apollo/components/reactions-card/index.js';
+import StatsCard from '@tmz-apps/cms-js/plugins/news/components/article-screen/StatsCard.js';
+import StoryTab from '@tmz-apps/cms-js/plugins/news/components/article-screen/StoryTab.js';
+import DetailsTab from '@tmz-apps/cms-js/plugins/news/components/article-screen/DetailsTab.js';
+import NotificationsTab from '@tmz-apps/cms-js/plugins/news/components/article-screen/NotificationsTab.js';
+import AssetsTab from '@tmz-apps/cms-js/plugins/news/components/article-screen/AssetsTab.js';
+import TaxonomyTab from '@tmz-apps/cms-js/plugins/taxonomy/components/taxonomy-tab/index.js';
+import SeoTab from '@tmz-apps/cms-js/plugins/common/components/seo-tab/index.js';
+import HistoryTab from '@tmz-apps/cms-js/plugins/ncr/components/history-tab/index.js';
+import RawTab from '@tmz-apps/cms-js/plugins/ncr/components/raw-tab/index.js';
+import SaveNodeButton from '@tmz-apps/cms-js/plugins/ncr/components/save-node-button/index.js';
 
 function ArticleScreen(props) {
   const {

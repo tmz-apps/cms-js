@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { Icon } from '@triniti/cms/components/index.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
 
 export default function InsertBlockButtons({ onInsertTextBlock: handleInsertTextBlock , onInsertBlock: handleInsertBlock, className = 'insert-block-buttons', style = {} }) {
   return (

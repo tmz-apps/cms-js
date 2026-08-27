@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { SwitchField } from '@triniti/cms/components/index.js';
+import { SwitchField } from '@tmz-apps/cms-js/components/index.js';
 
 export default function CarouselWidgetFields() {
   return (

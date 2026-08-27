@@ -5,11 +5,11 @@ import classNames from 'classnames';
 import { Badge, FormText, Label } from 'reactstrap';
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
 import isEmpty from 'lodash-es/isEmpty.js';
-import { useField, useFormContext } from '@triniti/cms/components/index.js';
-import defaultLoadOptions from '@triniti/cms/plugins/ncr/components/node-picker-field/loadOptions.js';
-import MultiValueLabel from '@triniti/cms/plugins/ncr/components/node-picker-field/MultiValueLabel.js';
-import Option from '@triniti/cms/plugins/ncr/components/node-picker-field/Option.js';
-import SortableValues from '@triniti/cms/plugins/ncr/components/node-picker-field/SortableValues.js';
+import { useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import defaultLoadOptions from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/loadOptions.js';
+import MultiValueLabel from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/MultiValueLabel.js';
+import Option from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/Option.js';
+import SortableValues from '@tmz-apps/cms-js/plugins/ncr/components/node-picker-field/SortableValues.js';
 
 const defaultComponents = { MultiValueLabel, Option };
 const isEqual = (a, b) => fastDeepEqual(a, b) || (isEmpty(a) && isEmpty(b));

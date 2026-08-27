@@ -3,13 +3,13 @@ import { Field, useField, useFormState } from 'react-final-form';
 import ReactSelect from 'react-select';
 import classNames from 'classnames';
 import { Badge, Label } from 'reactstrap';
-import { ErrorBoundary, Loading, useFormContext } from '@triniti/cms/components/index.js';
+import { ErrorBoundary, Loading, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 // todo: enable the other pickers once server side handling exists for other content types, also, could this be simpler?
 export const pickers = {
-  article: lazy(() => import('@triniti/cms/plugins/notify/components/content-ref-field/ArticlePickerField.js')),
-  // gallery: lazy(() => import('@triniti/cms/plugins/curator/components/gallery-picker-field')),
-  // video: lazy(() => import('@triniti/cms/plugins/ovp/components/video-picker-field')),
+  article: lazy(() => import('@tmz-apps/cms-js/plugins/notify/components/content-ref-field/ArticlePickerField.js')),
+  // gallery: lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/gallery-picker-field')),
+  // video: lazy(() => import('@tmz-apps/cms-js/plugins/ovp/components/video-picker-field')),
   none: props => <Field {...props} type="hidden" component="input" value={null} />,
 };
 

@@ -1,6 +1,6 @@
 import MessageResolver from '@gdbots/pbj/MessageResolver.js';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
-import getRootFields from '@triniti/cms/utils/getRootFields.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
+import getRootFields from '@tmz-apps/cms-js/utils/getRootFields.js';
 
 export default (values, form, node) => async (dispatch, getState, app) => {
   const CreateNodeV1 = await MessageResolver.resolveCurie('gdbots:ncr:command:create-node:v1');

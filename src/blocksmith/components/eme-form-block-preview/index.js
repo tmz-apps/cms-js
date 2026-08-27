@@ -1,6 +1,6 @@
 import React from 'react';
 import { expand } from '@gdbots/pbjx/pbjUrl.js';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function EmeFormBlockPreview(props) {
   const { block } = props;

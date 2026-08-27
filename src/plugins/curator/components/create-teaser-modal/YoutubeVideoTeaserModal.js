@@ -1,7 +1,7 @@
 import React from 'react';
-import { TextField } from '@triniti/cms/components/index.js';
-import parseYouTubeId from '@triniti/cms/utils/parseYouTubeId.js';
-import withTeaserModal from '@triniti/cms/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
+import { TextField } from '@tmz-apps/cms-js/components/index.js';
+import parseYouTubeId from '@tmz-apps/cms-js/utils/parseYouTubeId.js';
+import withTeaserModal from '@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
 
 function YoutubeVideoTeaserModal() {
   return (

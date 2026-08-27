@@ -1,10 +1,10 @@
 import React from 'react';
 import { components } from 'react-select';
 import { Badge, Media } from 'reactstrap';
-import Loading from '@triniti/cms/components/loading/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import brokenImage from '@triniti/cms/assets/img/broken-image--xxs.jpg';
+import Loading from '@tmz-apps/cms-js/components/loading/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import brokenImage from '@tmz-apps/cms-js/assets/img/broken-image--xxs.jpg';
 
 export default function Option(props) {
   const { labelField = 'title', showImage = true, showType = false } = props.selectProps;

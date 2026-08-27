@@ -1,7 +1,7 @@
 import { $getRoot } from 'lexical';
-import { $isBlocksmithNode } from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
-import marshalToFinalForm from '@triniti/cms/blocksmith/utils/marshalToFinalForm.js';
-import nodeToHtml from '@triniti/cms/blocksmith/utils/nodeToHtml.js';
+import { $isBlocksmithNode } from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
+import marshalToFinalForm from '@tmz-apps/cms-js/blocksmith/utils/marshalToFinalForm.js';
+import nodeToHtml from '@tmz-apps/cms-js/blocksmith/utils/nodeToHtml.js';
 
 const EMPTY_TEXT_BLOCKS = ['<p><br></p>', '<p>&nbsp;</p>', '<p></p>', '<ol><li></li></ol>', '<ul><li></li></ul>'];
 const isEmptyBlock = (block) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Media } from 'reactstrap';
-import AssetPickerField from '@triniti/cms/plugins/dam/components/asset-picker-field/index.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
+import AssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
 
 function Preview(props) {
   const { assetRef, launchText = '' } = props;

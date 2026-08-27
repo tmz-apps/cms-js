@@ -2,9 +2,9 @@ import isEmpty from 'lodash-es/isEmpty.js';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MessageResolver from '@gdbots/pbj/MessageResolver.js';
-import clearRequest from '@triniti/cms/plugins/pbjx/actions/clearRequest.js';
-import persistRequest from '@triniti/cms/plugins/pbjx/actions/persistRequest.js';
-import getRequest from '@triniti/cms/plugins/pbjx/selectors/getRequest.js';
+import clearRequest from '@tmz-apps/cms-js/plugins/pbjx/actions/clearRequest.js';
+import persistRequest from '@tmz-apps/cms-js/plugins/pbjx/actions/persistRequest.js';
+import getRequest from '@tmz-apps/cms-js/plugins/pbjx/selectors/getRequest.js';
 
 const defaultConfig = {
   channel: '',

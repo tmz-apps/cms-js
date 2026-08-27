@@ -8,13 +8,13 @@ import {
   TextareaField,
   TextField,
   withForm
-} from '@triniti/cms/components/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import AssetPreview from '@triniti/cms/plugins/dam/components/asset-preview/index.js';
-import formatBytes from '@triniti/cms/utils/formatBytes.js';
-import useDelegate from '@triniti/cms/plugins/dam/components/uploader-modal/useDelegate.js';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import AssetPreview from '@tmz-apps/cms-js/plugins/dam/components/asset-preview/index.js';
+import formatBytes from '@tmz-apps/cms-js/utils/formatBytes.js';
+import useDelegate from '@tmz-apps/cms-js/plugins/dam/components/uploader-modal/useDelegate.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
 
 function AssetDetails(props) {
   const delegate = useDelegate(props);

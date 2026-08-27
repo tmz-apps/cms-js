@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
-import Loading from '@triniti/cms/components/loading/index.js';
-import logout from '@triniti/cms/plugins/iam/actions/logout.js';
+import Loading from '@tmz-apps/cms-js/components/loading/index.js';
+import logout from '@tmz-apps/cms-js/plugins/iam/actions/logout.js';
 
 function Logout() {
   const dispatch = useDispatch();

@@ -4,20 +4,20 @@ import noop from 'lodash-es/noop.js';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import { ActionButton, ErrorBoundary, Loading, Pager, withForm } from '@triniti/cms/components/index.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import linkAssets from '@triniti/cms/plugins/dam/actions/linkAssets.js';
-import delay from '@triniti/cms/utils/delay.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import AssetPresenter from '@triniti/cms/plugins/dam/components/asset-picker-field/AssetPresenter.js';
-import SearchForm from '@triniti/cms/plugins/dam/components/linked-assets-card/SearchForm.js';
+import { ActionButton, ErrorBoundary, Loading, Pager, withForm } from '@tmz-apps/cms-js/components/index.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import linkAssets from '@tmz-apps/cms-js/plugins/dam/actions/linkAssets.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import AssetPresenter from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/AssetPresenter.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/dam/components/linked-assets-card/SearchForm.js';
 
-const UploaderModal = lazy(() => import('@triniti/cms/plugins/dam/components/uploader-modal/index.js'));
+const UploaderModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/uploader-modal/index.js'));
 
 function LinkAssetsModal(props) {
   const {

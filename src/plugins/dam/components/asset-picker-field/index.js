@@ -2,12 +2,12 @@ import React, { lazy } from 'react';
 import classNames from 'classnames';
 import { Badge, Button, FormText, Label } from 'reactstrap';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import { ActionButton, CreateModalButton, Icon, useField, useFormContext } from '@triniti/cms/components/index.js';
+import { ActionButton, CreateModalButton, Icon, useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 import { expand } from '@gdbots/pbjx/pbjUrl.js';
 import getNode from "../../../ncr/selectors/getNode.js";
 import { useSelector } from "react-redux";
 
-const AssetPickerModal = lazy(() => import('@triniti/cms/plugins/dam/components/asset-picker-field/AssetPickerModal.js'));
+const AssetPickerModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/AssetPickerModal.js'));
 
 const validate = (value) => {
   if (!value) {

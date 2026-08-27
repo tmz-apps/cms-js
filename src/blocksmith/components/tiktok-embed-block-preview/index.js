@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import noop from 'lodash-es/noop.js';
 import { Media } from 'reactstrap';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 // ref https://developers.tiktok.com/doc/embed-videos/
 const fetchOembed = async (id) => {

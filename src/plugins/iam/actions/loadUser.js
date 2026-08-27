@@ -4,11 +4,11 @@ import Code from '@gdbots/schemas/gdbots/pbjx/enums/Code.js';
 import HttpCode from '@gdbots/schemas/gdbots/pbjx/enums/HttpCode.js';
 import Exception from '@gdbots/pbj/Exception.js';
 import { vendorToHttp } from '@gdbots/pbjx/utils/statusCodeConverter.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import receiveEnvelope from '@triniti/cms/plugins/pbjx/actions/receiveEnvelope.js';
-import getAccessToken from '@triniti/cms/plugins/iam/selectors/getAccessToken.js';
-import Policy from '@triniti/cms/plugins/iam/Policy.js';
-import { actionTypes } from '@triniti/cms/plugins/iam/constants.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import receiveEnvelope from '@tmz-apps/cms-js/plugins/pbjx/actions/receiveEnvelope.js';
+import getAccessToken from '@tmz-apps/cms-js/plugins/iam/selectors/getAccessToken.js';
+import Policy from '@tmz-apps/cms-js/plugins/iam/Policy.js';
+import { actionTypes } from '@tmz-apps/cms-js/plugins/iam/constants.js';
 
 async function fetchUser(accessToken) {
   try {

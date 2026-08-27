@@ -1,10 +1,10 @@
 import Swal from 'sweetalert2';
 import Code from '@gdbots/schemas/gdbots/pbjx/enums/Code.js';
-import clearAlerts from '@triniti/cms/actions/clearAlerts.js';
-import logout from '@triniti/cms/plugins/iam/actions/logout.js';
-import isInEditMode from '@triniti/cms/plugins/iam/utils/isInEditMode.js';
-import reloadForAuthExpired from '@triniti/cms/plugins/iam/utils/reloadForAuthExpired.js';
-import { actionTypes } from '@triniti/cms/plugins/pbjx/constants.js';
+import clearAlerts from '@tmz-apps/cms-js/actions/clearAlerts.js';
+import logout from '@tmz-apps/cms-js/plugins/iam/actions/logout.js';
+import isInEditMode from '@tmz-apps/cms-js/plugins/iam/utils/isInEditMode.js';
+import reloadForAuthExpired from '@tmz-apps/cms-js/plugins/iam/utils/reloadForAuthExpired.js';
+import { actionTypes } from '@tmz-apps/cms-js/plugins/pbjx/constants.js';
 
 /**
  * Once the Pbjx HTTP operation completes it will dispatch

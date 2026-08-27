@@ -4,16 +4,16 @@ import startCase from 'lodash-es/startCase.js';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection';
 import { Button, Card, CardBody, CardHeader } from 'reactstrap';
-import { useFormContext, withPbj, Loading, Icon } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import resolveComponent from '@triniti/cms/blocksmith/utils/resolveComponent.js';
-import BlocksmithModal from '@triniti/cms/blocksmith/components/blocksmith-modal/index.js';
+import { useFormContext, withPbj, Loading, Icon } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import resolveComponent from '@tmz-apps/cms-js/blocksmith/utils/resolveComponent.js';
+import BlocksmithModal from '@tmz-apps/cms-js/blocksmith/components/blocksmith-modal/index.js';
 import {
   REMOVE_BLOCK_COMMAND,
   REPLACE_BLOCK_COMMAND
-} from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
-import config from '@triniti/cms/blocksmith/config.js';
+} from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
+import config from '@tmz-apps/cms-js/blocksmith/config.js';
 
 const okayToDelete = async () => {
   const result = await Swal.fire({

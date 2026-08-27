@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import startCase from 'lodash-es/startCase.js';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Loading, withForm } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import pruneNodes from '@triniti/cms/plugins/ncr/actions/pruneNodes.js';
-import useDelegate from '@triniti/cms/plugins/ncr/components/with-node-screen/useDelegate.js';
-import useParams from '@triniti/cms/plugins/ncr/components/with-node-screen/useParams.js';
+import { Loading, withForm } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import pruneNodes from '@tmz-apps/cms-js/plugins/ncr/actions/pruneNodes.js';
+import useDelegate from '@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/useDelegate.js';
+import useParams from '@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/useParams.js';
 
 export { useDelegate, useParams };
 

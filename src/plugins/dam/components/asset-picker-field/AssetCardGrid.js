@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Card, CardImgOverlay, CardTitle, Col, Container, Media, Row } from 'reactstrap';
-import { BackgroundImage, Icon } from '@triniti/cms/components/index.js';
-import AssetIcon from '@triniti/cms/plugins/dam/components/asset-icon/index.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
+import { BackgroundImage, Icon } from '@tmz-apps/cms-js/components/index.js';
+import AssetIcon from '@tmz-apps/cms-js/plugins/dam/components/asset-icon/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
 
 function AssetCard ({ node, batch, imagesPerRow, onSelectAsset }) {
   const [isHovering, setIsHovering] = useState(false);

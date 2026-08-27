@@ -2,9 +2,9 @@ import React, { lazy, useState } from 'react';
 import startCase from 'lodash-es/startCase.js';
 import { ListGroup, ListGroupItem, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import SchemaCurie from '@gdbots/pbj/SchemaCurie.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
-import { ActionButton, withPbj } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
+import { ActionButton, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
 
 const components = {};
 const resolveComponent = (curie) => {
@@ -13,7 +13,7 @@ const resolveComponent = (curie) => {
   }
 
   const file = startCase(SchemaCurie.fromString(curie).getMessage()).replace(/\s/g, '');
-  components[curie] = lazy(() => import(`@triniti/cms/plugins/curator/components/create-teaser-modal/${file}Modal.js`));
+  components[curie] = lazy(() => import(`@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/${file}Modal.js`));
   return components[curie];
 };
 

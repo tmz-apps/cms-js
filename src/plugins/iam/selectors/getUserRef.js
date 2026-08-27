@@ -1,4 +1,4 @@
-import getUser from '@triniti/cms/plugins/iam/selectors/getUser.js';
+import getUser from '@tmz-apps/cms-js/plugins/iam/selectors/getUser.js';
 
 export default (state, asNodeRef = false) => {
   const user = getUser(state);

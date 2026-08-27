@@ -5,21 +5,21 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import { ActionButton, CreateModalButton, Icon, Loading } from '@triniti/cms/components/index.js';
-import delay from '@triniti/cms/utils/delay.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import ResizeGallerySlider from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/ResizeGallerySlider.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import unlinkAssets from '@triniti/cms/plugins/dam/actions/unlinkAssets.js';
-import AssetPresenter from '@triniti/cms/plugins/dam/components/asset-picker-field/AssetPresenter.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
+import { ActionButton, CreateModalButton, Icon, Loading } from '@tmz-apps/cms-js/components/index.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import ResizeGallerySlider from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/ResizeGallerySlider.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import unlinkAssets from '@tmz-apps/cms-js/plugins/dam/actions/unlinkAssets.js';
+import AssetPresenter from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/AssetPresenter.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
 
-const LinkAssetsModal = lazy(() => import('@triniti/cms/plugins/dam/components/linked-assets-card/LinkAssetsModal.js'));
+const LinkAssetsModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/linked-assets-card/LinkAssetsModal.js'));
 
 const okayToUnlink = async () => {
   const result = await Swal.fire({

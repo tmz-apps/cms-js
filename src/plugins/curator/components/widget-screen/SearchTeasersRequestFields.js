@@ -1,14 +1,14 @@
 import React from 'react';
-import { DatePickerField, NumberField, SelectField, TextField, withPbj } from '@triniti/cms/components/index.js';
+import { DatePickerField, NumberField, SelectField, TextField, withPbj } from '@tmz-apps/cms-js/components/index.js';
 import { Col, Row } from 'reactstrap';
 import SearchTeasersSort from '@triniti/schemas/triniti/curator/enums/SearchTeasersSort.js';
-import ChannelPickerField from '@triniti/cms/plugins/taxonomy/components/channel-picker-field/index.js';
-import CategoryPickerField from '@triniti/cms/plugins/taxonomy/components/category-picker-field/index.js';
-import PersonPickerField from '@triniti/cms/plugins/people/components/person-picker-field/index.js';
-import GalleryPickerField from '@triniti/cms/plugins/curator/components/gallery-picker-field/index.js';
-import TimelinePickerField from '@triniti/cms/plugins/curator/components/timeline-picker-field/index.js';
-import SortField from '@triniti/cms/plugins/ncr/components/sort-field/index.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
+import ChannelPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/channel-picker-field/index.js';
+import CategoryPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/category-picker-field/index.js';
+import PersonPickerField from '@tmz-apps/cms-js/plugins/people/components/person-picker-field/index.js';
+import GalleryPickerField from '@tmz-apps/cms-js/plugins/curator/components/gallery-picker-field/index.js';
+import TimelinePickerField from '@tmz-apps/cms-js/plugins/curator/components/timeline-picker-field/index.js';
+import SortField from '@tmz-apps/cms-js/plugins/ncr/components/sort-field/index.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
 import slottingKeys from '@triniti/app/config/slottingKeys.js';
 
 function SearchTeasersRequestFields(props) {

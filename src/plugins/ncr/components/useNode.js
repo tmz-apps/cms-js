@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import GetNodeRequestV1 from '@gdbots/schemas/gdbots/ncr/request/GetNodeRequestV1.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import * as constants from '@triniti/cms/constants.js';
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import * as constants from '@tmz-apps/cms-js/constants.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
 import { getInstance } from '@triniti/app/main.js';
 
 

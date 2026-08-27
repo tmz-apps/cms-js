@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import startCase from 'lodash-es/startCase.js';
 import { Button, Card, CardBody, CardHeader, Input, Label } from 'reactstrap';
-import { NumberField, TimePickerField } from '@triniti/cms/components/index.js';
+import { NumberField, TimePickerField } from '@tmz-apps/cms-js/components/index.js';
 
 const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 const abbreviate = day => day.substr(0, 3);

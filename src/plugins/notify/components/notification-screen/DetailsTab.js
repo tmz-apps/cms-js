@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 import startCase from 'lodash-es/startCase.js';
-import { DatePickerField, ErrorBoundary, Loading, TextareaField, TextField } from '@triniti/cms/components/index.js';
+import { DatePickerField, ErrorBoundary, Loading, TextareaField, TextField } from '@tmz-apps/cms-js/components/index.js';
 import { Badge, Card, CardBody, CardHeader } from 'reactstrap';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import ContentRefField from '@triniti/cms/plugins/notify/components/content-ref-field/index.js';
-import SendOptionsField from '@triniti/cms/plugins/notify/components/send-options-field/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import ContentRefField from '@tmz-apps/cms-js/plugins/notify/components/content-ref-field/index.js';
+import SendOptionsField from '@tmz-apps/cms-js/plugins/notify/components/send-options-field/index.js';
 
 const components = {};
 const resolveComponent = (label) => {
@@ -13,7 +13,7 @@ const resolveComponent = (label) => {
   }
 
   const file = startCase(label).replace(/\s/g, '');
-  components[label] = lazy(() => import(`@triniti/cms/plugins/notify/components/notification-screen/${file}Fields.js`));
+  components[label] = lazy(() => import(`@tmz-apps/cms-js/plugins/notify/components/notification-screen/${file}Fields.js`));
   return components[label];
 };
 

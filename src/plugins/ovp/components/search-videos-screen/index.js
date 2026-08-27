@@ -2,21 +2,21 @@ import React, { lazy } from 'react';
 import { Button, Card, Input, Media, Table } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchVideosSort from '@triniti/schemas/triniti/ovp/enums/SearchVideosSort.js';
-import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import brokenImage from '@triniti/cms/assets/img/broken-image--xs.jpg';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import SearchForm from '@triniti/cms/plugins/ovp/components/search-videos-screen/SearchForm.js';
-import BatchOperationsCard from '@triniti/cms/plugins/ncr/components/batch-operations-card/index.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import createRowClickHandler from '@triniti/cms/utils/createRowClickHandler.js';
+import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import brokenImage from '@tmz-apps/cms-js/assets/img/broken-image--xs.jpg';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/ovp/components/search-videos-screen/SearchForm.js';
+import BatchOperationsCard from '@tmz-apps/cms-js/plugins/ncr/components/batch-operations-card/index.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import createRowClickHandler from '@tmz-apps/cms-js/utils/createRowClickHandler.js';
 
-const CreateVideoModal = lazy(() => import('@triniti/cms/plugins/ovp/components/create-video-modal/index.js'));
+const CreateVideoModal = lazy(() => import('@tmz-apps/cms-js/plugins/ovp/components/create-video-modal/index.js'));
 
 function SearchVideosScreen(props) {
   const { request, delegate } = props;

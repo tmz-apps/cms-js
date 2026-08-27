@@ -13,11 +13,11 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import { Backdrop, Icon, RouterLink } from '@triniti/cms/components/index.js';
-import UserNav from '@triniti/cms/components/navbar/UserNav.js';
-import getNavbar from '@triniti/cms/selectors/getNavbar.js';
-import getStatus from '@triniti/cms/plugins/raven/selectors/getStatus.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import { Backdrop, Icon, RouterLink } from '@tmz-apps/cms-js/components/index.js';
+import UserNav from '@tmz-apps/cms-js/components/navbar/UserNav.js';
+import getNavbar from '@tmz-apps/cms-js/selectors/getNavbar.js';
+import getStatus from '@tmz-apps/cms-js/plugins/raven/selectors/getStatus.js';
 
 export default function Navbar() {
   const policy = usePolicy();

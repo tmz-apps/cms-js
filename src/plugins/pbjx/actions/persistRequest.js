@@ -1,4 +1,4 @@
-import { actionTypes } from '@triniti/cms/plugins/pbjx/constants.js';
+import { actionTypes } from '@tmz-apps/cms-js/plugins/pbjx/constants.js';
 
 /**
  * @param {Message} request - message using mixin 'gdbots:pbjx:mixin:request'

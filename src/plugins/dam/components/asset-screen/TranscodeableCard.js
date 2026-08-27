@@ -4,7 +4,7 @@ import startCase from 'lodash-es/startCase.js';
 import AssetId from '@triniti/schemas/triniti/dam/AssetId.js';
 import TranscodingStatus from '@triniti/schemas/triniti/ovp/enums/TranscodingStatus.js';
 import { expand } from '@gdbots/pbjx/pbjUrl.js';
-import artifactUrl from '@triniti/cms/plugins/ovp/artifactUrl.js';
+import artifactUrl from '@tmz-apps/cms-js/plugins/ovp/artifactUrl.js';
 
 const artifactTypes = ['original', 'manifest', 'subtitled', 'video', 'tooltip-thumbnail-sprite', 'tooltip-thumbnail-track'];
 

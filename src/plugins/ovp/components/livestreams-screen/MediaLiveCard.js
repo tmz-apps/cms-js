@@ -1,10 +1,10 @@
 import React from 'react';
 import { Badge, Button, Card, CardBody, CardHeader, Spinner, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Icon } from '@triniti/cms/components/index.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import MediaLiveChannelControls, { processMedialiveMetas } from '@triniti/cms/plugins/ovp/components/media-live-channel-controls/index.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import MediaLiveChannelControls, { processMedialiveMetas } from '@tmz-apps/cms-js/plugins/ovp/components/media-live-channel-controls/index.js';
 
 export default function MediaLiveCard(props) {
   const { node, nodeRef, metas, refresh, isRefreshing } = props;

@@ -7,17 +7,17 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
-import BlocksmithPlugin from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
-import AppPlugins from '@triniti/cms/blocksmith/plugins/AppPlugins.js';
-import DraggableBlockPlugin from '@triniti/cms/blocksmith/plugins/DraggableBlockPlugin.js';
-import FloatingTextFormatToolbarPlugin from '@triniti/cms/blocksmith/plugins/FloatingTextFormatToolbarPlugin.js';
-import InsertBlockPlugin from '@triniti/cms/blocksmith/plugins/InsertBlockPlugin.js';
-import BottomInsertBlockPlugin from '@triniti/cms/blocksmith/plugins/BottomInsertBlockPlugin.js';
-import ToolbarPlugin from '@triniti/cms/blocksmith/plugins/ToolbarPlugin.js';
-import WordCountPlugin from '@triniti/cms/blocksmith/plugins/WordCountPlugin.js';
-import HoverInsertButtons from '@triniti/cms/blocksmith/components/hover-insert-buttons/index.js';
-import { useFormContext } from '@triniti/cms/components/index.js';
-import config from '@triniti/cms/blocksmith/config.js';
+import BlocksmithPlugin from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
+import AppPlugins from '@tmz-apps/cms-js/blocksmith/plugins/AppPlugins.js';
+import DraggableBlockPlugin from '@tmz-apps/cms-js/blocksmith/plugins/DraggableBlockPlugin.js';
+import FloatingTextFormatToolbarPlugin from '@tmz-apps/cms-js/blocksmith/plugins/FloatingTextFormatToolbarPlugin.js';
+import InsertBlockPlugin from '@tmz-apps/cms-js/blocksmith/plugins/InsertBlockPlugin.js';
+import BottomInsertBlockPlugin from '@tmz-apps/cms-js/blocksmith/plugins/BottomInsertBlockPlugin.js';
+import ToolbarPlugin from '@tmz-apps/cms-js/blocksmith/plugins/ToolbarPlugin.js';
+import WordCountPlugin from '@tmz-apps/cms-js/blocksmith/plugins/WordCountPlugin.js';
+import HoverInsertButtons from '@tmz-apps/cms-js/blocksmith/components/hover-insert-buttons/index.js';
+import { useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import config from '@tmz-apps/cms-js/blocksmith/config.js';
 
 export default function Blocksmith(props) {
   const { editMode, pbj } = useFormContext();

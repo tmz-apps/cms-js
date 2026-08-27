@@ -1,6 +1,6 @@
 import { ACCESS_TOKEN_STORAGE_KEY } from '@gdbots/pbjx/constants.js';
-import isJwtExpired from '@triniti/cms/plugins/iam/utils/isJwtExpired.js';
-import { THEME_STORAGE_KEY } from '@triniti/cms/constants.js';
+import isJwtExpired from '@tmz-apps/cms-js/plugins/iam/utils/isJwtExpired.js';
+import { THEME_STORAGE_KEY } from '@tmz-apps/cms-js/constants.js';
 
 export default () => {
   const preloadedState = {};//CLIENT_PRELOADED_STATE || {};

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UrlField, TextField } from '@triniti/cms/components/index.js';
+import { UrlField, TextField } from '@tmz-apps/cms-js/components/index.js';
 
 export default function LinkTeaserFields() {
   return (

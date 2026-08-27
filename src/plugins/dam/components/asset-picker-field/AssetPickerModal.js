@@ -1,11 +1,11 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import noop from 'lodash-es/noop.js';
-import { ActionButton, ErrorBoundary, Loading } from '@triniti/cms/components/index.js';
+import { ActionButton, ErrorBoundary, Loading } from '@tmz-apps/cms-js/components/index.js';
 
-const UploaderModal = lazy(() => import('@triniti/cms/plugins/dam/components/uploader-modal/index.js'));
-const LinkedTab = lazy(() => import('@triniti/cms/plugins/dam/components/asset-picker-field/LinkedTab.js'));
-const SearchTab = lazy(() => import('@triniti/cms/plugins/dam/components/asset-picker-field/SearchTab.js'));
+const UploaderModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/uploader-modal/index.js'));
+const LinkedTab = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/LinkedTab.js'));
+const SearchTab = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/SearchTab.js'));
 
 export default function AssetPickerModal(props) {
   const {

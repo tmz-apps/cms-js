@@ -1,6 +1,6 @@
 import React from 'react';
-import CategoryPickerField from '@triniti/cms/plugins/taxonomy/components/category-picker-field/index.js';
-import withTeaserModal from '@triniti/cms/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
+import CategoryPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/category-picker-field/index.js';
+import withTeaserModal from '@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
 
 function CategoryTeaserModal() {
   return (

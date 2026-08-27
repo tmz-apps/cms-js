@@ -5,13 +5,13 @@ import { useDropzone } from 'react-dropzone';
 import md5 from 'md5';
 import GetUploadUrlsRequestV1 from '@triniti/schemas/triniti/dam/request/GetUploadUrlsRequestV1.js';
 import { getInstance } from '@triniti/app/main.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import uploadFile from '@triniti/cms/plugins/dam/utils/uploadFile.js';
-import { aspectRatios } from '@triniti/cms/plugins/dam/constants.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import { Loading } from '@triniti/cms/components/index.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import uploadFile from '@tmz-apps/cms-js/plugins/dam/utils/uploadFile.js';
+import { aspectRatios } from '@tmz-apps/cms-js/plugins/dam/constants.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import { Loading } from '@tmz-apps/cms-js/components/index.js';
 
 const variants = aspectRatios;
 

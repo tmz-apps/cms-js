@@ -1,11 +1,11 @@
 import React from 'react';
 import { Badge, Button, Input, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Icon } from '@triniti/cms/components/index.js';
-import formatBytes from '@triniti/cms/utils/formatBytes.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import AssetIcon from '@triniti/cms/plugins/dam/components/asset-icon/index.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import formatBytes from '@tmz-apps/cms-js/utils/formatBytes.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import AssetIcon from '@tmz-apps/cms-js/plugins/dam/components/asset-icon/index.js';
 
 export default function AssetTable(props) {
   const { nodes, batch, inModal = false } = props;

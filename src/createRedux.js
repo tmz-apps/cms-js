@@ -1,9 +1,9 @@
 import camelCase from 'lodash-es/camelCase.js';
 import { applyMiddleware, combineReducers, compose, legacy_createStore as createStore } from 'redux';
 import { withExtraArgument } from 'redux-thunk';
-import ActionEvent from '@triniti/cms/events/ActionEvent.js';
-import appReducer from '@triniti/cms/reducers/index.js';
-import { serviceIds } from '@triniti/cms/constants.js';
+import ActionEvent from '@tmz-apps/cms-js/events/ActionEvent.js';
+import appReducer from '@tmz-apps/cms-js/reducers/index.js';
+import { serviceIds } from '@tmz-apps/cms-js/constants.js';
 
 /**
  * Broadcasts all actions through the app's dispatcher to

@@ -1,6 +1,6 @@
 import React from 'react';
-import PagePickerField from '@triniti/cms/plugins/canvas/components/page-picker-field/index.js';
-import withTeaserModal from '@triniti/cms/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
+import PagePickerField from '@tmz-apps/cms-js/plugins/canvas/components/page-picker-field/index.js';
+import withTeaserModal from '@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/withTeaserModal.js';
 
 function PageTeaserModal() {
   return (

@@ -1,11 +1,11 @@
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import isAuthenticated from '@triniti/cms/plugins/iam/selectors/isAuthenticated.js';
-import getAccessToken from '@triniti/cms/plugins/iam/selectors/getAccessToken.js';
-import getUserRef from '@triniti/cms/plugins/iam/selectors/getUserRef.js';
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
-import shouldShowStaleDataWarning from '@triniti/cms/plugins/raven/utils/shouldShowStaleDataWarning.js';
-import showStaleDataWarning from '@triniti/cms/plugins/raven/utils/showStaleDataWarning.js';
-import { actionTypes, methods, serviceIds } from '@triniti/cms/plugins/raven/constants.js';
+import isAuthenticated from '@tmz-apps/cms-js/plugins/iam/selectors/isAuthenticated.js';
+import getAccessToken from '@tmz-apps/cms-js/plugins/iam/selectors/getAccessToken.js';
+import getUserRef from '@tmz-apps/cms-js/plugins/iam/selectors/getUserRef.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
+import shouldShowStaleDataWarning from '@tmz-apps/cms-js/plugins/raven/utils/shouldShowStaleDataWarning.js';
+import showStaleDataWarning from '@tmz-apps/cms-js/plugins/raven/utils/showStaleDataWarning.js';
+import { actionTypes, methods, serviceIds } from '@tmz-apps/cms-js/plugins/raven/constants.js';
 
 export default (nodeRef) => async (dispatch, getState, app) => {
   if (!app.has(serviceIds.RAVEN_WORKER)) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function SpotifyTrackBlockPreview(props) {
   const { block } = props;

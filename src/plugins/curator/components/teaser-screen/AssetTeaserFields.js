@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
 
 export default function AssetTeaserFields() {
   return (

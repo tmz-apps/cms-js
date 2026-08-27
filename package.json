@@ -1,11 +1,11 @@
 {
-  "name": "@triniti/cms",
-  "version": "1.2.2",
+  "name": "@tmz-apps/cms-js",
+  "version": "1.3.0",
   "license": "Apache-2.0",
   "description": "A single page app for managing triniti schemas and services.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/triniti/cms-js.git"
+    "url": "git+https://github.com/tmz-apps/cms-js.git"
   },
   "type": "module",
   "scripts": {
@@ -15,8 +15,7 @@
     "build:prepub-put-this-one-back-later": "cp -rf ./{*.md,package.json} ./dist && cpx 'src/**/*.{jpg,png,scss,sass,svg}' ./dist",
     "clean": "rm -rf ./dist",
     "pub": "npm run build && cd dist && npm publish --access public",
-    "test": "NODE_NO_WARNINGS=1 NODE_OPTIONS=\"--experimental-loader @node-loader/babel -r ./bootstrap.cjs\" tape-es './src/**/*.test.js*' | faucet",
-    "postinstall": "[ -f ./postinstall.sh ] && ./postinstall.sh"
+    "test": "NODE_NO_WARNINGS=1 NODE_OPTIONS=\"--experimental-loader @node-loader/babel -r ./bootstrap.cjs\" tape-es './src/**/*.test.js*' | faucet"
   },
   "peerDependencies": {
     "@gdbots/schemas": "^3.0.0",
@@ -75,8 +74,8 @@
     "@babel/preset-react": "^7.24.1",
     "@babel/register": "^7.23.7",
     "@node-loader/babel": "^2.1.0",
+    "@tmz-apps/cms-js": "file:./src/",
     "@triniti/app": "file:./demo/src/",
-    "@triniti/cms": "file:./src/",
     "cpx": "^1.5.0",
     "faucet": "0.0.4",
     "ignore-styles": "^5.0.1",

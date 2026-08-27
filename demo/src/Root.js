@@ -1,13 +1,13 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ErrorBoundary, Loading, Navbar } from '@triniti/cms/components/index.js';
-import isAuthenticated from '@triniti/cms/plugins/iam/selectors/isAuthenticated.js';
-import getUser from '@triniti/cms/plugins/iam/selectors/getUser.js';
-import loadUser from '@triniti/cms/plugins/iam/actions/loadUser.js';
+import { ErrorBoundary, Loading, Navbar } from '@tmz-apps/cms-js/components/index.js';
+import isAuthenticated from '@tmz-apps/cms-js/plugins/iam/selectors/isAuthenticated.js';
+import getUser from '@tmz-apps/cms-js/plugins/iam/selectors/getUser.js';
+import loadUser from '@tmz-apps/cms-js/plugins/iam/actions/loadUser.js';
 import AppRoutes from './config/Routes.js';
 
-const Login = lazy(() => import('@triniti/cms/plugins/iam/components/login-screen/index.js'));
+const Login = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/login-screen/index.js'));
 const LoggedOut = () => <Routes><Route path="*" element={<Login />} /></Routes>;
 
 function LoggedIn() {

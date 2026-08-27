@@ -6,20 +6,20 @@ import { useNavigate } from 'react-router-dom';
 import { FORM_ERROR } from 'final-form';
 import Swal from 'sweetalert2';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import clearAlerts from '@triniti/cms/actions/clearAlerts.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import deleteNode from '@triniti/cms/plugins/ncr/actions/deleteNode.js';
-import duplicateNode from '@triniti/cms/plugins/ncr/actions/duplicateNode.js';
-import lockNode from '@triniti/cms/plugins/ncr/actions/lockNode.js';
-import unlockNode from '@triniti/cms/plugins/ncr/actions/unlockNode.js';
-import updateNode from '@triniti/cms/plugins/ncr/actions/updateNode.js';
-import publishNode from '@triniti/cms/plugins/ncr/actions/publishNode.js';
-import useBlocker from '@triniti/cms/plugins/ncr/components/with-node-screen/useBlocker.js';
-import useRaven from '@triniti/cms/plugins/raven/components/useRaven.js';
+import clearAlerts from '@tmz-apps/cms-js/actions/clearAlerts.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import deleteNode from '@tmz-apps/cms-js/plugins/ncr/actions/deleteNode.js';
+import duplicateNode from '@tmz-apps/cms-js/plugins/ncr/actions/duplicateNode.js';
+import lockNode from '@tmz-apps/cms-js/plugins/ncr/actions/lockNode.js';
+import unlockNode from '@tmz-apps/cms-js/plugins/ncr/actions/unlockNode.js';
+import updateNode from '@tmz-apps/cms-js/plugins/ncr/actions/updateNode.js';
+import publishNode from '@tmz-apps/cms-js/plugins/ncr/actions/publishNode.js';
+import useBlocker from '@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/useBlocker.js';
+import useRaven from '@tmz-apps/cms-js/plugins/raven/components/useRaven.js';
 
 const okayToDelete = async (nodeRef) => {
   const result = await Swal.fire({
