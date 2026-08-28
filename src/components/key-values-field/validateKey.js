@@ -6,7 +6,7 @@ export default (value, fieldValues, relaxValidation = false) => {
   }
 
   if (!relaxValidation && !VALID_KEY_PATTERN.test(value)) {
-    return 'Only use letters, numbers and underscores.';
+    return 'Only use letters, numbers, underscores, and hyphens.';
   }
 
   const used = (fieldValues || []).map(o => o && o.key).filter(v => v === value);

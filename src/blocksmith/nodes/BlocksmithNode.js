@@ -65,7 +65,7 @@ export default class BlocksmithNode extends DecoratorBlockNode {
 
   createDOM(config, _editor) {
     const dom = super.createDOM(config);
-    dom.draggable = _editor._editable;
+    dom.draggable = _editor.isEditable();
     return dom;
   }
 

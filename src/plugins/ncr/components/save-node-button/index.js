@@ -6,7 +6,7 @@ import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 export default function SaveNodeButton (props) {
   const { disabled, nodeRef, onClick: handleSave } = props;
   const policy = usePolicy();
-  const canSave = policy.isGranted(`${NodeRef.fromString(nodeRef).qname}:update`);
+  const canSave = policy.isGranted(`${NodeRef.fromString(nodeRef).getQName()}:update`);
 
   return (
     canSave ?
