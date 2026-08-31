@@ -2,13 +2,13 @@ import React, { useRef } from 'react';
 import { Card, CardBody, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import Swal from 'sweetalert2';
 import noop from 'lodash-es/noop.js';
-import { ActionButton } from '@triniti/cms/components/index.js';
-import AssetForm from '@triniti/cms/plugins/dam/components/uploader-modal/AssetForm.js';
-import Uploader from '@triniti/cms/plugins/dam/components/uploader-modal/Uploader.js';
-import FileList from '@triniti/cms/plugins/dam/components/uploader-modal/FileList.js';
-import useBatch from '@triniti/cms/plugins/dam/components/uploader-modal/useBatch.js';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
-import '@triniti/cms/plugins/dam/components/uploader-modal/styles.scss';
+import { ActionButton } from '@tmz-apps/cms-js/components/index.js';
+import AssetForm from '@tmz-apps/cms-js/plugins/dam/components/uploader-modal/AssetForm.js';
+import Uploader from '@tmz-apps/cms-js/plugins/dam/components/uploader-modal/Uploader.js';
+import FileList from '@tmz-apps/cms-js/plugins/dam/components/uploader-modal/FileList.js';
+import useBatch from '@tmz-apps/cms-js/plugins/dam/components/uploader-modal/useBatch.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
+import '@tmz-apps/cms-js/plugins/dam/components/uploader-modal/styles.scss';
 
 const okayToClose = async (msg = 'Files that haven\'t uploaded will be lost.', btn = 'OK, Close!') => {
   const result = await Swal.fire({
@@ -59,7 +59,7 @@ export default function UploaderModal(props) {
       .filter(o => o.status === uploadStatus.COMPLETED)
       .map(o => o.result)
     );
-    await onDone(assetRef, assets.map(a => a.generateNodeRef()));
+    await onDone(assetRef, assets);
     props.toggle();
   };
 
@@ -84,11 +84,14 @@ export default function UploaderModal(props) {
   };
 
   const handleUploadCompleted = (nameHash) => {
-    if (activeUpload.current || activeUpload.current === nameHash) {
+    if (activeUpload.current) {
       return;
     }
 
-    activeUpload.current = nameHash;
+    if (nameHash === batch.values()[0]?.nameHash) {
+      activeUpload.current = nameHash;
+    }
+    
     batch.refresh();
   };
 
@@ -101,7 +104,7 @@ export default function UploaderModal(props) {
   };
 
   return (
-    <Modal isOpen backdrop="static" size="lg" centered>
+    <Modal isOpen size="lg" centered toggle={handleDone}>
       <ModalHeader toggle={handleDone}>Upload Files</ModalHeader>
       <ModalBody className="p-0 modal-scrollable">
         <div className="d-flex flex-column flex-md-row flex-nowrap">

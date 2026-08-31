@@ -3,23 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { Badge, Button, Card, Input, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import formatBytes from '@triniti/cms/utils/formatBytes.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import SearchForm from '@triniti/cms/plugins/dam/components/search-assets-screen/SearchForm.js';
-import BatchOperationsCard from '@triniti/cms/plugins/dam/components/search-assets-screen/BatchOperationsCard.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import AssetIcon from '@triniti/cms/plugins/dam/components/asset-icon/index.js';
-import createRowClickHandler from '@triniti/cms/utils/createRowClickHandler.js';
+import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import formatBytes from '@tmz-apps/cms-js/utils/formatBytes.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/dam/components/search-assets-screen/SearchForm.js';
+import BatchOperationsCard from '@tmz-apps/cms-js/plugins/dam/components/search-assets-screen/BatchOperationsCard.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import AssetIcon from '@tmz-apps/cms-js/plugins/dam/components/asset-icon/index.js';
+import AssetPresenter from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/AssetPresenter.js';
+import createRowClickHandler from '@tmz-apps/cms-js/utils/createRowClickHandler.js';
 
-const UploaderModal = lazy(() => import('@triniti/cms/plugins/dam/components/uploader-modal/index.js'));
+const UploaderModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/uploader-modal/index.js'));
 
 function SearchAssetsScreen(props) {
   const { request, delegate } = props;
@@ -34,6 +35,8 @@ function SearchAssetsScreen(props) {
     return null;
   }
 
+  const nodes = response?.get('nodes', []);
+
   return (
     <Screen
       header="Assets"
@@ -47,8 +50,8 @@ function SearchAssetsScreen(props) {
               icon="cloud-upload"
               modal={UploaderModal}
               modalProps={{
-                onDone: (ref, refs) => {
-                  if (!refs.length) {
+                onDone: (assetRef, assets) => {
+                  if (!assets.length) {
                     return;
                   }
 
@@ -81,66 +84,76 @@ function SearchAssetsScreen(props) {
             in <strong>{response.get('time_taken').toLocaleString()}</strong> milliseconds.
           </div>
 
-          <Card>
-            <Table hover responsive>
-              <thead>
-              <tr>
-                <th><Input type="checkbox" checked={batch.hasAll()} onChange={batch.toggleAll} /></th>
-                <th style={{ width: '44px' }}></th>
-                <th className="text-break w-100">Title</th>
-                <th></th>
-                <th className="d-none d-sm-table-cell">Mime Type</th>
-                <th className="d-none d-sm-table-cell">File Size</th>
-                <th className="d-none d-md-table-cell">Created At</th>
-                <th></th>
-              </tr>
-              </thead>
-              <tbody>
-              {response.get('nodes', []).map(node => {
-                const ref = node.generateNodeRef();
-                const canUpdate = policy.isGranted(`${ref.getQName()}:update`);
-                const transcodingStatus = `${node.get('transcoding_status', '')}`;
-                const handleRowClick = createRowClickHandler(navigate, node);
+          {props.displayView ? (
+            <div className="border-top border-light-subtle border-3 p-2">
+              <AssetPresenter
+                displayView={props.displayView}
+                nodes={nodes}
+                batch={batch}
+              />
+            </div>
+          ) : (
+            <Card>
+              <Table hover responsive>
+                <thead>
+                <tr>
+                  <th><Input type="checkbox" checked={batch.hasAll()} onChange={batch.toggleAll} /></th>
+                  <th style={{ width: '44px' }}></th>
+                  <th className="text-break w-100">Title</th>
+                  <th></th>
+                  <th className="d-none d-sm-table-cell">Mime Type</th>
+                  <th className="d-none d-sm-table-cell">File Size</th>
+                  <th className="d-none d-md-table-cell">Created At</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {nodes.map(node => {
+                  const ref = node.generateNodeRef();
+                  const canUpdate = policy.isGranted(`${ref.getQName()}:update`);
+                  const transcodingStatus = `${node.get('transcoding_status', '')}`;
+                  const handleRowClick = createRowClickHandler(navigate, node);
 
-                return (
-                  <tr key={`${node.get('_id')}`} className={`status-${node.get('status')} cursor-pointer`} onClick={handleRowClick}>
-                    <td data-ignore-row-click={true}><Input type="checkbox" onChange={() => batch.toggle(node)} checked={batch.has(node)} /></td>
-                    <td data-ignore-row-click={true} className="text-center"><AssetIcon id={node.get('_id')} /></td>
-                    <td className="text-break w-100">
-                      {node.get('title')}
-                      {transcodingStatus && (
-                        <Badge pill className={`ms-1 status-${transcodingStatus}`}>Transcoding:{transcodingStatus}</Badge>
-                      )}
-                    </td>
-                    <td className="text-nowrap px-1 py-1"><Collaborators nodeRef={ref.toString()} /></td>
-                    <td className="text-nowrap d-none d-sm-table-cell">{node.get('mime_type')}</td>
-                    <td className="text-nowrap d-none d-sm-table-cell">{formatBytes(node.get('file_size'))}</td>
-                    <td className="td-date d-none d-md-table-cell">{formatDate(node.get('created_at'))}</td>
-                    <td data-ignore-row-click={true} className="td-icons">
-                      <Link to={nodeUrl(node, 'view')}>
-                        <Button color="hover" tag="span">
-                          <Icon imgSrc="eye" alt="view" />
-                        </Button>
-                      </Link>
-                      {canUpdate && (
-                        <Link to={nodeUrl(node, 'edit')}>
+                  return (
+                    <tr key={`${node.get('_id')}`} className={`status-${node.get('status')} cursor-pointer`} onClick={handleRowClick}>
+                      <td data-ignore-row-click={true}><Input type="checkbox" onChange={() => batch.toggle(node)} checked={batch.has(node)} /></td>
+                      <td data-ignore-row-click={true} className="text-center"><AssetIcon id={node.get('_id')} /></td>
+                      <td className="text-break w-100">
+                        {node.get('title')}
+                        {transcodingStatus && (
+                          <Badge pill className={`ms-1 status-${transcodingStatus}`}>Transcoding:{transcodingStatus}</Badge>
+                        )}
+                      </td>
+                      <td className="text-nowrap px-1 py-1"><Collaborators nodeRef={ref.toString()} /></td>
+                      <td className="text-nowrap d-none d-sm-table-cell">{node.get('mime_type')}</td>
+                      <td className="text-nowrap d-none d-sm-table-cell">{formatBytes(node.get('file_size'))}</td>
+                      <td className="td-date d-none d-md-table-cell">{formatDate(node.get('created_at'))}</td>
+                      <td data-ignore-row-click={true} className="td-icons">
+                        <Link to={nodeUrl(node, 'view')}>
                           <Button color="hover" tag="span">
-                            <Icon imgSrc="pencil" alt="edit" />
+                            <Icon imgSrc="eye" alt="view" />
                           </Button>
                         </Link>
-                      )}
-                      <a href={damUrl(node.get('_id'))} target="_blank" rel="noopener noreferrer">
-                        <Button color="hover" tag="span">
-                          <Icon imgSrc="download" alt="download" />
-                        </Button>
-                      </a>
-                    </td>
-                  </tr>
-                );
-              })}
-              </tbody>
-            </Table>
-          </Card>
+                        {canUpdate && (
+                          <Link to={nodeUrl(node, 'edit')}>
+                            <Button color="hover" tag="span">
+                              <Icon imgSrc="pencil" alt="edit" />
+                            </Button>
+                          </Link>
+                        )}
+                        <a href={damUrl(node.get('_id'))} target="_blank" rel="noopener noreferrer">
+                          <Button color="hover" tag="span">
+                            <Icon imgSrc="download" alt="download" />
+                          </Button>
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
+                </tbody>
+              </Table>
+            </Card>
+          )}
 
           <Pager
             disabled={isRunning}

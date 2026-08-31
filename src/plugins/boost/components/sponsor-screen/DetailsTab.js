@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { DatePickerField, EnumField, TextareaField, TextField } from '@triniti/cms/components/index.js';
+import { DatePickerField, EnumField, TextareaField, TextField } from '@tmz-apps/cms-js/components/index.js';
 import SponsorType from '@triniti/schemas/triniti/boost/enums/SponsorType.js';
-import SlugField from '@triniti/cms/plugins/ncr/components/slug-field/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
+import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
 
 export default function DetailsTab(props) {
   const { node } = props;

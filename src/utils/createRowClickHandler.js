@@ -1,4 +1,4 @@
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
 
 export default (navigate, node) => {
   return (e) => {

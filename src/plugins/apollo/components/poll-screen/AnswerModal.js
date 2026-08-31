@@ -2,10 +2,10 @@ import React from 'react';
 import { FORM_ERROR } from 'final-form';
 import { getInstance } from '@triniti/app/main.js';
 import { Form, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import { ActionButton, FormErrors, NumberField, TextField, UrlField, withForm } from '@triniti/cms/components/index.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
-import getRootFields from '@triniti/cms/utils/getRootFields.js';
+import { ActionButton, FormErrors, NumberField, TextField, UrlField, withForm } from '@tmz-apps/cms-js/components/index.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
+import getRootFields from '@tmz-apps/cms-js/utils/getRootFields.js';
 
 function AnswerModal(props) {
   const { delegate, editMode, form, formState, handleSubmit, pbj } = props;
@@ -38,7 +38,7 @@ function AnswerModal(props) {
   };
 
   return (
-    <Modal isOpen centered backdrop="static">
+    <Modal isOpen centered toggle={props.toggle}>
       <ModalHeader toggle={props.toggle}>Poll Answer</ModalHeader>
       <ModalBody>
         {hasSubmitErrors && <FormErrors errors={submitErrors} />}

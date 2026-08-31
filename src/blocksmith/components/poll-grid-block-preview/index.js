@@ -1,9 +1,9 @@
 import React from 'react';
-import { Badge, Button, ListGroup, ListGroupItem } from 'reactstrap';
-import { Icon, Loading } from '@triniti/cms/components/index.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import { Badge, ListGroup, ListGroupItem } from 'reactstrap';
+import { Loading } from '@tmz-apps/cms-js/components/index.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function SinglePoll(props) {
   const { nodeRef } = props;
@@ -19,13 +19,10 @@ function SinglePoll(props) {
 
   return (
     <ListGroupItem key={`${node.get('_id')}`}>
-      {node.get('title')}
-      <Badge color="dark" size="sm" className={`ms-1 align-self-end status-${status}`}>{status}</Badge>
-      <a href={url} className="ms-1" target="_blank">
-        <Button color="hover" tag="span" size="sm" className="mb-0 me-0 p-0" style={{ minHeight: 'initial' }}>
-          <Icon imgSrc="external" alt="view" />
-        </Button>
+      <a href={url} target="_blank">
+        {node.get('title')}
       </a>
+      <Badge color="dark" size="sm" className={`ms-1 align-self-end status-${status}`}>{status}</Badge>
     </ListGroupItem>
   );
 }

@@ -1,8 +1,8 @@
 import base64 from 'base-64';
 import utf8 from 'utf8';
-import { serviceIds } from '@triniti/cms/plugins/raven/constants.js';
-import getAccessToken from '@triniti/cms/plugins/iam/selectors/getAccessToken.js';
-import isAuthenticated from '@triniti/cms/plugins/iam/selectors/isAuthenticated.js';
+import { serviceIds } from '@tmz-apps/cms-js/plugins/raven/constants.js';
+import getAccessToken from '@tmz-apps/cms-js/plugins/iam/selectors/getAccessToken.js';
+import isAuthenticated from '@tmz-apps/cms-js/plugins/iam/selectors/isAuthenticated.js';
 
 const LOG_PREFIX = `raven_server.v${APP_VERSION}/`;
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
-import { DatePickerField, TextField } from '@triniti/cms/components/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import WidgetPickerField from '@triniti/cms/plugins/curator/components/widget-picker-field/index.js';
-import SortableSlots from '@triniti/cms/plugins/curator/components/promotion-screen/SortableSlots.js';
+import { DatePickerField, TextField } from '@tmz-apps/cms-js/components/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import WidgetPickerField from '@tmz-apps/cms-js/plugins/curator/components/widget-picker-field/index.js';
+import SortableSlots from '@tmz-apps/cms-js/plugins/curator/components/promotion-screen/SortableSlots.js';
 
 export default function DetailsTab(props) {
   const { node } = props;

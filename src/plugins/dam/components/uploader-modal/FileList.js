@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Button, Spinner } from 'reactstrap';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
-import { Icon } from '@triniti/cms/components/index.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
 
 function UploadingItem(props) {
   const { upload, onSelectUpload } = props;

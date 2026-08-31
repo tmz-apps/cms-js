@@ -1,18 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInstance } from '@triniti/app/main.js';
-import { useFormContext } from '@triniti/cms/components/index.js';
+import { useFormContext } from '@tmz-apps/cms-js/components/index.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import toast from '@triniti/cms/utils/toast.js';
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
-import isCollaboratingSelector from '@triniti/cms/plugins/raven/selectors/isCollaborating.js';
-import heartbeat from '@triniti/cms/plugins/raven/actions/heartbeat.js';
-import joinCollaboration from '@triniti/cms/plugins/raven/actions/joinCollaboration.js';
-import leaveCollaboration from '@triniti/cms/plugins/raven/actions/leaveCollaboration.js';
-import subscribe from '@triniti/cms/plugins/raven/actions/subscribe.js';
-import unsubscribe from '@triniti/cms/plugins/raven/actions/unsubscribe.js';
-import shouldShowStaleDataWarning from '@triniti/cms/plugins/raven/utils/shouldShowStaleDataWarning.js';
-import showStaleDataWarning from '@triniti/cms/plugins/raven/utils/showStaleDataWarning.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
+import isCollaboratingSelector from '@tmz-apps/cms-js/plugins/raven/selectors/isCollaborating.js';
+import heartbeat from '@tmz-apps/cms-js/plugins/raven/actions/heartbeat.js';
+import joinCollaboration from '@tmz-apps/cms-js/plugins/raven/actions/joinCollaboration.js';
+import leaveCollaboration from '@tmz-apps/cms-js/plugins/raven/actions/leaveCollaboration.js';
+import subscribe from '@tmz-apps/cms-js/plugins/raven/actions/subscribe.js';
+import unsubscribe from '@tmz-apps/cms-js/plugins/raven/actions/unsubscribe.js';
+import shouldShowStaleDataWarning from '@tmz-apps/cms-js/plugins/raven/utils/shouldShowStaleDataWarning.js';
+import showStaleDataWarning from '@tmz-apps/cms-js/plugins/raven/utils/showStaleDataWarning.js';
 
 export default (nodeRef, editMode, canCollaborate) => {
   const formContext = useFormContext();
@@ -88,18 +88,17 @@ export default (nodeRef, editMode, canCollaborate) => {
       dispatch(joinCollaboration(nodeRef));
       heartbeatInterval = setInterval(() => {
         dispatch(heartbeat(nodeRef));
-      }, 10000);
+      }, 3000); // Temporary interval while CMS old and new coexist
     };
 
     const handleVisibilityChange = () => {
       if (!document.hidden) {
+        // Page becomes visible: send immediate heartbeat and restart collaboration
+        dispatch(heartbeat(nodeRef));
         startCollaboration();
-      } else {
-        if (heartbeatInterval) {
-          clearInterval(heartbeatInterval);
-          heartbeatInterval = null;
-        }
       }
+      // Page becomes hidden: keep heartbeats running to maintain "online" status
+      // This ensures user stays visible to other collaborators even when tab is hidden
     };
 
     if (editMode && canCollaborate) {

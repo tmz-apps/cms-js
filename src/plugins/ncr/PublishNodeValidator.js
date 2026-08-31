@@ -1,5 +1,5 @@
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
-import PrimaryImageRequired from '@triniti/cms/plugins/ncr/exceptions/PrimaryImageRequired.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
+import PrimaryImageRequired from '@tmz-apps/cms-js/plugins/ncr/exceptions/PrimaryImageRequired.js';
 
 export default class PublishNodeValidator {
   /**
@@ -22,6 +22,10 @@ export default class PublishNodeValidator {
     const command = pbjxEvent.getMessage();
     const node = this.app.select(getNode, command.get('node_ref'));
     if (!node) {
+      return;
+    }
+
+    if (node.schema().hasMixin('triniti:curator:mixin:live-blog-update-teaser')) {
       return;
     }
 

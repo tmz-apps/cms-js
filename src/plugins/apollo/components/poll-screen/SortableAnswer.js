@@ -3,9 +3,9 @@ import { Button} from 'reactstrap';
 import { useField } from 'react-final-form';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { CreateModalButton, Icon, useFormContext, withPbj } from '@triniti/cms/components/index.js';
-import schemaToCurie from '@triniti/cms/utils/schemaToCurie.js';
-import AnswerModal from '@triniti/cms/plugins/apollo/components/poll-screen/AnswerModal.js';
+import { CreateModalButton, Icon, useFormContext, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import schemaToCurie from '@tmz-apps/cms-js/utils/schemaToCurie.js';
+import AnswerModal from '@tmz-apps/cms-js/plugins/apollo/components/poll-screen/AnswerModal.js';
 
 export default function SortableAnswer(props) {
   const { editMode } = useFormContext();

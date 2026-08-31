@@ -1,5 +1,5 @@
 {
-  "name": "@triniti/demo",
+  "name": "@tmz-apps/demo",
   "version": "1.0.0",
   "license": "UNLICENSED",
   "private": true,
@@ -11,8 +11,8 @@
     "@babel/plugin-proposal-export-default-from": "^7.24.1",
     "@babel/preset-env": "^7.24.5",
     "@babel/preset-react": "^7.24.1",
+    "@tmz-apps/cms-js": "file:../src/",
     "@triniti/app": "file:./src/",
-    "@triniti/cms": "file:../src/",
     "autoprefixer": "^10.4.19",
     "babel-loader": "^10.0.0",
     "buffer": "^6.0.3",

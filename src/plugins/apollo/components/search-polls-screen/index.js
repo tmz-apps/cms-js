@@ -2,17 +2,17 @@ import React, { lazy } from 'react';
 import { Button, Card, Table } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchPollsSort from '@triniti/schemas/triniti/apollo/enums/SearchPollsSort.js';
-import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import SearchForm from '@triniti/cms/plugins/apollo/components/search-polls-screen/SearchForm.js';
-import createRowClickHandler from '@triniti/cms/utils/createRowClickHandler.js';
+import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/apollo/components/search-polls-screen/SearchForm.js';
+import createRowClickHandler from '@tmz-apps/cms-js/utils/createRowClickHandler.js';
 
-const CreatePollModal = lazy(() => import('@triniti/cms/plugins/apollo/components/create-poll-modal/index.js'));
+const CreatePollModal = lazy(() => import('@tmz-apps/cms-js/plugins/apollo/components/create-poll-modal/index.js'));
 
 function SearchPollsScreen(props) {
   const { request, delegate } = props;

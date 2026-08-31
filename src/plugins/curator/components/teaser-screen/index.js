@@ -1,14 +1,15 @@
 import React from 'react';
 import { Badge, DropdownMenu, DropdownToggle, Form, TabContent, TabPane, UncontrolledDropdown } from 'reactstrap';
-import withNodeScreen, { useDelegate } from '@triniti/cms/plugins/ncr/components/with-node-screen/index.js';
-import NodeStatusCard from '@triniti/cms/plugins/ncr/components/node-status-card/index.js';
-import { ActionButton, FormErrors, Icon, Screen, ViewModeWarning } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import DetailsTab from '@triniti/cms/plugins/curator/components/teaser-screen/DetailsTab.js';
-import TaxonomyTab from '@triniti/cms/plugins/taxonomy/components/taxonomy-tab/index.js';
-import SeoTab from '@triniti/cms/plugins/common/components/seo-tab/index.js';
-import HistoryTab from '@triniti/cms/plugins/ncr/components/history-tab/index.js';
-import RawTab from '@triniti/cms/plugins/ncr/components/raw-tab/index.js';
+import withNodeScreen, { useDelegate } from '@tmz-apps/cms-js/plugins/ncr/components/with-node-screen/index.js';
+import NodeStatusCard from '@tmz-apps/cms-js/plugins/ncr/components/node-status-card/index.js';
+import { ActionButton, FormErrors, Icon, Screen, ViewModeWarning } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import DetailsTab from '@tmz-apps/cms-js/plugins/curator/components/teaser-screen/DetailsTab.js';
+import TaxonomyTab from '@tmz-apps/cms-js/plugins/taxonomy/components/taxonomy-tab/index.js';
+import SeoTab from '@tmz-apps/cms-js/plugins/common/components/seo-tab/index.js';
+import HistoryTab from '@tmz-apps/cms-js/plugins/ncr/components/history-tab/index.js';
+import RawTab from '@tmz-apps/cms-js/plugins/ncr/components/raw-tab/index.js';
+import SaveNodeButton from '@tmz-apps/cms-js/plugins/ncr/components/save-node-button/index.js';
 
 function TeaserScreen(props) {
   const {
@@ -25,10 +26,8 @@ function TeaserScreen(props) {
   } = props;
 
   const delegate = useDelegate(props);
-
   const { dirty, errors, hasSubmitErrors, hasValidationErrors, submitting, valid } = formState;
   const submitDisabled = submitting || isRefreshing || !dirty || (!valid && !hasSubmitErrors);
-
   const canDelete = policy.isGranted(`${qname}:delete`);
   const canUpdate = policy.isGranted(`${qname}:update`);
   const canDuplicate = policy.isGranted(`${qname}:create`);
@@ -66,24 +65,20 @@ function TeaserScreen(props) {
             color="light"
             outline
           />
+          <SaveNodeButton 
+            onClick={delegate.handleSave}
+            disabled={submitDisabled}
+            nodeRef={nodeRef}
+          />
           {canUpdate && (
-            <>
-              <ActionButton
-                text="Save"
-                onClick={delegate.handleSave}
-                disabled={submitDisabled}
-                icon="save-diskette"
-                color="primary"
-              />
-              <ActionButton
-                text={editMode ? 'Enter View Mode' : 'Enter Edit Mode'}
-                onClick={delegate.handleSwitchMode}
-                disabled={submitting || isRefreshing}
-                icon={editMode ? 'eye' : 'edit'}
-                color="light"
-                outline
-              />
-            </>
+            <ActionButton
+              text={editMode ? 'Enter View Mode' : 'Enter Edit Mode'}
+              onClick={delegate.handleSwitchMode}
+              disabled={submitting || isRefreshing}
+              icon={editMode ? 'eye' : 'edit'}
+              color="light"
+              outline
+            />
           )}
           {(canDelete || canDuplicate) && (
             <UncontrolledDropdown>

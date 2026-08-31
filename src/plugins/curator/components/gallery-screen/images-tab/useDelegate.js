@@ -2,17 +2,17 @@ import clamp from 'lodash-es/clamp.js';
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import delay from '@triniti/cms/utils/delay.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import { scrollToTop } from '@triniti/cms/components/screen/index.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import reorderGalleryAssets from '@triniti/cms/plugins/dam/actions/reorderGalleryAssets.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import useSequencer from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/useSequencer.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import { scrollToTop } from '@tmz-apps/cms-js/components/screen/index.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import reorderGalleryAssets from '@tmz-apps/cms-js/plugins/dam/actions/reorderGalleryAssets.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import useSequencer from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/useSequencer.js';
 
 const okayToRemove = async () => {
   const result = await Swal.fire({

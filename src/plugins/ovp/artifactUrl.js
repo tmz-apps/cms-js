@@ -1,6 +1,6 @@
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import insertBeforeExt from '@triniti/cms/utils/insertBeforeExt.js';
-import removeExt from '@triniti/cms/utils/removeExt.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import insertBeforeExt from '@tmz-apps/cms-js/utils/insertBeforeExt.js';
+import removeExt from '@tmz-apps/cms-js/utils/removeExt.js';
 
 export default (id, type) => {
   const assetUrl = damUrl(id);

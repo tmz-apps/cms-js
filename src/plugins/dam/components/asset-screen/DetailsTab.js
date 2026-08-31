@@ -7,16 +7,16 @@ import {
   TextareaField,
   TextField,
   UrlField
-} from '@triniti/cms/components/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import PollPickerField from '@triniti/cms/plugins/apollo/components/poll-picker-field/index.js';
-import AssetPreview from '@triniti/cms/plugins/dam/components/asset-preview/index.js';
-import GalleryCard from '@triniti/cms/plugins/dam/components/asset-screen/GalleryCard.js';
-import LinkedNodesCard from '@triniti/cms/plugins/dam/components/asset-screen/LinkedNodesCard.js';
-import TranscodeableCard from '@triniti/cms/plugins/dam/components/asset-screen/TranscodeableCard.js';
-import TranscribeableCard from '@triniti/cms/plugins/dam/components/asset-screen/TranscribeableCard.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import formatBytes from '@triniti/cms/utils/formatBytes.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import PollPickerField from '@tmz-apps/cms-js/plugins/apollo/components/poll-picker-field/index.js';
+import AssetPreview from '@tmz-apps/cms-js/plugins/dam/components/asset-preview/index.js';
+import GalleryCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/GalleryCard.js';
+import LinkedNodesCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/LinkedNodesCard.js';
+import TranscodeableCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/TranscodeableCard.js';
+import TranscribeableCard from '@tmz-apps/cms-js/plugins/dam/components/asset-screen/TranscribeableCard.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import formatBytes from '@tmz-apps/cms-js/utils/formatBytes.js';
 
 export default function DetailsTab(props) {
   const { label, node } = props;
@@ -57,6 +57,12 @@ export default function DetailsTab(props) {
                     <td className="w-100">{node.get('duration')} seconds</td>
                   </tr>
                 )}
+                {schema.hasMixin('triniti:dam:mixin:video-asset') && (
+                  <tr>
+                    <th className="nowrap ps-2" scope="row">Vertical:</th>
+                    <td className="w-100">{node.get('is_vertical') ? 'Yes' : 'No'}</td>
+                  </tr>
+                )}
                 {schema.hasMixin('triniti:dam:mixin:image-asset') && (
                   <tr>
                     <th className="nowrap ps-2" scope="row">Dimensions:</th>
@@ -76,7 +82,15 @@ export default function DetailsTab(props) {
           <TextField name="title" label="Title" />
           <TextField name="display_title" label="Display Title" />
           {schema.hasMixin('gdbots:ncr:mixin:expirable') && (
-            <DatePickerField name="expires_at" label="Expires At" />
+            <DatePickerField 
+              name="expires_at" 
+              label="Expires At" 
+              showQuickSelect
+              quickSelectOptions={[
+                { amount: 5, unit: 'year' },
+                { amount: 1, unit: 'year' }
+              ]}
+            />
           )}
           <TextareaField name="description" label="Description" rows={5} />
           {schema.hasField('alt_text') && (

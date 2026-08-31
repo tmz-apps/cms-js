@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Badge, FormText, InputGroup, InputGroupText, Label } from 'reactstrap';
-import { Icon, useField, useFormContext } from '@triniti/cms/components/index.js';
+import { Icon, useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 export default function EmailField(props) {
   const { name, label, description, validator, nestedPbj, pbjName, required, groupClassName = '', ...rest } = props;

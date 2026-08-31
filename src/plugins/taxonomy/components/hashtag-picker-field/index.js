@@ -7,9 +7,9 @@ import isEmpty from 'lodash-es/isEmpty.js';
 import trim from 'lodash-es/trim.js';
 import { withAsyncPaginate } from 'react-select-async-paginate';
 import { createHashtag, isValidHashtag } from '@gdbots/pbj/utils/index.js';
-import { useField, useFormContext } from '@triniti/cms/components/index.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import defaultLoadOptions from '@triniti/cms/plugins/taxonomy/components/hashtag-picker-field/loadOptions.js';
+import { useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import defaultLoadOptions from '@tmz-apps/cms-js/plugins/taxonomy/components/hashtag-picker-field/loadOptions.js';
 
 const isEqual = (a, b) => fastDeepEqual(a, b) || (isEmpty(a) && isEmpty(b));
 const CreatableAsyncPaginate = withAsyncPaginate(Creatable);

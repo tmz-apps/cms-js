@@ -1,12 +1,12 @@
 import React, { lazy } from 'react';
 import { ButtonGroup} from 'reactstrap';
 import NodeStatus from '@gdbots/schemas/gdbots/ncr/enums/NodeStatus.js';
-import { CreateModalButton } from '@triniti/cms/components/index.js';
-import deleteNode from '@triniti/cms/plugins/ncr/actions/deleteNode.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
+import { CreateModalButton } from '@tmz-apps/cms-js/components/index.js';
+import deleteNode from '@tmz-apps/cms-js/plugins/ncr/actions/deleteNode.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
 
-const BatchOperationModal = lazy(() => import('@triniti/cms/plugins/ncr/components/batch-operation-modal/index.js'));
-const PatchAssetsModal = lazy(() => import('@triniti/cms/plugins/dam/components/patch-assets-modal/index.js'));
+const BatchOperationModal = lazy(() => import('@tmz-apps/cms-js/plugins/ncr/components/batch-operation-modal/index.js'));
+const PatchAssetsModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/patch-assets-modal/index.js'));
 
 const deleteOperation = async (dispatch, node) => {
   if (node.get('status') === NodeStatus.DELETED) {

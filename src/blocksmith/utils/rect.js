@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-import { isPoint } from '@triniti/cms/blocksmith/utils/point.js';
+import { isPoint } from '@tmz-apps/cms-js/blocksmith/utils/point.js';
 
 export class Rect {
   constructor(left, top, right, bottom) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormText } from 'reactstrap';
-import { SelectField, TextField, useFormContext } from '@triniti/cms/components/index.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
+import { SelectField, TextField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
 
 const EMBED_PATTERN = /.*open\.spotify\.com\/embed\/(album|artist|episode|playlist|show|track)\/(\w+).*/;
 

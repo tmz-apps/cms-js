@@ -1,7 +1,7 @@
 import React from 'react';
-import PropertiesTable from '@triniti/cms/plugins/ncr/components/node-history-card/PropertiesTable.js';
-import filterData from '@triniti/cms/plugins/ncr/components/node-history-card/filterData.js';
-import findNodeDiff from '@triniti/cms/plugins/ncr/components/node-history-card/findNodeDiff.js';
+import PropertiesTable from '@tmz-apps/cms-js/plugins/ncr/components/node-history-card/PropertiesTable.js';
+import filterData from '@tmz-apps/cms-js/plugins/ncr/components/node-history-card/filterData.js';
+import findNodeDiff from '@tmz-apps/cms-js/plugins/ncr/components/node-history-card/findNodeDiff.js';
 
 export default function Event({ event }) {
   const schema = event.schema();

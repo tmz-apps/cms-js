@@ -2,22 +2,23 @@ import React, { lazy } from 'react';
 import { Badge, Button, Card, Input, Media, Table } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchTeasersSort from '@triniti/schemas/triniti/curator/enums/SearchTeasersSort.js';
-import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import brokenImage from '@triniti/cms/assets/img/broken-image--xs.jpg';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import SearchForm from '@triniti/cms/plugins/curator/components/search-teasers-screen/SearchForm.js';
-import BatchOperationsCard from '@triniti/cms/plugins/ncr/components/batch-operations-card/index.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import createRowClickHandler from '@triniti/cms/utils/createRowClickHandler.js';
+import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import brokenImage from '@tmz-apps/cms-js/assets/img/broken-image--xs.jpg';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/curator/components/search-teasers-screen/SearchForm.js';
+import useDuplicateNode from '@tmz-apps/cms-js/plugins/curator/components/useDuplicateNode.js';
+import BatchOperationsCard from '@tmz-apps/cms-js/plugins/ncr/components/batch-operations-card/index.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import createRowClickHandler from '@tmz-apps/cms-js/utils/createRowClickHandler.js';
 
-const CreateTeaserModal = lazy(() => import('@triniti/cms/plugins/curator/components/create-teaser-modal/index.js'));
+const CreateTeaserModal = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/create-teaser-modal/index.js'));
 
 function SearchTeasersScreen(props) {
   const { request, delegate } = props;
@@ -26,6 +27,7 @@ function SearchTeasersScreen(props) {
   const canCreate = policy.isGranted(`${APP_VENDOR}:teaser:create`);
   const batch = useBatch(response);
   const navigate = useNavigate();
+  const duplicateNode = useDuplicateNode();
 
   const curies = useCuries('triniti:curator:mixin:teaser:v1');
   if (!curies) {
@@ -82,7 +84,9 @@ function SearchTeasersScreen(props) {
               {response.get('nodes', []).map(node => {
                 const ref = node.generateNodeRef();
                 const canUpdate = policy.isGranted(`${ref.getQName()}:update`);
+                const canDuplicate = policy.isGranted(`${ref.getQName()}:create`);
                 const handleRowClick = createRowClickHandler(navigate, node);
+                const handleDuplicateTeaser = () => duplicateNode(node);
                 return (
                   <tr key={`${node.get('_id')}`} className={`status-${node.get('status')} cursor-pointer`} onClick={handleRowClick}>
                     <td data-ignore-row-click={true}><Input type="checkbox" onChange={() => batch.toggle(node)} checked={batch.has(node)} /></td>
@@ -123,11 +127,16 @@ function SearchTeasersScreen(props) {
                           </Button>
                         </Link>
                       )}
-                      <a href={nodeUrl(node, 'canonical')} target="_blank" rel="noopener noreferrer">
+                     <a href={nodeUrl(node, 'canonical')} target="_blank" rel="noopener noreferrer">
                         <Button color="hover" tag="span">
                           <Icon imgSrc="external" alt="open" />
                         </Button>
                       </a>
+                      {canDuplicate && (
+                        <Button color="hover" tag="span" onClick={handleDuplicateTeaser}>
+                          <Icon imgSrc="documents" alt="copy" />
+                        </Button>
+                      )}
                     </td>
                   </tr>
                 );

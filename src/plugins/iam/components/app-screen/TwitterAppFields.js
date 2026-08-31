@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
-import { EncryptedField, TextField } from '@triniti/cms/components/index.js';
+import { EncryptedField, TextField } from '@tmz-apps/cms-js/components/index.js';
 
 export default function TwitterAppFields() {
   return (

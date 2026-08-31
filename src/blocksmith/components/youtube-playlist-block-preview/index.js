@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Media, Row, Table } from 'reactstrap';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function YoutubePlaylistBlockPreview(props) {
   const { block } = props;

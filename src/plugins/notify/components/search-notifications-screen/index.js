@@ -2,18 +2,18 @@ import React, { lazy } from 'react';
 import { Button, Card, Table } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchNotificationsSort from '@triniti/schemas/triniti/notify/enums/SearchNotificationsSort.js';
-import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@triniti/cms/components/index.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import SearchForm from '@triniti/cms/plugins/notify/components/search-notifications-screen/SearchForm.js';
-import createRowClickHandler from '@triniti/cms/utils/createRowClickHandler.js';
+import { CreateModalButton, Icon, Loading, Pager, Screen, withForm } from '@tmz-apps/cms-js/components/index.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/notify/components/search-notifications-screen/SearchForm.js';
+import createRowClickHandler from '@tmz-apps/cms-js/utils/createRowClickHandler.js';
 
-const CreateNotificationModal = lazy(() => import('@triniti/cms/plugins/notify/components/create-notification-modal/index.js'));
+const CreateNotificationModal = lazy(() => import('@tmz-apps/cms-js/plugins/notify/components/create-notification-modal/index.js'));
 
 const editable = { draft: true, scheduled: true };
 

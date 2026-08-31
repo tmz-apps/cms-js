@@ -3,13 +3,13 @@ import { FORM_ERROR } from 'final-form';
 import startCase from 'lodash-es/startCase.js';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { Form, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import { ActionButton, FormErrors, Icon, useFormContext, withForm, withPbj } from '@triniti/cms/components/index.js';
+import { ActionButton, FormErrors, Icon, useFormContext, withForm, withPbj } from '@tmz-apps/cms-js/components/index.js';
 import Message from '@gdbots/pbj/Message.js';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
-import getRootFields from '@triniti/cms/utils/getRootFields.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import { INSERT_BLOCK_COMMAND } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
-import config from '@triniti/cms/blocksmith/config.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
+import getRootFields from '@tmz-apps/cms-js/utils/getRootFields.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import { INSERT_BLOCK_COMMAND, INSERT_BLOCK_AT_TOP_COMMAND } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
+import config from '@tmz-apps/cms-js/blocksmith/config.js';
 
 function BlockModal(props) {
   const {
@@ -49,7 +49,7 @@ function BlockModal(props) {
   const title = config.blocks[type]?.title || startCase(type);
 
   return (
-    <Modal isOpen backdrop="static" size="lg" centered>
+    <Modal isOpen size="lg" centered toggle={props.toggle}>
       <ModalHeader toggle={props.toggle}>
         <Icon imgSrc={icon} size="lg" className="me-2" />
         {title}
@@ -90,7 +90,8 @@ export default function withBlockModal(Component) {
       pbj,
       canUpdate = false,
       canCreate = false,
-      afterNodeKey = null
+      afterNodeKey = null,
+      insertAtTop = false
     } = props;
     const BlockModalWithPbj = useMemo(() => {
       return pbj instanceof Message ? withForm(BlockModal) : withPbj(withForm(BlockModal), curie, pbj);
@@ -102,7 +103,8 @@ export default function withBlockModal(Component) {
 
     const isNew = !props.onUpdate;
     const onUpdate = !isNew ? props.onUpdate : (newPbj) => {
-      editor.dispatchCommand(INSERT_BLOCK_COMMAND, { newPbj, afterNodeKey });
+      const command = insertAtTop ? INSERT_BLOCK_AT_TOP_COMMAND : INSERT_BLOCK_COMMAND;
+      editor.dispatchCommand(command, { newPbj, afterNodeKey });
     };
 
     return (

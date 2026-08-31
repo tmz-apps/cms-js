@@ -7,9 +7,9 @@ import {
   SwitchField,
   TextField,
   UrlField
-} from '@triniti/cms/components/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
 
-const NotificationsCard = lazy(() => import('@triniti/cms/plugins/notify/components/notifications-card/index.js'));
+const NotificationsCard = lazy(() => import('@tmz-apps/cms-js/plugins/notify/components/notifications-card/index.js'));
 
 export default function NotificationsTab(props) {
   const { node, nodeRef, tab } = props;

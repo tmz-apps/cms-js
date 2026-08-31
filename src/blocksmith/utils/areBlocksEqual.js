@@ -1,6 +1,6 @@
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
 import omit from 'lodash-es/omit.js';
-import { BLOCKSMITH_DIRTY } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
+import { BLOCKSMITH_DIRTY } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
 
 const omitKeys = ['etag'];
 

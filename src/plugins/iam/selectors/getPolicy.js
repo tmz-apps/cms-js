@@ -1,4 +1,4 @@
-import Policy from '@triniti/cms/plugins/iam/Policy.js';
+import Policy from '@tmz-apps/cms-js/plugins/iam/Policy.js';
 
 const emptyPolicy = new Policy;
 

@@ -1,9 +1,11 @@
 import Swal from 'sweetalert2';
-import AuthenticationRequired from '@triniti/cms/plugins/iam/exceptions/AuthenticationRequired.js';
-import PermissionDenied from '@triniti/cms/plugins/iam/exceptions/PermissionDenied.js';
-import getPolicy from '@triniti/cms/plugins/iam/selectors/getPolicy.js';
-import isAuthenticated from '@triniti/cms/plugins/iam/selectors/isAuthenticated.js';
-import logout from '@triniti/cms/plugins/iam/actions/logout.js';
+import AuthenticationRequired from '@tmz-apps/cms-js/plugins/iam/exceptions/AuthenticationRequired.js';
+import PermissionDenied from '@tmz-apps/cms-js/plugins/iam/exceptions/PermissionDenied.js';
+import getPolicy from '@tmz-apps/cms-js/plugins/iam/selectors/getPolicy.js';
+import isAuthenticated from '@tmz-apps/cms-js/plugins/iam/selectors/isAuthenticated.js';
+import logout from '@tmz-apps/cms-js/plugins/iam/actions/logout.js';
+import isInEditMode from '@tmz-apps/cms-js/plugins/iam/utils/isInEditMode.js';
+import reloadForAuthExpired from '@tmz-apps/cms-js/plugins/iam/utils/reloadForAuthExpired.js';
 
 const MIXINS_TO_ACTION = {
   'gdbots:ncr:mixin:create-node': 'create',
@@ -49,6 +51,11 @@ export default class Authorizer {
     const redux = this.app.getRedux();
     const state = redux.getState();
     if (!isAuthenticated(state, true)) {
+      if (!isInEditMode()) {
+        reloadForAuthExpired();
+        throw new AuthenticationRequired();
+      }
+
       Swal.fire({
         title: 'Authentication Expired',
         icon: 'error',
@@ -63,7 +70,7 @@ export default class Authorizer {
           + '</ol>'
           + '</p>',
       }).then((result) => {
-        if (result.isDismissed && result.dismiss === 'cancel') {
+        if (result.isDismissed && result.dismiss === Swal.DismissReason.cancel) {
           redux.dispatch(logout());
         }
       }).catch(console.error);

@@ -1,11 +1,11 @@
 import React, { lazy } from 'react';
 import classNames from 'classnames';
 import { Badge, InputGroup, Label } from 'reactstrap';
-import { CreateModalButton, Loading, useFormContext } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
+import { CreateModalButton, Loading, useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
 
-const RenameForm = lazy(() => import('@triniti/cms/plugins/ncr/components/slug-field/RenameForm.js'));
+const RenameForm = lazy(() => import('@tmz-apps/cms-js/plugins/ncr/components/slug-field/RenameForm.js'));
 
 export default function SlugField(props) {
   const formContext = useFormContext();

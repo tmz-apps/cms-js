@@ -1,4 +1,4 @@
-import getExt from '@triniti/cms/utils/getExt.js';
+import getExt from '@tmz-apps/cms-js/utils/getExt.js';
 
 /**
  * @param {String} fileName - A file name including extension.

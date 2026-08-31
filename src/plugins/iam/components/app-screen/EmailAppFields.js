@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
-import { EncryptedField, KeyValuesField, NumberField } from '@triniti/cms/components/index.js';
+import { EncryptedField, KeyValuesField, NumberField } from '@tmz-apps/cms-js/components/index.js';
 
 export default function EmailAppFields() {
   return (
@@ -12,7 +12,7 @@ export default function EmailAppFields() {
         </CardText>
         <EncryptedField name="sendgrid_api_key" label="API Key" />
         <NumberField name="sendgrid_suppression_group_id" label="Suppression Group ID" />
-        <KeyValuesField name="sendgrid_senders" label="Senders" component={NumberField} />
+        <KeyValuesField name="sendgrid_senders" label="Senders" component={NumberField} relaxValidation />
         <KeyValuesField name="sendgrid_lists" label="Lists" component={NumberField} />
       </CardBody>
     </Card>

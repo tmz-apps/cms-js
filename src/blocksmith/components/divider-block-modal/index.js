@@ -1,6 +1,6 @@
 import React from 'react';
-import { SelectField, TextField } from '@triniti/cms/components/index.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
+import { SelectField, TextField } from '@tmz-apps/cms-js/components/index.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
 
 const colors = [
   { label: 'primary', value: 'primary' },
@@ -17,8 +17,8 @@ function DividerBlockModal() {
   return (
     <>
       <TextField name="text" label="Text" />
-      <SelectField name="stroke_color" label="Color" options={colors} />
-      <SelectField name="stroke_style" label="Style" options={styles} />
+      <SelectField name="stroke_color" label="Color" options={colors} isClearable={false} />
+      <SelectField name="stroke_style" label="Style" options={styles} isClearable={false} />
     </>
   );
 }

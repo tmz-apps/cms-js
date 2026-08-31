@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormText, UncontrolledTooltip } from 'reactstrap';
 import classNames from 'classnames';
-import { Icon, useField, useFormContext } from '@triniti/cms/components/index.js';
+import { Icon, useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 export default function SwitchField(props) {
   const {
@@ -68,7 +68,7 @@ export default function SwitchField(props) {
       {tooltip && (
         <>
           <Icon imgSrc="info-outline" id={`${domId}-tooltip`} className="ms-1 align-self-start mb-2" />
-          <UncontrolledTooltip target={`${domId}-tooltip`} placement="right" className="mb-2">{tooltip}</UncontrolledTooltip>
+          <UncontrolledTooltip target={`${domId}-tooltip`} placement="right" className="mb-2" fade={false}>{tooltip}</UncontrolledTooltip>
         </>
       )}
     </div>

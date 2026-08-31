@@ -5,15 +5,15 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Form } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
-import registerForm from '@triniti/cms/actions/registerForm.js';
-import unregisterForm from '@triniti/cms/actions/unregisterForm.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import FormEvent from '@triniti/cms/events/FormEvent.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import { SUFFIX_INIT_FORM } from '@triniti/cms/constants.js';
-import FormMarshaler from '@triniti/cms/utils/FormMarshaler.js';
-import { FormContextProvider } from '@triniti/cms/components/useFormContext.js';
-import Loading from '@triniti/cms/components/loading/index.js';
+import registerForm from '@tmz-apps/cms-js/actions/registerForm.js';
+import unregisterForm from '@tmz-apps/cms-js/actions/unregisterForm.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import FormEvent from '@tmz-apps/cms-js/events/FormEvent.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import { SUFFIX_INIT_FORM } from '@tmz-apps/cms-js/constants.js';
+import FormMarshaler from '@tmz-apps/cms-js/utils/FormMarshaler.js';
+import { FormContextProvider } from '@tmz-apps/cms-js/components/useFormContext.js';
+import Loading from '@tmz-apps/cms-js/components/loading/index.js';
 
 const defaultHandleSubmit = values => console.info('defaultHandleSubmit', values);
 

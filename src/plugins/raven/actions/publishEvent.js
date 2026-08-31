@@ -1,8 +1,8 @@
 import ObjectSerializer from '@gdbots/pbj/serializers/ObjectSerializer.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import { actionTypes } from '@triniti/cms/plugins/raven/constants.js';
-import PublishEvent from '@triniti/cms/plugins/raven/events/PublishEvent.js';
-import getUserRef from '@triniti/cms/plugins/iam/selectors/getUserRef.js';
+import { actionTypes } from '@tmz-apps/cms-js/plugins/raven/constants.js';
+import PublishEvent from '@tmz-apps/cms-js/plugins/raven/events/PublishEvent.js';
+import getUserRef from '@tmz-apps/cms-js/plugins/iam/selectors/getUserRef.js';
 
 export default (worker, action) => async (dispatch, getState, app) => {
   const { nodeRef, pbj } = action;

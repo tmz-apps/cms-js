@@ -1,10 +1,10 @@
 import React from 'react';
 import { components } from 'react-select';
 import { Badge, Media } from 'reactstrap';
-import Loading from '@triniti/cms/components/loading/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import brokenImage from '@triniti/cms/assets/img/broken-image--xxs.jpg';
+import Loading from '@tmz-apps/cms-js/components/loading/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import brokenImage from '@tmz-apps/cms-js/assets/img/broken-image--xxs.jpg';
 
 export default function Option(props) {
   const { labelField = 'title', showImage = true, showType = false } = props.selectProps;
@@ -23,6 +23,7 @@ export default function Option(props) {
   const status = `${node.get('status')}`;
   const schema = node.schema();
   const isPublishable = schema.hasMixin('gdbots:ncr:mixin:publishable');
+  const label = node.get('tags')?.picker_label;
 
   return (
     <components.Option {...props}>
@@ -37,6 +38,9 @@ export default function Option(props) {
         />
       )}
       <span>{node.get(labelField)}</span>
+      {label && (
+        <Badge pill className={`label-${label}`}>{label}</Badge>
+      )}
       {showType && (
         <Badge pill color="light">{schema.getQName().getMessage()}</Badge>
       )}

@@ -1,10 +1,10 @@
 import isFunction from 'lodash-es/isFunction.js';
 import Dispatcher from '@gdbots/pbjx/Dispatcher.js';
-import LogicException from '@triniti/cms/exceptions/LogicException.js';
-import ServiceNotFound from '@triniti/cms/exceptions/ServiceNotFound.js';
-import createPbjx from '@triniti/cms/createPbjx.js';
-import createRedux from '@triniti/cms/createRedux.js';
-import startApp from '@triniti/cms/actions/startApp.js';
+import LogicException from '@tmz-apps/cms-js/exceptions/LogicException.js';
+import ServiceNotFound from '@tmz-apps/cms-js/exceptions/ServiceNotFound.js';
+import createPbjx from '@tmz-apps/cms-js/createPbjx.js';
+import createRedux from '@tmz-apps/cms-js/createRedux.js';
+import startApp from '@tmz-apps/cms-js/actions/startApp.js';
 
 const instances = new WeakMap();
 

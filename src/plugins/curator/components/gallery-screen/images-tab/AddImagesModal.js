@@ -3,6 +3,8 @@ import clamp from 'lodash-es/clamp.js';
 import noop from 'lodash-es/noop.js';
 import {
   Card,
+  CardImgOverlay,
+  CardTitle,
   Col,
   Container,
   Media,
@@ -11,7 +13,6 @@ import {
   ModalFooter,
   ModalHeader,
   Row,
-  UncontrolledTooltip
 } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
@@ -22,20 +23,20 @@ import {
   Loading,
   Pager,
   withForm
-} from '@triniti/cms/components/index.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import reorderGalleryAssets from '@triniti/cms/plugins/dam/actions/reorderGalleryAssets.js';
-import delay from '@triniti/cms/utils/delay.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import useBatch from '@triniti/cms/plugins/ncr/components/useBatch.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import SearchForm from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/SearchForm.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import reorderGalleryAssets from '@tmz-apps/cms-js/plugins/dam/actions/reorderGalleryAssets.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import useBatch from '@tmz-apps/cms-js/plugins/ncr/components/useBatch.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import SearchForm from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/SearchForm.js';
 
-const UploaderModal = lazy(() => import('@triniti/cms/plugins/dam/components/uploader-modal/index.js'));
+const UploaderModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/uploader-modal/index.js'));
 
 function AddImagesModal(props) {
   const { onClose = noop, galleryRef, gallerySeqIncrementer, request, delegate } = props;
@@ -51,14 +52,15 @@ function AddImagesModal(props) {
     props.toggle();
   };
 
-  const handleUploaderDone = (ref, refs) => {
-    if (!refs || !refs.length) {
+  const handleUploaderDone = async (assetRef, assets) => {
+    if (!assetRef || !assets.length) {
       if (uploaderOpen) {
         setUploaderOpen(false);
       }
       return;
     }
 
+    await addImagesToGallery(assets.reverse());
     onClose();
     props.toggle();
   };
@@ -67,17 +69,21 @@ function AddImagesModal(props) {
     setUploaderOpen(true);
   };
 
-  const handleAddImages = async () => {
+  const handleAddImages = () => {
+    addImagesToGallery(Array.from(batch.values()).reverse());
+  };
+
+  const addImagesToGallery = async (assets) => {
     try {
       await progressIndicator.show('Adding Images...');
       const gallerySeqs = {};
-      for (const asset of batch.values()) {
+      for (const asset of assets) {
         gallerySeqs[asset.get('_id').toString()] = gallerySeqIncrementer();
       }
 
       await dispatch(reorderGalleryAssets(galleryRef, gallerySeqs));
       // delay to give time for all assets to be updated in elastic search.
-      await delay(clamp(500 * batch.size, 3000, 10000));
+      await delay(clamp(500 * assets.length, 3000, 10000));
       run();
       await progressIndicator.close();
       toast({ title: 'Images added.' });
@@ -85,7 +91,7 @@ function AddImagesModal(props) {
       await progressIndicator.close();
       dispatch(sendAlert({ type: 'danger', message: getFriendlyErrorMessage(e) }));
     }
-  };
+  }
 
   if (uploaderOpen) {
     return (
@@ -103,7 +109,7 @@ function AddImagesModal(props) {
   }
 
   return (
-    <Modal isOpen backdrop="static" size="xxl" centered>
+    <Modal isOpen size="xxl" centered toggle={handleClose}>
       <ModalHeader toggle={handleClose}>Add Images</ModalHeader>
       <ModalBody className="p-0">
         <div id="asset-linker-search-body" className="scrollable-container modal-scrollable--tabs">
@@ -122,22 +128,25 @@ function AddImagesModal(props) {
                     {response.get('nodes').map(node => {
                       const id = node.get('_id');
                       const key = `image-${id.toString()}`;
-                      const previewUrl = damUrl(id, '1by1', 'sm');
+                      const previewUrl = damUrl(id, 'o', 'sm');
+                      const title = node.get('title');
                       return (
-                        <Col key={key} id={key} xs={12} sm={6} md={4} lg={3} xl="2p">
+                        <Col key={key} id={key} xs={12} sm={6} md={4} xl='2p'>
                           <Card
                             inverse
                             tag="button"
                             className={`p-1 mb-0 image-grid-card cursor-pointer ${batch.has(node) ? 'selected' : ''}`}
                             onClick={() => batch.toggle(node)}
                           >
-                            <Media className="ratio ratio-1x1 mt-0 mb-0 border border-4 bg-dark">
-                              <BackgroundImage imgSrc={previewUrl} alt="" />
+                            <Media className="ratio ratio-1x1 mt-0 mb-0 border border-4 bg-light">
+                              <BackgroundImage imgSrc={previewUrl} alt="" className="background-image-contain background-image-no-repeat" />
                             </Media>
+                            {title && (
+                              <CardImgOverlay>
+                                <CardTitle tag="h3" className="h5 mb-0 text-start">{title}</CardTitle>
+                              </CardImgOverlay>
+                            )}
                           </Card>
-                          <UncontrolledTooltip target={key} placement="bottom">
-                            {node.get('title')}
-                          </UncontrolledTooltip>
                         </Col>
                       );
                     })}

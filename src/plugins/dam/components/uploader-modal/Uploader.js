@@ -10,16 +10,16 @@ import BigNumber from '@gdbots/pbj/well-known/BigNumber.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import GetUploadUrlsRequestV1 from '@triniti/schemas/triniti/dam/request/GetUploadUrlsRequestV1.js';
 import { getInstance } from '@triniti/app/main.js';
-import { Icon, Loading } from '@triniti/cms/components/index.js';
-import uploadFile from '@triniti/cms/plugins/dam/utils/uploadFile.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import receiveNodes from '@triniti/cms/plugins/ncr/actions/receiveNodes.js';
-import getExt from '@triniti/cms/utils/getExt.js';
-import delay from '@triniti/cms/utils/delay.js';
-import getImageDimensions from '@triniti/cms/plugins/dam/utils/getImageDimensions.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
+import { Icon, Loading } from '@tmz-apps/cms-js/components/index.js';
+import uploadFile from '@tmz-apps/cms-js/plugins/dam/utils/uploadFile.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import receiveNodes from '@tmz-apps/cms-js/plugins/ncr/actions/receiveNodes.js';
+import getExt from '@tmz-apps/cms-js/utils/getExt.js';
+import delay from '@tmz-apps/cms-js/utils/delay.js';
+import getImageDimensions from '@tmz-apps/cms-js/plugins/dam/utils/getImageDimensions.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
 
 const getFileExtension = (file) => {
   // Return quick for known types
@@ -75,13 +75,6 @@ const createAsset = async (upload, app, dispatch, batch) => {
   const { linkedRef, galleryRef, assetEnricher = noop } = batch.config;
   if (linkedRef) {
     asset.addToSet('linked_refs', [NodeRef.fromString(`${linkedRef}`)]);
-  }
-
-  if (galleryRef) {
-    asset.set('gallery_ref', NodeRef.fromString(`${galleryRef}`));
-    if (upload.gallerySeq !== null) {
-      asset.set('gallery_seq', upload.gallerySeq);
-    }
   }
 
   await assetEnricher(asset, upload, app);
@@ -160,10 +153,6 @@ export default function Uploader(props) {
         running: true,
         gallerySeq: null,
       };
-
-      if (batch.config.galleryRef && batch.config.gallerySeqIncrementer) {
-        upload.gallerySeq = batch.config.gallerySeqIncrementer();
-      }
 
       const process = async () => {
         if (upload.status === uploadStatus.COMPLETED) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import AssetPickerField from '@triniti/cms/plugins/dam/components/asset-picker-field/index.js';
+import AssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/asset-picker-field/index.js';
 
 export default function AudioAssetPickerField(props) {
   return (

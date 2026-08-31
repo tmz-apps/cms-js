@@ -4,7 +4,7 @@ import { Badge, Button, Col, Label, Row } from 'reactstrap';
 import { FieldArray } from 'react-final-form-arrays';
 import isEmpty from 'lodash-es/isEmpty.js';
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
-import { Icon, useFormContext } from '@triniti/cms/components/index.js';
+import { Icon, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 const isEqual = (a, b) => fastDeepEqual(a, b) || (isEmpty(a) && isEmpty(b));
 

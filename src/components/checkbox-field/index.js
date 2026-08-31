@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Label } from 'reactstrap';
-import { useField, useFormContext } from '@triniti/cms/components/index.js';
+import { useField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 
 export default function CheckboxField(props) {
   const {

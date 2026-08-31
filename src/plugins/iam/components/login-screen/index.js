@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import { Button, Card, CardBody } from 'reactstrap';
-import { Loading } from '@triniti/cms/components/index.js';
-import acceptLogin from '@triniti/cms/plugins/iam/actions/acceptLogin.js';
-import { serviceIds } from '@triniti/cms/plugins/iam/constants.js';
+import { Loading } from '@tmz-apps/cms-js/components/index.js';
+import acceptLogin from '@tmz-apps/cms-js/plugins/iam/actions/acceptLogin.js';
+import { serviceIds } from '@tmz-apps/cms-js/plugins/iam/constants.js';
 import logoLight from '@triniti/app/assets/img/site-logo-login--light.png';
 import logoDark from '@triniti/app/assets/img/site-logo-login--dark.png';
 

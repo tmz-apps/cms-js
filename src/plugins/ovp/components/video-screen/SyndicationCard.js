@@ -8,8 +8,8 @@ import {
   SwitchField,
   TextField,
   TrinaryField
-} from '@triniti/cms/components/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 
 export default function SyndicationCard(props) {
   const { node } = props;

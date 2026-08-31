@@ -2,14 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Alert, Badge, Button, Card, CardBody, Table } from 'reactstrap';
-import { Icon } from '@triniti/cms/components/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import Collaborators from '@triniti/cms/plugins/raven/components/collaborators/index.js';
-import getCollaborations from '@triniti/cms/plugins/raven/selectors/getCollaborations.js';
-import createRowClickHandler from '@triniti/cms/utils/createRowClickHandler.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import Collaborators from '@tmz-apps/cms-js/plugins/raven/components/collaborators/index.js';
+import getCollaborations from '@tmz-apps/cms-js/plugins/raven/selectors/getCollaborations.js';
+import createRowClickHandler from '@tmz-apps/cms-js/utils/createRowClickHandler.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
 
 function TableRow(props) {
   const { nodeRef } = props;

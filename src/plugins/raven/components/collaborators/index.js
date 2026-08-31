@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { UncontrolledTooltip } from 'reactstrap';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import getCollaborators from '@triniti/cms/plugins/raven/selectors/getCollaborators.js';
-import WarningModal from '@triniti/cms/plugins/raven/components/collaborators/WarningModal.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import getCollaborators from '@tmz-apps/cms-js/plugins/raven/selectors/getCollaborators.js';
+import WarningModal from '@tmz-apps/cms-js/plugins/raven/components/collaborators/WarningModal.js';
 
 function UserAvatar(props) {
   const { nodeRef } = props;
@@ -30,7 +30,7 @@ function UserAvatar(props) {
       <span id={target} className="avatar-initials avatar-initials-sm badge-indicator">
         {initials}
       </span>
-      <UncontrolledTooltip placement="top" target={target}>
+      <UncontrolledTooltip placement="top" target={target} fade={false}>
         {title}
       </UncontrolledTooltip>
     </>

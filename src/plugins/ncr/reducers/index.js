@@ -1,6 +1,6 @@
-import createReducer from '@triniti/cms/utils/createReducer.js';
-import { actionTypes as pbjxActionTypes } from '@triniti/cms/plugins/pbjx/constants.js';
-import { actionTypes } from '@triniti/cms/plugins/ncr/constants.js';
+import createReducer from '@tmz-apps/cms-js/utils/createReducer.js';
+import { actionTypes as pbjxActionTypes } from '@tmz-apps/cms-js/plugins/pbjx/constants.js';
+import { actionTypes } from '@tmz-apps/cms-js/plugins/ncr/constants.js';
 
 export const initialState = {};
 

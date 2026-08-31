@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from 'reactstrap';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function HeadingBlockPreview(props) {
   const { block } = props;

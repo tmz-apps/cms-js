@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, CardHeader, Spinner, Table } from 'reactstrap';
-import { Icon } from '@triniti/cms/components/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
 
 const numberFormatter = new Intl.NumberFormat('en-US');
 

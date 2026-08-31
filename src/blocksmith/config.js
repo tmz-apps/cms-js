@@ -1,4 +1,4 @@
-import BlocksmithNode from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
+import BlocksmithNode from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
 import { LinkNode } from '@lexical/link';
 import { ListItemNode, ListNode } from '@lexical/list';
 import customConfig from '@triniti/app/config/blocksmith.js';

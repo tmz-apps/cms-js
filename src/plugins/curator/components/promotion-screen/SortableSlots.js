@@ -2,9 +2,9 @@ import React from 'react';
 import isEmpty from 'lodash-es/isEmpty.js';
 import fastDeepEqual from 'fast-deep-equal/es6/index.js';
 import { FieldArray } from 'react-final-form-arrays';
-import { CreateModalButton, useFormContext, withPbj } from '@triniti/cms/components/index.js';
-import SlotModal from '@triniti/cms/plugins/curator/components/promotion-screen/SlotModal.js';
-import SortableSlot from '@triniti/cms/plugins/curator/components/promotion-screen/SortableSlot.js';
+import { CreateModalButton, useFormContext, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import SlotModal from '@tmz-apps/cms-js/plugins/curator/components/promotion-screen/SlotModal.js';
+import SortableSlot from '@tmz-apps/cms-js/plugins/curator/components/promotion-screen/SortableSlot.js';
 import {
   DndContext,
   closestCenter,

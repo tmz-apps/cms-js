@@ -3,11 +3,11 @@ import { Badge, Button } from 'reactstrap';
 import { useField } from 'react-final-form';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { CreateModalButton, Icon, useFormContext, withPbj } from '@triniti/cms/components/index.js';
-import useNode from '@triniti/cms/plugins/ncr/components/useNode.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
-import schemaToCurie from '@triniti/cms/utils/schemaToCurie.js';
-import SlotModal from '@triniti/cms/plugins/curator/components/promotion-screen/SlotModal.js';
+import { CreateModalButton, Icon, useFormContext, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import useNode from '@tmz-apps/cms-js/plugins/ncr/components/useNode.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
+import schemaToCurie from '@tmz-apps/cms-js/utils/schemaToCurie.js';
+import SlotModal from '@tmz-apps/cms-js/plugins/curator/components/promotion-screen/SlotModal.js';
 
 const renderingColors = {
   server: 'danger',

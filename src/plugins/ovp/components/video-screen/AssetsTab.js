@@ -7,14 +7,13 @@ import {
   SwitchField,
   TextField,
   UrlField
-} from '@triniti/cms/components/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import AudioAssetPickerField from '@triniti/cms/plugins/dam/components/audio-asset-picker-field/index.js';
-import CaptionAssetPickerField from '@triniti/cms/plugins/dam/components/caption-asset-picker-field/index.js';
-import MezzanineCard from '@triniti/cms/plugins/ovp/components/video-screen/MezzanineCard.js';
+import AudioAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/audio-asset-picker-field/index.js';
+import CaptionAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/caption-asset-picker-field/index.js';
 import videoLanguages from '@triniti/app/config/videoLanguages.js';
 
-const LinkedAssetsCard = lazy(() => import('@triniti/cms/plugins/dam/components/linked-assets-card/index.js'));
+const LinkedAssetsCard = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/linked-assets-card/index.js'));
 
 export default function AssetsTab(props) {
   const { tab, nodeRef, node } = props;
@@ -38,8 +37,6 @@ export default function AssetsTab(props) {
           )}
         </CardBody>
       </Card>
-
-      <MezzanineCard {...props} />
 
       <Card>
         <CardHeader>Captions</CardHeader>

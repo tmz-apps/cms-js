@@ -13,15 +13,15 @@ import {
   UncontrolledButtonDropdown
 } from 'reactstrap';
 import DatePicker from 'react-datepicker';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import markNodeAsDraft from '@triniti/cms/plugins/ncr/actions/markNodeAsDraft.js';
-import markNodeAsPending from '@triniti/cms/plugins/ncr/actions/markNodeAsPending.js';
-import publishNode from '@triniti/cms/plugins/ncr/actions/publishNode.js';
-import unpublishNode from '@triniti/cms/plugins/ncr/actions/unpublishNode.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import markNodeAsDraft from '@tmz-apps/cms-js/plugins/ncr/actions/markNodeAsDraft.js';
+import markNodeAsPending from '@tmz-apps/cms-js/plugins/ncr/actions/markNodeAsPending.js';
+import publishNode from '@tmz-apps/cms-js/plugins/ncr/actions/publishNode.js';
+import unpublishNode from '@tmz-apps/cms-js/plugins/ncr/actions/unpublishNode.js';
 
 const actions = {
   'mark-as-draft': markNodeAsDraft,
@@ -66,6 +66,8 @@ export default function PublishForm(props) {
   const { nodeRef, node, onStatusUpdated } = props;
   const dispatch = useDispatch();
   const policy = usePolicy();
+  const ref = NodeRef.fromString(nodeRef);
+  const qname = ref.getQName();
 
   const [action, setAction] = useState(null);
   const [publishAt, setPublishAt] = useState(node.get('published_at') || new Date());
@@ -80,19 +82,20 @@ export default function PublishForm(props) {
     setAction(null);
   }, [status]);
 
-  const can = a => allowedActions?.[status][a] && policy.isGranted(`${nodeRef}:${a}`);
+  const can = a => allowedActions?.[status][a] && policy.isGranted(`${qname}:${a}`);
   const handleApply = async () => {
     if (!action) {
       return;
     }
 
-    const ref = NodeRef.fromString(nodeRef);
     const label = startCase(ref.getLabel());
 
     try {
       await progressIndicator.show(`Updating ${label} status...`);
-      await dispatch(actions[action](nodeRef, publishAt));
-      await onStatusUpdated(action, publishAt);
+      const effectivePublishAt = action === 'publish' ? null : publishAt;
+
+      await dispatch(actions[action](nodeRef, effectivePublishAt));
+      await onStatusUpdated(action, effectivePublishAt);
       await progressIndicator.close();
       toast({ title: `${label} status updated.` });
     } catch (e) {

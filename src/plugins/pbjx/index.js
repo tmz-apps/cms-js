@@ -1,8 +1,8 @@
 import { TRANSPORT_HTTP_ENVELOPE_RECEIVED } from '@gdbots/pbjx/constants.js';
-import Plugin from '@triniti/cms/Plugin.js';
-import reducer from '@triniti/cms/plugins/pbjx/reducers/index.js';
-import receiveEnvelope from '@triniti/cms/plugins/pbjx/actions/receiveEnvelope.js';
-import { serviceIds } from '@triniti/cms/plugins/pbjx/constants.js';
+import Plugin from '@tmz-apps/cms-js/Plugin.js';
+import reducer from '@tmz-apps/cms-js/plugins/pbjx/reducers/index.js';
+import receiveEnvelope from '@tmz-apps/cms-js/plugins/pbjx/actions/receiveEnvelope.js';
+import { serviceIds } from '@tmz-apps/cms-js/plugins/pbjx/constants.js';
 
 export default class PbjxPlugin extends Plugin {
   constructor() {
@@ -13,7 +13,7 @@ export default class PbjxPlugin extends Plugin {
     this.reducer = reducer;
 
     app.register(serviceIds.MESSAGE_BINDER, async () => {
-      const MessageBinder = (await import('@triniti/cms/plugins/pbjx/MessageBinder.js')).default;
+      const MessageBinder = (await import('@tmz-apps/cms-js/plugins/pbjx/MessageBinder.js')).default;
       return new MessageBinder(app);
     });
 

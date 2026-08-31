@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import startCase from 'lodash-es/startCase.js';
 import { useDispatch } from 'react-redux';
 import { FORM_ERROR } from 'final-form';
-import sendAlert from '@triniti/cms/actions/sendAlert.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import progressIndicator from '@triniti/cms/utils/progressIndicator.js';
-import toast from '@triniti/cms/utils/toast.js';
-import updateNode from '@triniti/cms/plugins/ncr/actions/updateNode.js';
-import patchAssets from '@triniti/cms/plugins/dam/actions/patchAssets.js';
-import { uploadStatus } from '@triniti/cms/plugins/dam/constants.js';
+import sendAlert from '@tmz-apps/cms-js/actions/sendAlert.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import progressIndicator from '@tmz-apps/cms-js/utils/progressIndicator.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
+import updateNode from '@tmz-apps/cms-js/plugins/ncr/actions/updateNode.js';
+import patchAssets from '@tmz-apps/cms-js/plugins/dam/actions/patchAssets.js';
+import { uploadStatus } from '@tmz-apps/cms-js/plugins/dam/constants.js';
 
 export default (props) => {
   const {
@@ -76,8 +76,21 @@ export default (props) => {
     try {
       await progressIndicator.show(`Applying [${field}] to ${refs.length} assets...`);
       await dispatch(patchAssets(refs, { [field]: value }));
+      const dirtyEntries = Object.keys(formState.dirtyFields)
+        .filter(fieldName =>  fieldName !== field)
+        .map(fieldName => [fieldName, formState.values[fieldName]]);
       delegate.shouldReinitialize = true;
       delegate.onAfterReinitialize = () => {
+        // reinitialize runs restart(), which clears touched on every field. Restore and re-mark the
+        // fields that still hold unsaved edits so they keep their green (edited) indicator;
+        // the applied field now matches the server (pristine) and is left unmarked.
+        form.batch(() => {
+          dirtyEntries
+            .forEach(([fieldName, value]) => {
+              form.change(fieldName, value);
+              form.blur(fieldName);
+            });
+        });
         progressIndicator.close();
         toast({ title: `Applied [${field}] to ${refs.length} assets.` });
       };

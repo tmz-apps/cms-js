@@ -1,11 +1,11 @@
 import React from 'react';
-import { DatePickerField, NumberField, TextField, withPbj } from '@triniti/cms/components/index.js';
+import { DatePickerField, NumberField, TextField, withPbj } from '@tmz-apps/cms-js/components/index.js';
 import { Col, Row } from 'reactstrap';
 import SearchGalleriesSort from '@triniti/schemas/triniti/curator/enums/SearchGalleriesSort.js';
-import ChannelPickerField from '@triniti/cms/plugins/taxonomy/components/channel-picker-field/index.js';
-import CategoryPickerField from '@triniti/cms/plugins/taxonomy/components/category-picker-field/index.js';
-import PersonPickerField from '@triniti/cms/plugins/people/components/person-picker-field/index.js';
-import SortField from '@triniti/cms/plugins/ncr/components/sort-field/index.js';
+import ChannelPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/channel-picker-field/index.js';
+import CategoryPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/category-picker-field/index.js';
+import PersonPickerField from '@tmz-apps/cms-js/plugins/people/components/person-picker-field/index.js';
+import SortField from '@tmz-apps/cms-js/plugins/ncr/components/sort-field/index.js';
 
 function SearchGalleriesRequestFields(props) {
   const { pbj } = props;
@@ -108,12 +108,24 @@ function SearchGalleriesRequestFields(props) {
           />
         </Col>
         <Col sm={6} xl={6}>
-          <NumberField
-            nestedPbj={pbj}
-            pbjName="count"
-            name="search_request.count"
-            label="Count"
-          />
+          <Row>
+            <Col sm={6}>
+              <NumberField
+                nestedPbj={pbj}
+                pbjName="page"
+                name="search_request.page"
+                label="Page"
+              />
+            </Col>
+            <Col sm={6}>
+              <NumberField
+                nestedPbj={pbj}
+                pbjName="count"
+                name="search_request.count"
+                label="Count"
+              />
+            </Col>
+          </Row>
         </Col>
       </Row>
     </>

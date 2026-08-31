@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
 import GetNodeRequestV1 from '@gdbots/schemas/gdbots/ncr/request/GetNodeRequestV1.js';
-import getFriendlyErrorMessage from '@triniti/cms/plugins/pbjx/utils/getFriendlyErrorMessage.js';
-import * as constants from '@triniti/cms/constants.js';
-import getNode from '@triniti/cms/plugins/ncr/selectors/getNode.js';
+import getFriendlyErrorMessage from '@tmz-apps/cms-js/plugins/pbjx/utils/getFriendlyErrorMessage.js';
+import * as constants from '@tmz-apps/cms-js/constants.js';
+import getNode from '@tmz-apps/cms-js/plugins/ncr/selectors/getNode.js';
 import { getInstance } from '@triniti/app/main.js';
 
 
@@ -97,7 +97,10 @@ export default (nodeRef, consistent = false) => {
       return;
     }
 
-    setRefreshCount(refreshCount + 1);
+    // functional update because callers can hold this closure from an old render
+    // (e.g. the uploader modal's save button) computing from the captured count
+    // would set the same value, bail out, and skip the refetch.
+    setRefreshCount(count => count + 1);
   };
 
   return {

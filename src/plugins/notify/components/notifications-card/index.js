@@ -1,16 +1,16 @@
 import React, { lazy } from 'react';
 import { Button, Card, CardBody, CardHeader, CardText, Spinner, Table } from 'reactstrap';
-import { CreateModalButton, Icon, Loading, } from '@triniti/cms/components/index.js';
+import { CreateModalButton, Icon, Loading, } from '@tmz-apps/cms-js/components/index.js';
 import { Link } from 'react-router-dom';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import useRequest from '@triniti/cms/plugins/pbjx/components/useRequest.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import useRequest from '@tmz-apps/cms-js/plugins/pbjx/components/useRequest.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
 import SearchNotificationsSort from '@triniti/schemas/triniti/notify/enums/SearchNotificationsSort.js';
 import NodeRef from '@gdbots/pbj/well-known/NodeRef.js';
-import formatDate from '@triniti/cms/utils/formatDate.js';
-import nodeUrl from '@triniti/cms/plugins/ncr/nodeUrl.js';
+import formatDate from '@tmz-apps/cms-js/utils/formatDate.js';
+import nodeUrl from '@tmz-apps/cms-js/plugins/ncr/nodeUrl.js';
 
-const CreateNotificationModal = lazy(() => import('@triniti/cms/plugins/notify/components/create-notification-modal/index.js'));
+const CreateNotificationModal = lazy(() => import('@tmz-apps/cms-js/plugins/notify/components/create-notification-modal/index.js'));
 
 const editable = { draft: true, scheduled: true };
 

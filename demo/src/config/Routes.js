@@ -1,53 +1,53 @@
 import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-const AppScreen = lazy(() => import('@triniti/cms/plugins/iam/components/app-screen/index.js'));
-const ArticleScreen = lazy(() => import('@triniti/cms/plugins/news/components/article-screen/index.js'));
-const AssetScreen = lazy(() => import('@triniti/cms/plugins/dam/components/asset-screen/index.js'));
-const CategoryScreen = lazy(() => import('@triniti/cms/plugins/taxonomy/components/category-screen/index.js'));
-const ChannelScreen = lazy(() => import('@triniti/cms/plugins/taxonomy/components/channel-screen/index.js'));
+const AppScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/app-screen/index.js'));
+const ArticleScreen = lazy(() => import('@tmz-apps/cms-js/plugins/news/components/article-screen/index.js'));
+const AssetScreen = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/asset-screen/index.js'));
+const CategoryScreen = lazy(() => import('@tmz-apps/cms-js/plugins/taxonomy/components/category-screen/index.js'));
+const ChannelScreen = lazy(() => import('@tmz-apps/cms-js/plugins/taxonomy/components/channel-screen/index.js'));
 const DashboardScreen = lazy(() => import('../plugins/dashboard/components/dashboard-screen/index.js'));
 const DemoScreen = lazy(() => import('../plugins/dashboard/components/demo-screen/index.js'));
-const FlagsetScreen = lazy(() => import('@triniti/cms/plugins/sys/components/flagset-screen/index.js'));
-const GalleryScreen = lazy(() => import('@triniti/cms/plugins/curator/components/gallery-screen/index.js'));
-const LivestreamsScreen = lazy(() => import('@triniti/cms/plugins/ovp/components/livestreams-screen/index.js'));
-const LoginScreen = lazy(() => import('@triniti/cms/plugins/iam/components/login-screen/index.js'));
-const LogoutScreen = lazy(() => import('@triniti/cms/plugins/iam/components/logout-screen/index.js'));
-const NotificationScreen = lazy(() => import('@triniti/cms/plugins/notify/components/notification-screen/index.js'));
-const PageScreen = lazy(() => import('@triniti/cms/plugins/canvas/components/page-screen/index.js'));
-const PersonScreen = lazy(() => import('@triniti/cms/plugins/people/components/person-screen/index.js'));
-const PollScreen = lazy(() => import('@triniti/cms/plugins/apollo/components/poll-screen/index.js'));
-const PicklistScreen = lazy(() => import('@triniti/cms/plugins/sys/components/picklist-screen/index.js'));
-const PromotionScreen = lazy(() => import('@triniti/cms/plugins/curator/components/promotion-screen/index.js'));
-const RedirectScreen = lazy(() => import('@triniti/cms/plugins/sys/components/redirect-screen/index.js'));
-const RoleScreen = lazy(() => import('@triniti/cms/plugins/iam/components/role-screen/index.js'));
-const SearchAppsScreen = lazy(() => import('@triniti/cms/plugins/iam/components/search-apps-screen/index.js'));
-const SearchArticlesScreen = lazy(() => import('@triniti/cms/plugins/news/components/search-articles-screen/index.js'));
-const SearchAssetsScreen = lazy(() => import('@triniti/cms/plugins/dam/components/search-assets-screen/index.js'));
-const SearchCategoriesScreen = lazy(() => import('@triniti/cms/plugins/taxonomy/components/search-categories-screen/index.js'));
-const SearchChannelsScreen = lazy(() => import('@triniti/cms/plugins/taxonomy/components/search-channels-screen/index.js'));
-const SearchFlagsetsScreen = lazy(() => import('@triniti/cms/plugins/sys/components/search-flagsets-screen/index.js'));
-const SearchGalleriesScreen = lazy(() => import('@triniti/cms/plugins/curator/components/search-galleries-screen/index.js'));
-const SearchNotificationsScreen = lazy(() => import('@triniti/cms/plugins/notify/components/search-notifications-screen/index.js'));
-const SearchPagesScreen = lazy(() => import('@triniti/cms/plugins/canvas/components/search-pages-screen/index.js'));
-const SearchPeopleScreen = lazy(() => import('@triniti/cms/plugins/people/components/search-people-screen/index.js'));
-const SearchPollsScreen = lazy(() => import('@triniti/cms/plugins/apollo/components/search-polls-screen/index.js'));
-const SearchPicklistsScreen = lazy(() => import('@triniti/cms/plugins/sys/components/search-picklists-screen/index.js'));
-const SearchPromotionsScreen = lazy(() => import('@triniti/cms/plugins/curator/components/search-promotions-screen/index.js'));
-const SearchRedirectsScreen = lazy(() => import('@triniti/cms/plugins/sys/components/search-redirects-screen/index.js'));
-const SearchRolesScreen = lazy(() => import('@triniti/cms/plugins/iam/components/search-roles-screen/index.js'));
-const SearchSponsorsScreen = lazy(() => import('@triniti/cms/plugins/boost/components/search-sponsors-screen/index.js'));
-const SearchTeasersScreen = lazy(() => import('@triniti/cms/plugins/curator/components/search-teasers-screen/index.js'));
-const SearchTimelinesScreen = lazy(() => import('@triniti/cms/plugins/curator/components/search-timelines-screen/index.js'));
-const SearchUsersScreen = lazy(() => import('@triniti/cms/plugins/iam/components/search-users-screen/index.js'));
-const SearchVideosScreen = lazy(() => import('@triniti/cms/plugins/ovp/components/search-videos-screen/index.js'));
-const SearchWidgetsScreen = lazy(() => import('@triniti/cms/plugins/curator/components/search-widgets-screen/index.js'));
-const SponsorScreen = lazy(() => import('@triniti/cms/plugins/boost/components/sponsor-screen/index.js'));
-const TeaserScreen = lazy(() => import('@triniti/cms/plugins/curator/components/teaser-screen/index.js'));
-const TimelineScreen = lazy(() => import('@triniti/cms/plugins/curator/components/timeline-screen/index.js'));
-const UserScreen = lazy(() => import('@triniti/cms/plugins/iam/components/user-screen/index.js'));
-const VideoScreen = lazy(() => import('@triniti/cms/plugins/ovp/components/video-screen/index.js'));
-const WidgetScreen = lazy(() => import('@triniti/cms/plugins/curator/components/widget-screen/index.js'));
+const FlagsetScreen = lazy(() => import('@tmz-apps/cms-js/plugins/sys/components/flagset-screen/index.js'));
+const GalleryScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/gallery-screen/index.js'));
+const LivestreamsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/ovp/components/livestreams-screen/index.js'));
+const LoginScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/login-screen/index.js'));
+const LogoutScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/logout-screen/index.js'));
+const NotificationScreen = lazy(() => import('@tmz-apps/cms-js/plugins/notify/components/notification-screen/index.js'));
+const PageScreen = lazy(() => import('@tmz-apps/cms-js/plugins/canvas/components/page-screen/index.js'));
+const PersonScreen = lazy(() => import('@tmz-apps/cms-js/plugins/people/components/person-screen/index.js'));
+const PollScreen = lazy(() => import('@tmz-apps/cms-js/plugins/apollo/components/poll-screen/index.js'));
+const PicklistScreen = lazy(() => import('@tmz-apps/cms-js/plugins/sys/components/picklist-screen/index.js'));
+const PromotionScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/promotion-screen/index.js'));
+const RedirectScreen = lazy(() => import('@tmz-apps/cms-js/plugins/sys/components/redirect-screen/index.js'));
+const RoleScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/role-screen/index.js'));
+const SearchAppsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/search-apps-screen/index.js'));
+const SearchArticlesScreen = lazy(() => import('@tmz-apps/cms-js/plugins/news/components/search-articles-screen/index.js'));
+const SearchAssetsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/search-assets-screen/index.js'));
+const SearchCategoriesScreen = lazy(() => import('@tmz-apps/cms-js/plugins/taxonomy/components/search-categories-screen/index.js'));
+const SearchChannelsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/taxonomy/components/search-channels-screen/index.js'));
+const SearchFlagsetsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/sys/components/search-flagsets-screen/index.js'));
+const SearchGalleriesScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/search-galleries-screen/index.js'));
+const SearchNotificationsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/notify/components/search-notifications-screen/index.js'));
+const SearchPagesScreen = lazy(() => import('@tmz-apps/cms-js/plugins/canvas/components/search-pages-screen/index.js'));
+const SearchPeopleScreen = lazy(() => import('@tmz-apps/cms-js/plugins/people/components/search-people-screen/index.js'));
+const SearchPollsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/apollo/components/search-polls-screen/index.js'));
+const SearchPicklistsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/sys/components/search-picklists-screen/index.js'));
+const SearchPromotionsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/search-promotions-screen/index.js'));
+const SearchRedirectsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/sys/components/search-redirects-screen/index.js'));
+const SearchRolesScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/search-roles-screen/index.js'));
+const SearchSponsorsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/boost/components/search-sponsors-screen/index.js'));
+const SearchTeasersScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/search-teasers-screen/index.js'));
+const SearchTimelinesScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/search-timelines-screen/index.js'));
+const SearchUsersScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/search-users-screen/index.js'));
+const SearchVideosScreen = lazy(() => import('@tmz-apps/cms-js/plugins/ovp/components/search-videos-screen/index.js'));
+const SearchWidgetsScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/search-widgets-screen/index.js'));
+const SponsorScreen = lazy(() => import('@tmz-apps/cms-js/plugins/boost/components/sponsor-screen/index.js'));
+const TeaserScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/teaser-screen/index.js'));
+const TimelineScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/timeline-screen/index.js'));
+const UserScreen = lazy(() => import('@tmz-apps/cms-js/plugins/iam/components/user-screen/index.js'));
+const VideoScreen = lazy(() => import('@tmz-apps/cms-js/plugins/ovp/components/video-screen/index.js'));
+const WidgetScreen = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/widget-screen/index.js'));
 
 export default () => (
   <Routes>
@@ -104,6 +104,7 @@ export default () => (
     <Route path="/ncr/ios-app/:id/*" element={<AppScreen label="ios-app" />} />
     <Route path="/ncr/ios-notification/:id/*" element={<NotificationScreen label="ios-notification" />} />
     <Route path="/ncr/link-teaser/:id/*" element={<TeaserScreen label="link-teaser" />} />
+    <Route path="/ncr/live-blog-update-teaser/:id/*" element={<TeaserScreen label="live-blog-update-teaser" />} />
     <Route path="/ncr/media-list-widget/:id/*" element={<WidgetScreen label="media-list-widget" />} />
     <Route path="/ncr/page/:id/*" element={<PageScreen />} />
     <Route path="/ncr/page-teaser/:id/*" element={<TeaserScreen label="page-teaser" />} />

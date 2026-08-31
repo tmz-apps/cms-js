@@ -1,5 +1,5 @@
 import React from 'react';
-import withBlockPreview from '@triniti/cms/blocksmith/components/with-block-preview/index.js';
+import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function TwitterTweetBlockPreview(props) {
   const { block } = props;

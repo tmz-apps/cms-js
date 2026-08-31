@@ -13,17 +13,19 @@ import {
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { $getNearestBlockElementAncestorOrThrow, mergeRegister } from '@lexical/utils';
 import { LinkNode } from '@lexical/link';
-import BlocksmithNode, { $createBlocksmithNode } from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
-import { getScrollTop, scrollToTop } from '@triniti/cms/components/screen/index.js';
-import { useFormContext } from '@triniti/cms/components/index.js';
-import areBlocksEqual from '@triniti/cms/blocksmith/utils/areBlocksEqual.js';
-import blocksToEditor from '@triniti/cms/blocksmith/utils/blocksToEditor.js';
-import editorToBlocks from '@triniti/cms/blocksmith/utils/editorToBlocks.js';
-import getSelectedNode from '@triniti/cms/blocksmith/utils/getSelectedNode.js';
-import marshalToFinalForm from '@triniti/cms/blocksmith/utils/marshalToFinalForm.js';
-import sanitizeNodes from '@triniti/cms/blocksmith/utils/sanitizeNodes.js';
+import BlocksmithNode, { $createBlocksmithNode } from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
+import { getScrollTop, scrollToTop } from '@tmz-apps/cms-js/components/screen/index.js';
+import { useFormContext } from '@tmz-apps/cms-js/components/index.js';
+import areBlocksEqual from '@tmz-apps/cms-js/blocksmith/utils/areBlocksEqual.js';
+import blocksToEditor from '@tmz-apps/cms-js/blocksmith/utils/blocksToEditor.js';
+import editorToBlocks from '@tmz-apps/cms-js/blocksmith/utils/editorToBlocks.js';
+import getSelectedNode from '@tmz-apps/cms-js/blocksmith/utils/getSelectedNode.js';
+import marshalToFinalForm from '@tmz-apps/cms-js/blocksmith/utils/marshalToFinalForm.js';
+import sanitizeNodes from '@tmz-apps/cms-js/blocksmith/utils/sanitizeNodes.js';
 
 export const INSERT_BLOCK_COMMAND = createCommand();
+export const INSERT_BLOCK_AT_BOTTOM_COMMAND = createCommand();
+export const INSERT_BLOCK_AT_TOP_COMMAND = createCommand();
 export const REMOVE_BLOCK_COMMAND = createCommand();
 export const REPLACE_BLOCK_COMMAND = createCommand();
 export const BLOCKSMITH_DIRTY = 'blocksmith.dirty';
@@ -118,6 +120,46 @@ export default function BlocksmithPlugin(props) {
 
         const $root = $getRoot();
         $root.append($node);
+        $node[selectMethod]();
+        return true;
+      }, COMMAND_PRIORITY_EDITOR),
+      editor.registerCommand(INSERT_BLOCK_AT_TOP_COMMAND, (payload) => {
+        const { newPbj = null } = payload;
+        let $node;
+        let selectMethod;
+        if (!newPbj) {
+          $node = $createParagraphNode();
+          selectMethod = 'select';
+        } else {
+          const curie = newPbj.schema().getCurie().toString();
+          $node = $createBlocksmithNode(curie, newPbj.toObject());
+          selectMethod = 'selectEnd';
+        }
+
+        const $root = $getRoot();
+        const $firstChild = $root.getFirstChild();
+        if ($firstChild) {
+          $firstChild.insertBefore($node);
+        } else {
+          $root.append($node);
+        }
+        $node[selectMethod]();
+        return true;
+      }, COMMAND_PRIORITY_EDITOR),
+      editor.registerCommand(INSERT_BLOCK_AT_BOTTOM_COMMAND, (payload) => {
+        const { newPbj = null } = payload;
+        let $node;
+        let selectMethod;
+        if (!newPbj) {
+          $node = $createParagraphNode();
+          selectMethod = 'select';
+        } else {
+          const curie = newPbj.schema().getCurie().toString();
+          $node = $createBlocksmithNode(curie, newPbj.toObject());
+          selectMethod = 'selectEnd';
+        }
+
+        $getRoot().append($node);
         $node[selectMethod]();
         return true;
       }, COMMAND_PRIORITY_EDITOR),

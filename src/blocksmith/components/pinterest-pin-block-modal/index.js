@@ -1,6 +1,6 @@
 import React from 'react';
-import { SelectField, SwitchField, UrlField } from '@triniti/cms/components/index.js';
-import withBlockModal from '@triniti/cms/blocksmith/components/with-block-modal/index.js';
+import { SelectField, SwitchField, UrlField } from '@tmz-apps/cms-js/components/index.js';
+import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
 
 const sizes = [
   { label: 'small', value: 'small' },

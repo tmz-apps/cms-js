@@ -1,7 +1,7 @@
 import { $getRoot } from 'lexical';
-import { $isBlocksmithNode } from '@triniti/cms/blocksmith/nodes/BlocksmithNode.js';
-import nodeToHtml from '@triniti/cms/blocksmith/utils/nodeToHtml.js';
-import { BLOCKSMITH_SANITIZE } from '@triniti/cms/blocksmith/plugins/BlocksmithPlugin.js';
+import { $isBlocksmithNode } from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
+import nodeToHtml from '@tmz-apps/cms-js/blocksmith/utils/nodeToHtml.js';
+import { BLOCKSMITH_SANITIZE } from '@tmz-apps/cms-js/blocksmith/plugins/BlocksmithPlugin.js';
 
 const EMPTY_HTML = ['<p><br></p>', '<p>&nbsp;</p>', '<p></p>'];
 const isEmptyHtml = (html) => {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ListGroup, ListGroupItem, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import SchemaCurie from '@gdbots/pbj/SchemaCurie.js';
-import useCuries from '@triniti/cms/plugins/pbjx/components/useCuries.js';
-import { ActionButton, withPbj } from '@triniti/cms/components/index.js';
-import usePolicy from '@triniti/cms/plugins/iam/components/usePolicy.js';
-import CreateAppForm from '@triniti/cms/plugins/iam/components/create-app-modal/CreateAppForm.js';
+import useCuries from '@tmz-apps/cms-js/plugins/pbjx/components/useCuries.js';
+import { ActionButton, withPbj } from '@tmz-apps/cms-js/components/index.js';
+import usePolicy from '@tmz-apps/cms-js/plugins/iam/components/usePolicy.js';
+import CreateAppForm from '@tmz-apps/cms-js/plugins/iam/components/create-app-modal/CreateAppForm.js';
 
 export default function CreateAppModal(props) {
   const policy = usePolicy();
@@ -25,7 +25,7 @@ export default function CreateAppModal(props) {
   const ComponentWithPbj = curie && withPbj(CreateAppForm, curie);
 
   return (
-    <Modal isOpen backdrop="static">
+    <Modal isOpen toggle={props.toggle}>
       {!curie && (
         <>
           <ModalHeader toggle={props.toggle}>Create App</ModalHeader>

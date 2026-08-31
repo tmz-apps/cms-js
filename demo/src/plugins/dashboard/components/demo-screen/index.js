@@ -74,10 +74,10 @@ import {
   SwitchField,
   withForm,
   withPbj
-} from '@triniti/cms/components/index.js';
+} from '@tmz-apps/cms-js/components/index.js';
 import ModalExample from './Modals.js';
 import './styles.scss';
-import toast from '@triniti/cms/utils/toast.js';
+import toast from '@tmz-apps/cms-js/utils/toast.js';
 
 function sweetAlert1(e) {
   e.preventDefault();
@@ -4787,13 +4787,13 @@ function DemoScreen() {
         </CardHeader>
         <CardBody>
           <p>Somewhere in here is a <a href="#" id="UncontrolledTooltipExample">tooltip</a>.</p>
-          <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
+          <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample" fade={false}>
             Hello world!
           </UncontrolledTooltip>
         </CardBody>
         <CardBody>
           <Button id="ScheduleUpdateTooltip">Click me</Button>
-          <UncontrolledTooltip placement="right" target="ScheduleUpdateTooltip">
+          <UncontrolledTooltip placement="right" target="ScheduleUpdateTooltip" fade={false}>
             placement="right"
           </UncontrolledTooltip>
         </CardBody>

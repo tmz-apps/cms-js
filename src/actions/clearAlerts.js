@@ -1,3 +1,3 @@
-import { actionTypes } from '@triniti/cms/constants.js';
+import { actionTypes } from '@tmz-apps/cms-js/constants.js';
 
 export default () => ({ type: actionTypes.ALERTS_CLEARED });

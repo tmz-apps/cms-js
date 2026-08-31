@@ -1,14 +1,14 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
-import { DatePickerField, SwitchField, TextareaField, TextField } from '@triniti/cms/components/index.js';
-import AdvertisingFields from '@triniti/cms/plugins/common/components/advertising-fields/index.js';
-import SeoTitleField from '@triniti/cms/plugins/common/components/seo-title-field/index.js';
-import ImageAssetPickerField from '@triniti/cms/plugins/dam/components/image-asset-picker-field/index.js';
-import PicklistField from '@triniti/cms/plugins/sys/components/picklist-field/index.js';
-import SlugField from '@triniti/cms/plugins/ncr/components/slug-field/index.js';
-import SponsorPickerField from '@triniti/cms/plugins/boost/components/sponsor-picker-field/index.js';
-import TaggableFields from '@triniti/cms/plugins/common/components/taggable-fields/index.js';
-import TimelinePickerField from '@triniti/cms/plugins/curator/components/timeline-picker-field/index.js';
+import { DatePickerField, SwitchField, TextareaField, TextField } from '@tmz-apps/cms-js/components/index.js';
+import AdvertisingFields from '@tmz-apps/cms-js/plugins/common/components/advertising-fields/index.js';
+import SeoTitleField from '@tmz-apps/cms-js/plugins/common/components/seo-title-field/index.js';
+import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
+import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.js';
+import SponsorPickerField from '@tmz-apps/cms-js/plugins/boost/components/sponsor-picker-field/index.js';
+import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-fields/index.js';
+import TimelinePickerField from '@tmz-apps/cms-js/plugins/curator/components/timeline-picker-field/index.js';
 
 export default function DetailsTab(props) {
   const { node } = props;
@@ -43,6 +43,9 @@ export default function DetailsTab(props) {
           )}
 
           <TimelinePickerField name="related_timeline_refs" label="Related Timelines" isMulti />
+          {schema.hasField('is_live_blog') && (
+            <SwitchField name="is_live_blog" label="Live Blog" />
+          )}
           <SwitchField name="allow_comments" label="Allow Comments" />
         </CardBody>
       </Card>

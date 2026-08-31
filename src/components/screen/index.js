@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, NavItem } from 'reactstrap';
 import kebabCase from 'lodash-es/kebabCase.js';
 import { useDispatch } from 'react-redux';
-import { Icon, Nav, RouterLink } from '@triniti/cms/components/index.js';
-import AlertBar from '@triniti/cms/components/screen/AlertBar.js';
-import PrimaryActions from '@triniti/cms/components/screen/PrimaryActions.js';
-import changeNavbar from '@triniti/cms/actions/changeNavbar.js';
+import { Icon, Nav, RouterLink } from '@tmz-apps/cms-js/components/index.js';
+import AlertBar from '@tmz-apps/cms-js/components/screen/AlertBar.js';
+import PrimaryActions from '@tmz-apps/cms-js/components/screen/PrimaryActions.js';
+import changeNavbar from '@tmz-apps/cms-js/actions/changeNavbar.js';
 
 let screenBody = null;
 export const scrollToTop = (behavior = 'smooth', top = 0) => {
@@ -130,11 +130,28 @@ export default function Screen(props) {
 
         {tabs.length > 0 && (
           <Nav underline className="screen-navtabs">
-            {tabs.map((tab) => {
+            {tabs.map(tab => {
               if (!tab) {
                 return null;
               }
+
+              // Otherwise, treat it as a simple config object
               const isActive = kebabCase(tab.text) === activeTab;
+
+              // If tab has a component property, render that component
+              if (tab.component) {
+                const Component = tab.component;
+                return (
+                  <Component
+                    key={tab.to}
+                    text={tab.text}
+                    to={tab.to}
+                    isActive={isActive}
+                    {...(tab.componentProps || {})}
+                  />
+                );
+              }
+
               return (
                 <NavItem key={tab.to} onClick={() => scrollToTop('auto')} active={isActive}>
                   <RouterLink navTab to={tab.to} active={isActive}>

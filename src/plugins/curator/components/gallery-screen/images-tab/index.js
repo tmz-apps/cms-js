@@ -1,19 +1,24 @@
-import React, { lazy } from 'react';
+import React, { lazy, useState } from 'react';
 import { Button, Card, CardBody, CardHeader, CardText, Row, Spinner } from 'reactstrap';
 import { closestCenter, DndContext, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { rectSortingStrategy, SortableContext } from '@dnd-kit/sortable';
 import SearchAssetsSort from '@triniti/schemas/triniti/dam/enums/SearchAssetsSort.js';
-import { ActionButton, CreateModalButton, Icon, Loading, Pager } from '@triniti/cms/components/index.js';
-import withRequest from '@triniti/cms/plugins/pbjx/components/with-request/index.js';
-import useDelegate from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/useDelegate.js';
-import SortableImage from '@triniti/cms/plugins/curator/components/gallery-screen/images-tab/SortableImage.js';
+import { ActionButton, CreateModalButton, Icon, Loading, Pager } from '@tmz-apps/cms-js/components/index.js';
+import withRequest from '@tmz-apps/cms-js/plugins/pbjx/components/with-request/index.js';
+import useDelegate from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/useDelegate.js';
+import SortableImage from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/SortableImage.js';
+import ResizeGallerySlider from '@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/ResizeGallerySlider.js';
 
-const AddImagesModal = lazy(() => import('@triniti/cms/plugins/curator/components/gallery-screen/images-tab/AddImagesModal.js'));
-const PatchAssetsModal = lazy(() => import('@triniti/cms/plugins/dam/components/patch-assets-modal/index.js'));
+const AddImagesModal = lazy(() => import('@tmz-apps/cms-js/plugins/curator/components/gallery-screen/images-tab/AddImagesModal.js'));
+const PatchAssetsModal = lazy(() => import('@tmz-apps/cms-js/plugins/dam/components/patch-assets-modal/index.js'));
 
 function ImagesTab(props) {
   const { nodeRef, request } = props;
   const delegate = useDelegate(props);
+  const DEFAULT_IMAGES_PER_ROW = 7;
+  const MAX_IMAGES_PER_ROW = 11;
+  const MIN_IMAGES_PER_ROW = 1;
+  const [ imagesPerRow, setImagesPerRow ] = useState(DEFAULT_IMAGES_PER_ROW);
   const {
     batch,
     ids,
@@ -36,10 +41,34 @@ function ImagesTab(props) {
     }),
   );
 
+  const handleIncreaseImagesPerRow = () => {
+    if (imagesPerRow <= MAX_IMAGES_PER_ROW) {
+      setImagesPerRow(imagesPerRow + 1);
+    }
+  };
+
+  const handleDecreaseImagesPerRow = () => {
+    if (imagesPerRow > MIN_IMAGES_PER_ROW) {
+      setImagesPerRow(imagesPerRow - 1);
+    }
+  };
+
+  const handleSlideImagesPerRow = (e) => {
+    setImagesPerRow(parseFloat(e.target.value));
+  };
+
   return (
     <Card>
       <CardHeader>
         <span>Images{total > 0 ? ` (${total})` : ''} {isRunning && <Spinner />}</span>
+        <ResizeGallerySlider 
+          imagesPerRow={imagesPerRow}
+          maxImagesPerRow={MAX_IMAGES_PER_ROW}
+          minImagesPerRow={MIN_IMAGES_PER_ROW}
+          onIncreaseImagesPerRow={handleIncreaseImagesPerRow}
+          onDecreaseImagesPerRow={handleDecreaseImagesPerRow}
+          onSlideImagesPerRow={handleSlideImagesPerRow}
+        />
         <span>
           {canReorder && isReordering && (
             <>
@@ -133,6 +162,7 @@ function ImagesTab(props) {
                         index={index}
                         seq={seqs[index]}
                         image={images[id]}
+                        imagesPerRow={imagesPerRow}
                         batch={batch}
                         canReorder={canReorder}
                         isReordering={isReordering}

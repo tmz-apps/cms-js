@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
 import { Col, Row } from 'reactstrap';
-import { SelectField, TextField } from '@triniti/cms/components/index.js';
+import { SelectField, TextField } from '@tmz-apps/cms-js/components/index.js';
 
 const fragments = [0, 1, 2];
 

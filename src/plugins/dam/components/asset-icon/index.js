@@ -1,8 +1,8 @@
 import React from 'react';
 import { Media } from 'reactstrap';
 import AssetId from '@triniti/schemas/triniti/dam/AssetId.js';
-import damUrl from '@triniti/cms/plugins/dam/damUrl.js';
-import { Icon } from '@triniti/cms/components/index.js';
+import damUrl from '@tmz-apps/cms-js/plugins/dam/damUrl.js';
+import { Icon } from '@tmz-apps/cms-js/components/index.js';
 
 function ArchiveAsset() {
   return (
