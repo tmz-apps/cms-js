@@ -4,6 +4,7 @@
 ## v1.3.0+0
 * resolve faucet incompatibility with multiple test files
 * add `.github/workflows/publish-package.yaml` to auto-publish to github packages on release tag.
+* modify `.github/workflows/validate-release.yaml` to validate without external dependency.
 
 
 ## v1.3.0
