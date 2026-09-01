@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/tmz-apps/cms-js.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "scripts": {
     "build": "npm run clean && npm run build:babel && npm run build:prepub",
