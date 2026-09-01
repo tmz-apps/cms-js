@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## v1.3.1
+* resolve faucet incompatibility with multiple test files
+
+
 ## v1.3.0
 * dam :: Adjust batch upload form's "Apply To All" fix to address a new regression that after saving an article, the save button remains enabled.
 * blocksmith :: Parse and save TikTok username in tiktok-embed-block modal.
