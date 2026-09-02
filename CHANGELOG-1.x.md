@@ -1,6 +1,12 @@
 # CHANGELOG
 
 
+## v1.3.0+0
+* resolve faucet incompatibility with multiple test files
+* add `.github/workflows/publish-package.yaml` to auto-publish to github packages on release tag.
+* modify `.github/workflows/validate-release.yaml` to validate without external dependency.
+
+
 ## v1.3.0
 * dam :: Adjust batch upload form's "Apply To All" fix to address a new regression that after saving an article, the save button remains enabled.
 * blocksmith :: Parse and save TikTok username in tiktok-embed-block modal.

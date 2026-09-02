@@ -11,9 +11,152 @@ on:
       - ready_for_review
 
 jobs:
-  call-validation-workflow:
+  validate-release-candidate:
     if: github.event.pull_request.draft == false
-    uses: tmz-apps/tmz-devops/.github/workflows/validate-app-release.yaml@main
-    with:
-      base_ref: ${{ github.base_ref }}
-      head_ref: ${{ github.head_ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'checkout base'
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.base_ref }}
+      - name: 'gather previous release config'
+        run: |
+          base_version=
+          for file in package.json package-lock.json; do
+            if ! [ -f $file ]; then
+              continue
+            fi
+
+            file_version=$(jq -r '.version' $file 2>/dev/null)
+            if [ -n "$base_version" ] && [ "$base_version" != "$file_version" ]; then
+              echo "The versions in package.json and package-lock.json must match. Found both $base_version and $file_version (from $file) on the base."
+              exit 1
+            fi
+
+            base_version=$file_version
+          done
+
+          if [ -z "${base_version}" ]; then
+            echo 'No version found on the base.'
+            exit 1
+          fi
+
+          if [[ $base_version =~ ^[0-9]+\.[0-9]+\.[0-9]+\+[0-9]$ ]]; then
+            echo 'Hotfix'
+          elif ! [[ $base_version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo 'The base version is invalid.'
+            exit 1
+          fi
+
+          base_lockfile_version=$(jq -r '.lockfileVersion' package-lock.json)
+          if [ 'null' == "$base_lockfile_version" ]; then
+            echo 'The package-lock.json file is invalid on the base.'
+            exit 1
+          fi
+          echo "BASE_LOCKFILE_VERSION=$base_lockfile_version" >> "$GITHUB_ENV"
+
+          echo "BASE_VERSION=$base_version" >> "$GITHUB_ENV"
+      - name: 'checkout head'
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+      - name: 'validate release candidate config'
+        run: |
+          head_version=
+          for file in package.json package-lock.json; do
+            if ! [ -f $file ]; then
+              continue
+            fi
+
+            file_version=$(jq -r '.version' $file 2>/dev/null)
+            if [ -n "$head_version" ] && [ "$head_version" != "$file_version" ]; then
+              echo "The versions in package.json and package-lock.json must match. Found both $head_version and $file_version (from $file) on the head."
+              exit 1
+            fi
+
+            head_version=$file_version
+          done
+
+          if [ -z "$head_version" ]; then
+            echo 'No version found on the head.'
+            exit 1
+          fi
+
+          if [ "$head_version" == "$BASE_VERSION" ]; then
+            echo 'The base and head versions must not be identical.'
+            exit 1
+          fi
+
+          if [[ $head_version =~ ^[0-9]+\.[0-9]+\.[0-9]+\+[0-9]$ ]]; then
+            echo 'Hotfix'
+          elif ! [[ $head_version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo 'The head version is invalid.'
+            exit 1
+          fi
+
+          if ! [ -f package-lock.json ]; then
+            echo 'The package-lock.json file is missing on the head.'
+            exit 1
+          fi
+          head_lockfile_version=$(jq -r '.lockfileVersion' package-lock.json)
+          if [ 'null' == "$head_lockfile_version" ]; then
+            echo 'The package-lock.json file is invalid on the head.'
+            exit 1
+          fi
+          if [[ "$head_lockfile_version" -lt "$BASE_LOCKFILE_VERSION" ]]; then
+            echo 'The lockfile version cannot be decremented.'
+            exit 1
+          fi
+
+          head_major=$(cut -d '.' -f 1 <<<"$head_version")
+          base_major=$(cut -d '.' -f 1 <<<"$BASE_VERSION")
+          if [ "$head_major" -gt "$base_major" ]; then
+            exit 0
+          fi
+
+          if [ "$head_major" -lt "$base_major" ]; then
+            echo 'The head version cannot be decremented.'
+            exit 1
+          fi
+
+          head_minor=$(cut -d '.' -f 2 <<<"$head_version")
+          base_minor=$(cut -d '.' -f 2 <<<"$BASE_VERSION")
+          if [ "$head_minor" -gt "$base_minor" ]; then
+            exit 0
+          fi
+
+          if [ "$head_minor" -lt "$base_minor" ]; then
+            echo 'The head version cannot be decremented.'
+            exit 1
+          fi
+
+          head_patch=$(cut -d '.' -f 3 <<<"$head_version" | cut -d '+' -f 1)
+          base_patch=$(cut -d '.' -f 3 <<<"$BASE_VERSION" | cut -d '+' -f 1)
+          if [ "$head_patch" -gt "$base_patch" ]; then
+            exit 0
+          fi
+
+          if [ "$head_patch" -lt "$base_patch" ]; then
+            echo 'The head version cannot be decremented.'
+            exit 1
+          fi
+
+          if [[ ! $BASE_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+\+[0-9]$ ]]; then
+            exit 0
+          fi
+
+          if [[ $head_version =~ ^[0-9]+\.[0-9]+\.[0-9]+\+[0-9]+$ ]]; then
+            head_hotfix=$(cut -d '+' -f 2 <<<"$head_version")
+            base_hotfix=$(cut -d '+' -f 2 <<<"$BASE_VERSION")
+            if [ "$head_hotfix" -gt "$base_hotfix" ]; then
+              exit 0
+            fi
+
+            if [ "$head_hotfix" -lt "$base_hotfix" ]; then
+              echo 'The head version cannot be decremented.'
+              exit 1
+            fi
+          fi
+
+          echo 'The head version is invalid.'
+          exit 1
