@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## vN.N.N
+* issue tmz-apps/tmz-cms#1627: Polish Swipe Preview on Gal Blocks
+
+
 ## v1.3.0+0
 * resolve faucet incompatibility with multiple test files
 * add `.github/workflows/publish-package.yaml` to auto-publish to github packages on release tag.
