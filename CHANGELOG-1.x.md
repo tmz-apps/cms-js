@@ -2,7 +2,9 @@
 
 
 ## vN.N.N
+* issue tmz-apps/tmz-cms#1627: Polish Swipe Preview on Gal Blocks
 * ncr :: Update node history card value renderer to display links from a group or set of valid URLs.
+
 
 
 ## v1.3.0+0
