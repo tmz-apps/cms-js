@@ -17,6 +17,8 @@ export default function SingleSelectField(props) {
     description,
     nestedPbj,
     pbjName,
+    parse,
+    format,
     debounceTimeout = 400,
     isClearable = true,
     readOnly = false,

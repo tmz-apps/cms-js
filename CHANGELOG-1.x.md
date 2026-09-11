@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## vN.N.N
+* issue tmz-apps/tmz-cms#1626: Sagas 2.0 (aka slider-block)
+
+
 ## v1.3.0+0
 * resolve faucet incompatibility with multiple test files
 * add `.github/workflows/publish-package.yaml` to auto-publish to github packages on release tag.
