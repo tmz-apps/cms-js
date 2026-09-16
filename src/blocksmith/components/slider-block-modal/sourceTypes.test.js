@@ -5,6 +5,7 @@ import {
   schemaIdFor,
   sourceTypeFor,
   sourceTypesFor,
+  v1SourceTypesFor,
 } from './sourceTypes.js';
 
 test('sourceTypesFor only offers timeline, gallery and type on teasers', (t) => {
@@ -40,5 +41,13 @@ test('sourceTypeFor picks the populated filter', (t) => {
   cases.forEach(([contentType, searchRequest, expected, description]) => {
     t.equal(sourceTypeFor(contentType, searchRequest), expected, description);
   });
+  t.end();
+});
+
+test('v1SourceTypesFor keeps the content type order and only offers v1 sources', (t) => {
+  Object.keys(CONTENT_TYPES).forEach((contentType) => {
+    t.deepEqual(v1SourceTypesFor(contentType), ['category'], contentType);
+  });
+  t.deepEqual(v1SourceTypesFor('nope'), [], 'unknown content type');
   t.end();
 });

@@ -53,3 +53,6 @@ export const sourceTypeFor = (contentType, searchRequest) => sourceTypesFor(cont
     const value = searchRequest?.[SOURCE_TYPES[sourceType].field];
     return Array.isArray(value) ? value.length > 0 : !!value;
   });
+
+export const v1SourceTypesFor = (contentType) => sourceTypesFor(contentType)
+  .filter(sourceType => V1_SOURCE_TYPES.includes(sourceType));
