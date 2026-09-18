@@ -482,6 +482,7 @@ icons['pinterest-pin-block'] = icons['pinterest'];
 icons['poll-block'] = icons['poll'];
 icons['poll-grid-block'] = icons['poll-grid'];
 icons['quote-block'] = icons['quote'];
+icons['slider-block'] = icons['list-cards'];
 icons['soundcloud-audio-block'] = icons['soundcloud'];
 icons['spotify-embed-block'] = icons['spotify'];
 icons['spotify-track-block'] = icons['spotify'];
