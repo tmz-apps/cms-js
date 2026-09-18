@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { FORM_ERROR } from 'final-form';
 import startCase from 'lodash-es/startCase.js';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
@@ -18,7 +18,6 @@ function BlockModal(props) {
     canCreate = true,
     editMode,
     ModalFields,
-    Footer,
     delegate,
     form,
     formState,
@@ -28,8 +27,6 @@ function BlockModal(props) {
 
   const { dirty, hasSubmitErrors, submitErrors, submitting, valid } = formState;
   const submitDisabled = submitting || !valid || (!isNew && !dirty);
-  const showSubmit = editMode && ((!isNew && canUpdate) || (isNew && canCreate));
-  const [step, setStep] = useState(1);
   const schema = pbj.schema();
 
   delegate.handleUpdate = form.submit;
@@ -60,51 +57,33 @@ function BlockModal(props) {
       <ModalBody>
         {hasSubmitErrors && <FormErrors errors={submitErrors} />}
         <Form onSubmit={handleSubmit} autoComplete="off">
-          <ModalFields {...props} step={step} setStep={setStep} />
+          <ModalFields {...props} />
         </Form>
       </ModalBody>
       <ModalFooter>
-        {Footer ? (
-          <Footer
-            step={step}
-            setStep={setStep}
-            isNew={isNew}
-            title={title}
-            showSubmit={showSubmit}
-            submitDisabled={submitDisabled}
-            onSubmit={delegate.handleUpdate}
-            toggle={props.toggle}
+        <ActionButton
+          text={isNew ? 'Cancel' : 'Close'}
+          onClick={props.toggle}
+          icon="close-sm"
+          color="light"
+          tabIndex="-1"
+        />
+        {editMode && ((!isNew && canUpdate) || (isNew && canCreate)) && (
+          <ActionButton
+            type="submit"
+            text={isNew ? `Add ${title}` : `Update ${title}`}
+            onClick={delegate.handleUpdate}
+            disabled={submitDisabled}
+            icon={isNew ? 'plus-outline' : 'save'}
+            color="primary"
           />
-        ) : (
-          <>
-            <ActionButton
-              text={isNew ? 'Cancel' : 'Close'}
-              onClick={props.toggle}
-              icon="close-sm"
-              color="light"
-              tabIndex="-1"
-            />
-            {showSubmit && (
-              <ActionButton
-                type="submit"
-                text={isNew ? `Add ${title}` : `Update ${title}`}
-                onClick={delegate.handleUpdate}
-                disabled={submitDisabled}
-                icon={isNew ? 'plus-outline' : 'save'}
-                color="primary"
-              />
-            )}
-          </>
         )}
       </ModalFooter>
     </Modal>
   );
 }
 
-// Footer, when given, replaces the default Cancel/Add buttons so a block
-// can walk the user through steps. It receives step/setStep along with
-// the same submit wiring the default footer uses.
-export default function withBlockModal(Component, { Footer = null } = {}) {
+export default function withBlockModal(Component) {
   return function ComponentWithBlockModal(props) {
     const {
       curie,
@@ -132,7 +111,6 @@ export default function withBlockModal(Component, { Footer = null } = {}) {
       <BlockModalWithPbj
         {...props}
         ModalFields={Component}
-        Footer={Footer}
         editor={editor}
         editMode={editMode && (canUpdate || canCreate)}
         containerFormContext={formContext}
