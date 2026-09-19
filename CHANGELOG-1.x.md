@@ -5,6 +5,7 @@
 * blocksmith :: Sagas 2.0 (aka slider-block)
 * blocksmith :: Polish Swipe Preview on Gal Blocks
 * ncr :: Update node history card value renderer to display links from a group or set of valid URLs.
+* Fixed date formatting for timestamp fields
 
 
 ## v1.3.0+0
