@@ -1,5 +1,6 @@
 # CHANGELOG
 
+
 ## vN.N.N
 * Fix malformed JSX in the video block preview component
 
