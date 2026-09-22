@@ -2,7 +2,6 @@ export default {
   blocks: {
     // example custom config for a block
     // 'article-block': { title: 'Acme Article', icon: 'star' },
-    'slider-block': { title: 'Article Slider' },
   },
   selector: {
     blocks: [
@@ -21,7 +20,6 @@ export default {
       'poll-block',
       'poll-grid-block',
       'quote-block',
-      'slider-block',
       'video-block',
     ],
     externalBlocks: [
