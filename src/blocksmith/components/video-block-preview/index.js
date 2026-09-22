@@ -30,7 +30,7 @@ function VideoBlockPreview(props) {
             <th className="nowrap ps-2 pt-0" scope="row">Title:</th>
             <td className="w-100 text-break pt-0">
               <a href={internalUrl} target="_blank">
-                {block.get('title', node.get('title'))}}
+                {block.get('title', node.get('title'))}
               </a>
             </td>
           </tr>

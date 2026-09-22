@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## vN.N.N
+* Fix malformed JSX in the video block preview component
+
 
 ## v1.3.0+0
 * resolve faucet incompatibility with multiple test files
