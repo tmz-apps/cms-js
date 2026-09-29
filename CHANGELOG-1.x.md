@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-## vN.N.N
+## v1.3.1
 * Fix malformed JSX in the video block preview component
 * blocksmith :: Polish Swipe Preview on Gal Blocks
 * ncr :: Update node history card value renderer to display links from a group or set of valid URLs.
