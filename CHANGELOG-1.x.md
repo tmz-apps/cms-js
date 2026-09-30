@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v1.3.1
+* Fix malformed JSX in the video block preview component
+* blocksmith :: Polish Swipe Preview on Gal Blocks
+* ncr :: Update node history card value renderer to display links from a group or set of valid URLs.
+* Fixed date formatting for timestamp fields
+
+
 ## v1.3.0+0
 * resolve faucet incompatibility with multiple test files
 * add `.github/workflows/publish-package.yaml` to auto-publish to github packages on release tag.
