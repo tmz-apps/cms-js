@@ -7,6 +7,8 @@ import TaggableFields from '@tmz-apps/cms-js/plugins/common/components/taggable-
 import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image-asset-picker-field/index.js';
 import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.js';
 import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
+import AuthorFields from '@tmz-apps/cms-js/plugins/people/components/person-screen/AuthorFields.js';
+import SocialPresence from '@tmz-apps/cms-js/plugins/people/components/person-screen/SocialPresence.js';
 import HashtagPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/hashtag-picker-field/index.js';
 
 const bioSourceOptions = [
@@ -31,7 +33,6 @@ export default function DetailsTab(props) {
           <TextareaField name="bio" label="Bio" rows={10} />
           <SwitchField name="is_celebrity" label="Is Celebrity" />
           <UrlField name="imdb_url" label="Imdb Url" />
-          <TextField name="twitter_username" label="Twitter Username" />
           {schema.hasMixin('triniti:common:mixin:themeable') && (
             <PicklistField picklist="person-themes" name="theme" label="Theme" />
           )}
@@ -45,6 +46,8 @@ export default function DetailsTab(props) {
         <Blocksmith isVisible={tab === 'details'} />
       )}
 
+      <AuthorFields />
+      <SocialPresence />
       <AdvertisingFields />
       <TaggableFields />
     </>
