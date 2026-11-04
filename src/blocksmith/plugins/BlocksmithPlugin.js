@@ -231,9 +231,13 @@ export default function BlocksmithPlugin(props) {
         isEqual: areBlocksEqual,
         initialValue: initialValueRef.current,
         beforeSubmit: () => {
+          // final-form 5.0.1 runs beforeSubmit before waiting on async validation
+          // and re-enters submit() once validation settles. Compare against the
+          // current form value so the second pass is a no-op instead of another
+          // change (new array ref) that queues more validation and loops forever.
           const blocks = editorToBlocks(editor);
           const newValue = blocks.length > 0 ? blocks : undefined;
-          if (!areBlocksEqual(newValue, initialValueRef.current)) {
+          if (!areBlocksEqual(newValue, form.getState().values[name])) {
             form.change(name, newValue);
           }
         }

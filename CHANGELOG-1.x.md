@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## vN.N.N
+* deps :: Unpin `final-form`, `final-form-arrays`, `react-final-form`. Fix Blocksmith `beforeSubmit` submit loop on final-form 5.0.1.
+
+
 ## v1.3.1
 * Fix malformed JSX in the video block preview component
 * blocksmith :: Polish Swipe Preview on Gal Blocks
