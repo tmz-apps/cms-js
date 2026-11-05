@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
 import { TextField } from '@tmz-apps/cms-js/components/index.js';
 
-export default function SocialPresence () {
+export default function SocialFields () {
   return (
     <Card>
       <CardHeader>Social Presence</CardHeader>
@@ -14,4 +14,3 @@ export default function SocialPresence () {
     </Card>
   );
 }
-        

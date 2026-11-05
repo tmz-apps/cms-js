@@ -8,7 +8,7 @@ import ImageAssetPickerField from '@tmz-apps/cms-js/plugins/dam/components/image
 import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.js';
 import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 import AuthorFields from '@tmz-apps/cms-js/plugins/people/components/person-screen/AuthorFields.js';
-import SocialPresence from '@tmz-apps/cms-js/plugins/people/components/person-screen/SocialPresence.js';
+import SocialFields from '@tmz-apps/cms-js/plugins/people/components/person-screen/SocialFields.js';
 import HashtagPickerField from '@tmz-apps/cms-js/plugins/taxonomy/components/hashtag-picker-field/index.js';
 
 const bioSourceOptions = [
@@ -47,7 +47,7 @@ export default function DetailsTab(props) {
       )}
 
       <AuthorFields />
-      <SocialPresence />
+      <SocialFields />
       <AdvertisingFields />
       <TaggableFields />
     </>
