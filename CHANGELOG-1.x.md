@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## vN.N.N
+* blocksmith :: prevent invalid links from being saved or pasted. Also handling undo/redo so they don't get restored
+
+
 ## v1.3.1
 * Fix malformed JSX in the video block preview component
 * blocksmith :: Polish Swipe Preview on Gal Blocks
