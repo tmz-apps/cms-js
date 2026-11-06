@@ -7,6 +7,7 @@ export default withRequest(NodePickerField, 'triniti:people:request:search-peopl
   initialData: {
     sort: SearchPeopleSort.TITLE_ASC.getValue(),
     is_author: true,
-    autocomplete: true
+    q: '+is_author:true',
+    autocomplete: true,
   }
 });
