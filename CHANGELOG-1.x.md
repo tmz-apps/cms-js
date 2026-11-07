@@ -3,6 +3,8 @@
 
 ## vN.N.N
 * Support Author Fields
+* blocksmith :: prevent invalid links from being saved or pasted. Also handling undo/redo so they don't get restored
+* deps :: Unpin `final-form`, `final-form-arrays`, `react-final-form`. Fix Blocksmith `beforeSubmit` submit loop on final-form 5.0.1.
 
 
 ## v1.3.1

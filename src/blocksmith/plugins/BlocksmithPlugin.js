@@ -9,10 +9,12 @@ import {
   COMMAND_PRIORITY_EDITOR,
   COMMAND_PRIORITY_HIGH,
   PASTE_COMMAND,
+  SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
 } from 'lexical';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { $getNearestBlockElementAncestorOrThrow, mergeRegister } from '@lexical/utils';
-import { LinkNode } from '@lexical/link';
+import { $dfs, $getNearestBlockElementAncestorOrThrow, $unwrapNode, mergeRegister } from '@lexical/utils';
+import { $isLinkNode, LinkNode } from '@lexical/link';
+import isValidUrl from '@gdbots/pbj/utils/isValidUrl.js';
 import BlocksmithNode, { $createBlocksmithNode } from '@tmz-apps/cms-js/blocksmith/nodes/BlocksmithNode.js';
 import { getScrollTop, scrollToTop } from '@tmz-apps/cms-js/components/screen/index.js';
 import { useFormContext } from '@tmz-apps/cms-js/components/index.js';
@@ -179,6 +181,20 @@ export default function BlocksmithPlugin(props) {
         }
         return true;
       }, COMMAND_PRIORITY_EDITOR),
+      editor.registerCommand(SELECTION_INSERT_CLIPBOARD_NODES_COMMAND, ({ nodes }) => {
+        const sanitizedNodes = nodes.flatMap(($node) => {
+          for (const { node: $child } of $dfs($node)) {
+            if ($child !== $node && $isLinkNode($child) && !isValidUrl($child.getURL())) {
+              $unwrapNode($child);
+            }
+          }
+
+          return $isLinkNode($node) && !isValidUrl($node.getURL()) ? $node.getChildren() : [$node];
+        });
+
+        nodes.splice(0, nodes.length, ...sanitizedNodes);
+        return false;
+      }, COMMAND_PRIORITY_HIGH),
       editor.registerCommand(PASTE_COMMAND, () => {
         setTimeout(() => {
           sanitizeNodes(editor);
@@ -231,9 +247,13 @@ export default function BlocksmithPlugin(props) {
         isEqual: areBlocksEqual,
         initialValue: initialValueRef.current,
         beforeSubmit: () => {
+          // final-form 5.0.1 runs beforeSubmit before waiting on async validation
+          // and re-enters submit() once validation settles. Compare against the
+          // current form value so the second pass is a no-op instead of another
+          // change (new array ref) that queues more validation and loops forever.
           const blocks = editorToBlocks(editor);
           const newValue = blocks.length > 0 ? blocks : undefined;
-          if (!areBlocksEqual(newValue, initialValueRef.current)) {
+          if (!areBlocksEqual(newValue, form.getState().values[name])) {
             form.change(name, newValue);
           }
         }
