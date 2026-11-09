@@ -17,7 +17,7 @@ export default async (q, lastOptions, additional) => {
   const request = additional.request;
 
   try {
-    request.set('q', q);
+    request.set('q', `${q} ${request.get('q', '')}`);
     request.set('page', additional.page);
     const response = await makeRequest(request);
     return {
