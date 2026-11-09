@@ -4,7 +4,7 @@ import SlugField from '@tmz-apps/cms-js/plugins/ncr/components/slug-field/index.
 import SeoTitleField from '@tmz-apps/cms-js/plugins/common/components/seo-title-field/index.js';
 import Blocksmith from '@tmz-apps/cms-js/blocksmith/index.js';
 import { DatePickerField, KeyValuesField, NumberField, SwitchField } from '@tmz-apps/cms-js/components/index.js';
-import AuthorsPickerField from '@tmz-apps/cms-js/plugins/people/components/authors-picker-field/index.js';
+import AuthorPickerField from '@tmz-apps/cms-js/plugins/people/components/author-picker-field/index.js';
 import PicklistField from '@tmz-apps/cms-js/plugins/sys/components/picklist-field/index.js';
 import HeadlineFragmentsCard from '@tmz-apps/cms-js/plugins/news/components/headline-fragments-card/index.js';
 import slottingKeys from '@triniti/app/config/slottingKeys.js';
@@ -24,7 +24,7 @@ export default function StoryTab(props) {
         <CardBody className="pb-0">
           <SeoTitleField />
           <SlugField withDatedSlug />
-          <AuthorsPickerField name="author_refs" label="Authors" isMulti sortable />
+          <AuthorPickerField name="author_refs" label="Authors" isMulti sortable />
           {schema.hasMixin('triniti:curator:mixin:teaserable') && (
             <DatePickerField name="order_date" label="Order Date" />
           )}
