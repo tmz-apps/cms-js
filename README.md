@@ -35,6 +35,11 @@ import { MyCustomComponent } from '@triniti/app/components/my-custom-component';
 import { vendorConfig } from '@triniti/app/config';
 ```
 
+## Dependencies
+
+### `@gdbots/pbj`
+The app and schema packages must share a single `@gdbots/pbj` 4.x, otherwise `MessageResolver` throws `NoMessageForSchemaId`.
+
 ## Component Documentation
 
 ### Higher-Order Components (HOCs)

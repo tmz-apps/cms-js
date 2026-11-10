@@ -4,6 +4,7 @@
 ## vN.N.N
 * blocksmith :: prevent invalid links from being saved or pasted. Also handling undo/redo so they don't get restored
 * deps :: Unpin `final-form`, `final-form-arrays`, `react-final-form`. Fix Blocksmith `beforeSubmit` submit loop on final-form 5.0.1.
+* deps :: Upgrade `@gdbots/pbj` to `^4.0.0`, `@gdbots/pbjx` to `^3.1.0`, and `uuid` to `^14.0.3`. Peer `@gdbots/schemas` and `@triniti/schemas` now `^3.1.0`.
 
 
 ## v1.3.1
