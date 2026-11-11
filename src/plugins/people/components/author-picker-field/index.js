@@ -6,7 +6,7 @@ export default withRequest(NodePickerField, 'triniti:people:request:search-peopl
   channel: 'picker',
   initialData: {
     sort: SearchPeopleSort.TITLE_ASC.getValue(),
-    q: '+is_author:true',
+    is_author: true,
     autocomplete: true,
   }
 });

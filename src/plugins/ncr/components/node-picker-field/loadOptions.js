@@ -17,8 +17,7 @@ export default async (q, lastOptions, additional) => {
   const request = additional.request;
 
   try {
-    // todo: This is unusual, fix this once the is_author search functionality is implemented. 
-    request.set('q', `${q} ${request.get('q', '')}`); 
+    request.set('q', q); 
     request.set('page', additional.page);
     const response = await makeRequest(request);
     return {
