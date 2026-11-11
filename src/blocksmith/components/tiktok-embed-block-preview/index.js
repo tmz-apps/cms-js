@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import noop from 'lodash-es/noop.js';
 import { Media } from 'reactstrap';
 import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
+import parseIframeSrc from '@tmz-apps/cms-js/blocksmith/utils/parseIframeSrc.js';
 
 // ref https://developers.tiktok.com/doc/embed-videos/
 const fetchOembed = async (id) => {
@@ -9,7 +10,7 @@ const fetchOembed = async (id) => {
   try {
     const response = await fetch(url);
     const embed = await response.json();
-    if (embed && embed.thumbnail_url) {
+    if (embed && embed.html) {
       return embed;
     }
 
@@ -40,7 +41,7 @@ function TiktokEmbedBlockPreview(props) {
       {oembed && (
         <p className="text-center">
           <a href={url} className="hover-box-shadow d-inline-block rounded-2" target="_blank" rel="noreferrer noopener">
-            <Media src={oembed.thumbnail_url} className="rounded-2" alt="" width="250" height="auto" object />
+            <iframe src={parseIframeSrc(oembed.html)} className="rounded-2" alt="" width="250" height="auto" object />
           </a>
         </p>
       )}
