@@ -12,7 +12,7 @@ function TiktokEmbedBlockPreview(props) {
     const handleMessage = ({ data }) => {
       const type = data?.type;
 
-      if (type && type.toLowerCase().includes('error')) {
+      if (type && type?.toLowerCase().includes('error')) {
         setEmbedError(true);
         window.removeEventListener('message', handleMessage);
       }
