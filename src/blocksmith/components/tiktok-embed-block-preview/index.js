@@ -1,51 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import noop from 'lodash-es/noop.js';
-import { Media } from 'reactstrap';
 import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
-import parseIframeSrc from '@tmz-apps/cms-js/blocksmith/utils/parseIframeSrc.js';
-
-// ref https://developers.tiktok.com/doc/embed-videos/
-const fetchOembed = async (id) => {
-  const url = `https://www.tiktok.com/oembed?url=https://www.tiktok.com/video/${id}`;
-  try {
-    const response = await fetch(url);
-    const embed = await response.json();
-    if (embed && embed.html) {
-      return embed;
-    }
-
-    throw new Error(await response.text());
-  } catch (e) {
-    console.error('TiktokEmbedBlockPreview.fetchOembed', url, e);
-    return e;
-  }
-};
 
 function TiktokEmbedBlockPreview(props) {
   const { block } = props;
-  const [oembed, setOembed] = useState(null);
   const id = block.get('tiktok_id');
-  const url = `https://www.tiktok.com/embed/v2/${id}`;
+  const username = block.get('user_name');
+  const [embedError, setEmbedError] = useState(false);
+  const url = `https://www.tiktok.com/${username}/video/${id}`;
 
   useEffect(() => {
-    fetchOembed(id).then(result => {
-      setOembed(result);
-    }).catch(noop);
-  }, [id]);
+    const handleMessage = ({ data }) => {
+      const type = data?.type;
+
+      if (type && type.toLowerCase().includes('error')) {
+        setEmbedError(true);
+        window.removeEventListener('message', handleMessage);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
+  if (embedError) {
+    return (<p><a href={url} target="_blank" rel="noreferrer noopener">{url}</a></p>);
+  }
 
   return (
-    <>
-      {!oembed && (
-        <p><a href={url} target="_blank" rel="noreferrer noopener">{url}</a></p>
-      )}
-      {oembed && (
-        <p className="text-center">
-          <a href={url} className="hover-box-shadow d-inline-block rounded-2" target="_blank" rel="noreferrer noopener">
-            <iframe src={parseIframeSrc(oembed.html)} className="rounded-2" alt="" width="250" height="auto" object />
-          </a>
-        </p>
-      )}
-    </>
+    <p className="text-center">
+      <a href={url} className="hover-box-shadow d-inline-block rounded-2" target="_blank" rel="noreferrer noopener">
+        <iframe 
+          src={`https://www.tiktok.com/player/v1/${id}?embed_from=oembed&music_info=1&description=1&autoplay=1&muted=1`}
+          className="rounded-2"
+          frameborder="0"
+          allow="accelerometer;"
+          loading="lazy"
+          width="250"
+          height="auto"
+          allowfullscreen
+          object
+        />
+      </a>
+    </p>
   );
 }
 
