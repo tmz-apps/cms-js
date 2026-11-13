@@ -8,6 +8,7 @@ function TiktokEmbedBlockPreview(props) {
   const [embedError, setEmbedError] = useState(false);
   const url = `https://www.tiktok.com/${username}/video/${id}`;
 
+  // ref: https://developers.tiktok.com/docs/en/embed-player
   useEffect(() => {
     const handleMessage = ({ data }) => {
       const type = data?.type;
