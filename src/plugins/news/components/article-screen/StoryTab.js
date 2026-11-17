@@ -24,7 +24,9 @@ export default function StoryTab(props) {
         <CardBody className="pb-0">
           <SeoTitleField />
           <SlugField withDatedSlug />
-          <AuthorPickerField name="author_refs" label="Authors" isMulti sortable />
+          {schema.hasField('author_refs') && (
+            <AuthorPickerField name="author_refs" label="Authors" isMulti sortable />
+          )}
           {schema.hasMixin('triniti:curator:mixin:teaserable') && (
             <DatePickerField name="order_date" label="Order Date" />
           )}

@@ -45,8 +45,10 @@ export default function DetailsTab(props) {
       {schema.hasMixin('triniti:canvas:mixin:has-blocks') && (
         <Blocksmith isVisible={tab === 'details'} />
       )}
-
-      <AuthorFields />
+      
+      {schema.hasField('is_author') && (
+        <AuthorFields />
+      )}
       <SocialFields />
       <AdvertisingFields />
       <TaggableFields />
