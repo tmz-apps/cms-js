@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardBody, CardHeader } from 'reactstrap';
 import { SwitchField, TextField } from '@tmz-apps/cms-js/components/index.js';
 
