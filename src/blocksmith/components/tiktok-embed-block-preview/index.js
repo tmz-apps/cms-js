@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import withBlockPreview from '@tmz-apps/cms-js/blocksmith/components/with-block-preview/index.js';
 
 function TiktokEmbedBlockPreview(props) {
   const { block } = props;
   const id = block.get('tiktok_id');
-  const username = block.get('user_name');
   const [embedError, setEmbedError] = useState(false);
-  const url = `https://www.tiktok.com/${username}/video/${id}`;
+  const iframeRef = useRef(null);
+  const url = `https://www.tiktok.com/player/v1/${id}`;
 
   // ref: https://developers.tiktok.com/docs/en/embed-player
   useEffect(() => {
-    const handleMessage = ({ data }) => {
-      const type = data?.type;
-
-      if (type && type?.toLowerCase().includes('error')) {
-        setEmbedError(true);
-        window.removeEventListener('message', handleMessage);
+    const handleMessage = ({ origin, data, source }) => {
+      if (origin !== 'https://www.tiktok.com') {
+        return;
       }
+
+      if (!data?.['x-tiktok-player'] || !['onPlayerError', 'onError'].includes(data?.type) || source !== iframeRef?.current?.contentWindow) {
+        return;
+      }
+
+      setEmbedError(true);
+      window.removeEventListener('message', handleMessage);
     };
 
     window.addEventListener('message', handleMessage);
@@ -31,13 +35,15 @@ function TiktokEmbedBlockPreview(props) {
     <p className="text-center">
       <a href={url} className="hover-box-shadow d-inline-block rounded-2" target="_blank" rel="noreferrer noopener">
         <iframe 
-          src={`https://www.tiktok.com/player/v1/${id}?embed_from=oembed&music_info=1&description=1&autoplay=1&muted=1`}
+          src={`https://www.tiktok.com/player/v1/${id}?music_info=1&description=1`}
+          ref={iframeRef}
+          style={{aspectRatio: '195 / 347'}}
           className="rounded-2"
           frameborder="0"
           allow="accelerometer;"
           loading="lazy"
-          width="250"
-          height="auto"
+          height="347"
+          width="195"
           allowfullscreen
           object
         />
