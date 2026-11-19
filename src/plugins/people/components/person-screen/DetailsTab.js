@@ -49,7 +49,7 @@ export default function DetailsTab(props) {
       {schema.hasField('is_author') && (
         <AuthorFields />
       )}
-      <SocialFields />
+      <SocialFields {...props} />
       <AdvertisingFields />
       <TaggableFields />
     </>
