@@ -5,7 +5,7 @@ import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-mo
 import parseIframeSrc from '../../utils/parseIframeSrc.js';
 
 const EMBED_PATTERN = /.*tiktok\.com\/@?([\w\.]+)\/video\/(\d+).*/;
-const IFRAME_SRC_EMBED_PATTERN = /.*tiktok\.com\/player\/v1\/(\d+).*/;
+const PLAYER_EMBED_PATTERN = /.*tiktok\.com\/player\/v1\/(\d+).*/;
 
 function TiktokEmbedBlockModal() {
   const { editMode, form } = useFormContext();
@@ -19,7 +19,7 @@ function TiktokEmbedBlockModal() {
     value = parseIframeSrc(value) || value;
     setEmbed(value);
 
-    const matches = value.match(EMBED_PATTERN) || value.match(IFRAME_SRC_EMBED_PATTERN);
+    const matches = value.match(EMBED_PATTERN) || value.match(PLAYER_EMBED_PATTERN);
     if (!matches) {
       setEmbedError('This value doesn\'t look like a TikTok Embed code.');
       return;
