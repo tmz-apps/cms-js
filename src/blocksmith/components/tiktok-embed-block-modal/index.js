@@ -24,8 +24,8 @@ function TiktokEmbedBlockModal() {
       setEmbedError('This value doesn\'t look like a TikTok Embed code.');
       return;
     }
+
     setEmbedError(null);
-  
     if (EMBED_PATTERN.test(value)) {
       form.change('user_name', matches[1]);
     }
