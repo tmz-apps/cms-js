@@ -21,7 +21,7 @@ export default function LinkModal(props) {
   const [url, setUrl] = useState(selectedLink ? selectedLink.url : '');
   const [target, setTarget] = useState(selectedLink && selectedLink.target);
   const [noFollow, setNoFollow] = useState(!!selectedLink?.rel?.includes?.('nofollow'));
-  const [isValid, setIsValid] = useState(!url || isValidUrl(url));
+  const [isValid, setIsValid] = useState(isValidUrl(url));
   const [touched, setTouched] = useState(false);
   const inputRef = useRef(null);
   const isNew = !selectedLink;
