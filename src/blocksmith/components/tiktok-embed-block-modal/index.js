@@ -5,7 +5,7 @@ import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-mo
 import parseIframeSrc from '../../utils/parseIframeSrc.js';
 
 const EMBED_PATTERN = /.*tiktok\.com\/@?([\w\.]+)\/video\/(\d+).*/;
-const PLAYER_EMBED_PATTERN = /.*tiktok\.com\/player\/v1\/(\d+).*/;
+const PLAYER_EMBED_PATTERN = /^(?:https?:\/\/)?(?:www\.)?tiktok\.com\/player\/v1\/(\d+)(?:[?#].*)?$/;
 
 function TiktokEmbedBlockModal() {
   const { editMode, form } = useFormContext();

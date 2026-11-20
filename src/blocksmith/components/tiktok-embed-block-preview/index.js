@@ -34,7 +34,7 @@ function TiktokEmbedBlockPreview(props) {
   return (
     <p className="text-center">
       <a href={url} className="hover-box-shadow d-inline-block rounded-2" target="_blank" rel="noreferrer noopener">
-        <iframe 
+        <iframe title="TikTok video player"
           src={`${url}?music_info=1&description=1`}
           ref={iframeRef}
           style={{aspectRatio: '195 / 347'}}
