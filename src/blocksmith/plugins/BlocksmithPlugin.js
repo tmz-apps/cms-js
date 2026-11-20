@@ -253,7 +253,7 @@ export default function BlocksmithPlugin(props) {
           // change (new array ref) that queues more validation and loops forever.
           const blocks = editorToBlocks(editor);
           const newValue = blocks.length > 0 ? blocks : undefined;
-          if (!areBlocksEqual(newValue, form.getState().values[name])) {
+          if (!areBlocksEqual(newValue, form.getFieldState(name).value)) {
             form.change(name, newValue);
           }
         }
