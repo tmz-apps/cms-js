@@ -16,7 +16,7 @@ function TiktokEmbedBlockModal() {
     event.preventDefault();
     event.stopPropagation();
     let value = event.target.value || '';
-    value = parseIframeSrc(value) || value;
+    value = parseIframeSrc(value) ?? value;
     setEmbed(value);
 
     const matches = value.match(EMBED_PATTERN) || value.match(PLAYER_EMBED_PATTERN);
@@ -24,13 +24,12 @@ function TiktokEmbedBlockModal() {
       setEmbedError('This value doesn\'t look like a TikTok Embed code.');
       return;
     }
-
+  
     setEmbedError(null);
-    if (EMBED_PATTERN.test(value)) {
-      form.change('user_name', matches[1]);
-    }
-      
-    form.change('tiktok_id', matches[2] || matches[1]);
+    form.batch(() => {
+      form.change('user_name', EMBED_PATTERN.test(value) ? matches[1] : undefined);
+      form.change('tiktok_id', matches[2] ?? matches[1]);
+    });
   };
 
   return (
