@@ -26,19 +26,11 @@ function TiktokEmbedBlockModal() {
     }
     setEmbedError(null);
   
-    let userName;
-    let id;
     if (EMBED_PATTERN.test(value)) {
-      userName = matches[1];
-      id = matches[2];
-    } else {
-      id = matches[1];
+      form.change('user_name', matches[1]);
     }
-
-    form.batch(() => {
-      form.change('user_name', userName);
-      form.change('tiktok_id', id);
-    });
+      
+    form.change('tiktok_id', matches[2] || matches[1]);
   };
 
   return (
