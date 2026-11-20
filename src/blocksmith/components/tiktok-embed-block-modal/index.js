@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { FormText } from 'reactstrap';
 import { TextField, useFormContext } from '@tmz-apps/cms-js/components/index.js';
 import withBlockModal from '@tmz-apps/cms-js/blocksmith/components/with-block-modal/index.js';
+import parseIframeSrc from '../../utils/parseIframeSrc.js';
 
 const EMBED_PATTERN = /.*tiktok\.com\/@?([\w\.]+)\/video\/(\d+).*/;
+const PLAYER_EMBED_PATTERN = /.*tiktok\.com\/player\/v1\/(\d+).*/;
 
 function TiktokEmbedBlockModal() {
   const { editMode, form } = useFormContext();
@@ -13,21 +15,20 @@ function TiktokEmbedBlockModal() {
   const handleChangeEmbed = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    const value = event.target.value || '';
+    let value = event.target.value || '';
+    value = parseIframeSrc(value) ?? value;
     setEmbed(value);
 
-    if (!EMBED_PATTERN.test(value)) {
+    const matches = value.match(EMBED_PATTERN) || value.match(PLAYER_EMBED_PATTERN);
+    if (!matches) {
       setEmbedError('This value doesn\'t look like a TikTok Embed code.');
       return;
     }
-
+  
     setEmbedError(null);
-    const matches = value.match(EMBED_PATTERN);
-    const userName = matches[1] || undefined;
-    const id = matches[2] || undefined;
     form.batch(() => {
-      form.change('user_name', userName);
-      form.change('tiktok_id', id);
+      form.change('user_name', EMBED_PATTERN.test(value) ? matches[1] : undefined);
+      form.change('tiktok_id', matches[2] ?? matches[1]);
     });
   };
 
